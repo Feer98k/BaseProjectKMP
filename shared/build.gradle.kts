@@ -39,6 +39,10 @@ kotlin {
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
+        androidMain.dependencies {
+            implementation(libs.firebase.bom)
+            implementation(libs.firebase.config)
+        }
     }
 }
 
@@ -52,4 +56,5 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
 }
