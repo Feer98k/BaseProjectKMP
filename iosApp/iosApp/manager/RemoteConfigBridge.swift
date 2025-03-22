@@ -8,25 +8,28 @@
 
 import Foundation
 import FirebaseRemoteConfig
-import FirebaseCore
 import shared
 
-@objc(RemoteConfigBridge)
-public class RemoteConfigBridge: NSObject {
-    @objc public static let shared = RemoteConfigBridge()
+// Aqui criamos e fornecemos a implementação Kotlin esperada (via injeção)
+class RemoteConfigBridgeIos {
+    
+    init() {
+           FirebaseApp.configure()
+           RemoteConfigBridgeIos.configureRemoteConfigService()
+       }
 
-    private override init() {
-        FirebaseApp.configure()
-    }
-
-    @objc public func fetchRemoteConfigJson(_ key: String, completion: @escaping (String?, NSError?) -> Void) {
-        let remoteConfig = RemoteConfig.remoteConfig()
-        remoteConfig.fetchAndActivate { status, error in
-            if let error = error {
-                completion(nil, error as NSError)
-            } else {
-                let json = remoteConfig.configValue(forKey: key).stringValue ?? ""
-                completion(json, nil)
+    static func configureRemoteConfigService() {
+        RemoteConfigServiceProvider.shared.remoteConfigService = IosRemoteConfigService { key, completion in
+            let remoteConfig = RemoteConfig.remoteConfig()
+            remoteConfig.fetchAndActivate { _, error in
+                if let error = error {
+                    completion(nil)
+                    print("RemoteConfig error: \(error.localizedDescription)")
+                } else {
+                    let json = remoteConfig.configValue(forKey: key).stringValue
+                    completion(json)
+                    print(json)
+                }
             }
         }
     }
