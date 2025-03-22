@@ -13,11 +13,6 @@ import shared
 // Aqui criamos e fornecemos a implementação Kotlin esperada (via injeção)
 class RemoteConfigBridgeIos {
     
-    init() {
-           FirebaseApp.configure()
-           RemoteConfigBridgeIos.configureRemoteConfigService()
-       }
-
     static func configureRemoteConfigService() {
         RemoteConfigServiceProvider.shared.remoteConfigService = IosRemoteConfigService { key, completion in
             let remoteConfig = RemoteConfig.remoteConfig()
