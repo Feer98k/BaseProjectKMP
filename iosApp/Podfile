@@ -1,8 +1,10 @@
 target 'iosApp' do
-  use_frameworks!
+  use_frameworks! :linkage => :static # melhora compatibilidade
+  use_modular_headers! # ajuda a importar módulos internos corretamente
+  
   platform :ios, '16.0'
   pod 'shared', :path => '../shared'
   
-  pod 'Firebase/RemoteConfig'
-	
+  pod 'FirebaseRemoteConfig'
+  pod 'FirebaseAnalytics'
 end

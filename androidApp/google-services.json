@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:712224722874:android:36502628ba073300d59783",
         "android_client_info": {
-          "package_name": "br.com.f98k.tipstermind"
+          "package_name": "com.f98k.tipstermindcocoapods.android"
         }
       },
       "oauth_client": [],

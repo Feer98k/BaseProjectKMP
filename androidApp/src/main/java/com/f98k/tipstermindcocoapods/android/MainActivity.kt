@@ -9,10 +9,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.f98k.tipstermindcocoapods.Greeting
+import com.f98k.tipstermindcocoapods.domain.TipsterRemoteConfig
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        TipsterRemoteConfig().getRemoteConfigValue("general_matches_hml") { value ->
+            println("Fetched value: $value")
+        }
         setContent {
             MyApplicationTheme {
                 Surface(
