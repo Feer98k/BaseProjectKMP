@@ -10,6 +10,7 @@ plugins {
     alias(libs.plugins.kotlinxSerialization)
 
 
+
 }
 kotlin {
     androidTarget {
@@ -47,6 +48,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
+
     sourceSets {
         getByName("main") {
             manifest.srcFile("src/main/AndroidManifest.xml")
@@ -63,6 +65,5 @@ dependencies {
     implementation(libs.koin.androidx.compose)
     implementation(libs.firebase.bom)
     implementation(libs.firebase.config)
-    implementation(libs.androidx.foundation.layout.android)
-    implementation(libs.androidx.material3.android)
+    implementation("androidx.compose.material:material:1.7.1")
 }
