@@ -4,7 +4,6 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.window.ComposeUIViewController
-import com.f98k.tipstermindcocoapods.domain.service.RemoteConfigServiceProvider
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
@@ -15,11 +14,14 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import com.f98k.tipstermindcocoapods.domain.RemoteConfigServiceProvider
+import com.f98k.tipstermindcocoapods.domain.di.initKoin
+
 
 
 fun MainViewController() = ComposeUIViewController(
     configure = {
-
+        initKoin()
     }
 ) {
     GreetingView("Hello, iOS!")
