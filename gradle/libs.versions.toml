@@ -22,6 +22,7 @@ firebase-bom = "32.2.0"
 googleFirebaseConfig = "22.1.0"
 runtimeAndroid = "1.7.8"
 uiAndroid = "1.7.8"
+lifecycleViewmodelAndroid = "2.8.7"
 
 
 
@@ -50,6 +51,7 @@ firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.r
 firebase-config = { group = "com.google.firebase", name = "firebase-config", version.ref = "googleFirebaseConfig" }
 androidx-runtime-android = { group = "androidx.compose.runtime", name = "runtime-android", version.ref = "runtimeAndroid" }
 androidx-ui-android = { group = "androidx.compose.ui", name = "ui-android", version.ref = "uiAndroid" }
+androidx-lifecycle-viewmodel-android = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-android", version.ref = "lifecycleViewmodelAndroid" }
 
 
 [plugins]
