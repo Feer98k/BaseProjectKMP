@@ -13,8 +13,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.f98k.tipstermindcocoapods.Greeting
 import com.f98k.tipstermindcocoapods.domain.RemoteConfigServiceProvider
+import kotlinx.coroutines.flow.MutableStateFlow
 
 class MainActivity : ComponentActivity() {
+    private var jsonReceived = MutableStateFlow<String?>(null)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val remoteConfig = RemoteConfigServiceProvider.remoteConfigService

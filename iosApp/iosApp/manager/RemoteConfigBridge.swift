@@ -14,6 +14,7 @@ import shared
 class RemoteConfigBridgeIos {
     
     static func configureRemoteConfigService() {
+        print("tentando buscar o json")
         RemoteConfigServiceProvider.shared.remoteConfigService = IosRemoteConfigService { key, completion in
             let remoteConfig = RemoteConfig.remoteConfig()
             remoteConfig.fetchAndActivate { _, error in
@@ -22,8 +23,8 @@ class RemoteConfigBridgeIos {
                     print("RemoteConfig error: \(error.localizedDescription)")
                 } else {
                     let json = remoteConfig.configValue(forKey: key).stringValue
+                    print("Sucesso ao buscar json")
                     completion(json)
-                    print(json)
                 }
             }
         }
