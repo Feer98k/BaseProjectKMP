@@ -8,22 +8,23 @@
 
 import Foundation
 import FirebaseRemoteConfig
+import shared
 
 @objc(RemoteConfigBridgeIos)
 class RemoteConfigBridgeIos: NSObject {
-
-    @objc func fetchRemoteConfigJsonWithKey(
-        _ key: String,
-        completion: @escaping (String?, NSError?) -> Void
-    ) {
-        let remoteConfig = RemoteConfig.remoteConfig()
-        remoteConfig.fetchAndActivate { _, error in
-            if let error = error {
-                completion(nil, error as NSError)
-            } else {
-                let jsonValue = remoteConfig.configValue(forKey: key).stringValue
-                completion(jsonValue, nil)
+    
+    @objc public static func configureRemoteConfigService() {
+        RemoteConfigServiceProvider.shared.remoteConfigService = IosRemoteConfigService { key, completion in
+            let remoteConfig = RemoteConfig.remoteConfig()
+            remoteConfig.fetchAndActivate { _, error in
+                if let error = error {
+                    completion("errorGetFile")
+                } else {
+                    let json = remoteConfig.configValue(forKey: key).stringValue
+                    completion(json)
+                }
             }
         }
     }
+    
 }

@@ -3,6 +3,7 @@ import SwiftUI
 import shared
 import FirebaseCore
 
+
 struct ComposeView: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UIViewController {
        return MainViewControllerKt.MainViewController()
@@ -15,7 +16,8 @@ struct ContentView: View {
     
     init() {
         print("inicializando o compose")
-        FirebaseApp.configure() 
+        RemoteConfigBridgeIos.configureRemoteConfigService()
+        FirebaseApp.configure()
        }
     
     var body: some View {
