@@ -10,6 +10,8 @@
 		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
+		4A1C6EF62D90B96700DF6B7B /* .plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A1C6EF52D90B96700DF6B7B /* .plist */; };
+		4A1C6EF82D90B9E600DF6B7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A1C6EF72D90B9E600DF6B7B /* GoogleService-Info.plist */; };
 		4A91DF882D8F3F1600CC3922 /* RemoteConfigBridgeIos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A91DF872D8F3F1600CC3922 /* RemoteConfigBridgeIos.swift */; };
 		4ACF07432D8F317600C2056B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4ACF07422D8F317600C2056B /* GoogleService-Info.plist */; };
 		4ACF07452D8F359C00C2056B /* RemoteConfigBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF07442D8F359C00C2056B /* RemoteConfigBridge.swift */; };
@@ -22,6 +24,8 @@
 		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
 		2488453D695DDCC86583986A /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
+		4A1C6EF52D90B96700DF6B7B /* .plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = .plist; sourceTree = "<group>"; };
+		4A1C6EF72D90B9E600DF6B7B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4A91DF872D8F3F1600CC3922 /* RemoteConfigBridgeIos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigBridgeIos.swift; sourceTree = "<group>"; };
 		4ACF07422D8F317600C2056B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4ACF07442D8F359C00C2056B /* RemoteConfigBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigBridge.swift; sourceTree = "<group>"; };
@@ -81,6 +85,7 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				4A1C6EF52D90B96700DF6B7B /* .plist */,
 				4ACF07422D8F317600C2056B /* GoogleService-Info.plist */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
 				7555FF82242A565900829871 /* ContentView.swift */,
@@ -89,6 +94,7 @@
 				058557D7273AAEEB004C7B11 /* Preview Content */,
 				4ACF07442D8F359C00C2056B /* RemoteConfigBridge.swift */,
 				4A91DF872D8F3F1600CC3922 /* RemoteConfigBridgeIos.swift */,
+				4A1C6EF72D90B9E600DF6B7B /* GoogleService-Info.plist */,
 			);
 			path = iosApp;
 			sourceTree = "<group>";
@@ -163,6 +169,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */,
+				4A1C6EF62D90B96700DF6B7B /* .plist in Resources */,
+				4A1C6EF82D90B9E600DF6B7B /* GoogleService-Info.plist in Resources */,
 				058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */,
 				4ACF07432D8F317600C2056B /* GoogleService-Info.plist in Resources */,
 			);
