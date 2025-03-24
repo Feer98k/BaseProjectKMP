@@ -1,7 +1,7 @@
 package com.f98k.tipstermindcocoapods.ui.presentation
 
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -21,9 +21,7 @@ fun HomeScreenApp(uiState: HomeUiState) {
             .fillMaxSize()
             .padding(16.dp)
     ) {
-        LazyColumn(
-            modifier = Modifier
-        ) {
+        LazyColumn() {
             item {
                 Button(
                     onClick = {
