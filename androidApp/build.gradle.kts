@@ -58,12 +58,18 @@ android {
 
 dependencies {
     implementation(projects.shared)
-    implementation(compose.preview)
-    implementation(libs.androidx.activity.compose)
     implementation(libs.ktor.client.okhttp)
     implementation(libs.koin.android)
     implementation(libs.koin.androidx.compose)
+
+    implementation(libs.compose.ui.pure)
+    implementation(libs.compose.foundation.pure)
+    implementation(libs.compose.material.pure)
+    implementation(libs.activity.compose.pure)
+    implementation(libs.lifecycle.runtime.ktx.pure)
+    implementation(libs.lifecycle.viewmodel.compose.pure)
+
+    debugImplementation(libs.compose.ui.tooling.pure)
     implementation(libs.firebase.bom)
     implementation(libs.firebase.config)
-    implementation("androidx.compose.material:material:1.7.1")
 }

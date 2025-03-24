@@ -25,6 +25,12 @@ uiAndroid = "1.7.8"
 lifecycleViewmodelAndroid = "2.8.7"
 kotlin-coroutines = "1.8.0"
 
+compose_pure = "1.5.4"
+activity_compose_pure = "1.8.0"
+lifecycle_pure = "2.6.2"
+compiler_ext_pure = "1.5.4"
+kotlin_pure = "1.9.22"
+
 
 
 [libraries]
@@ -57,6 +63,14 @@ androidx-ui-android = { group = "androidx.compose.ui", name = "ui-android", vers
 androidx-lifecycle-viewmodel-android = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-android", version.ref = "lifecycleViewmodelAndroid" }
 kotlin-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin-coroutines" }
 
+# dedicated android path compose dependencies
+compose-ui_pure = { group = "androidx.compose.ui", name = "ui", version.ref = "compose_pure" }
+compose-ui-tooling_pure = { group = "androidx.compose.ui", name = "ui-tooling", version.ref = "compose_pure" }
+compose-foundation_pure = { group = "androidx.compose.foundation", name = "foundation", version.ref = "compose_pure" }
+compose-material_pure = { group = "androidx.compose.material", name = "material", version.ref = "compose_pure" }
+activity-compose_pure = { group = "androidx.activity", name = "activity-compose", version.ref = "activity_compose_pure" }
+lifecycle-runtime-ktx_pure = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle_pure" }
+lifecycle-viewmodel-compose_pure = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle_pure" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -67,3 +81,5 @@ kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref =
 kotlinCocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }
 kotlinxSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 googleGmsGoogleServices = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
+kotlin-android-pure = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin_pure" }
+
