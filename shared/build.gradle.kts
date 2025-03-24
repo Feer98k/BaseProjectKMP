@@ -55,10 +55,11 @@ kotlin {
 
             implementation(libs.kamel)
 
-            api(libs.koin.core)
+            implementation(libs.koin.core)
             implementation(libs.koin.compose)
             implementation(libs.koin.composeVM)
 
+            implementation(libs.kotlin.coroutines.core)
 
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.uri.kmp)

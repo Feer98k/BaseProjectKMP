@@ -23,6 +23,7 @@ googleFirebaseConfig = "22.1.0"
 runtimeAndroid = "1.7.8"
 uiAndroid = "1.7.8"
 lifecycleViewmodelAndroid = "2.8.7"
+kotlin-coroutines = "1.8.0"
 
 
 
@@ -54,6 +55,7 @@ firebase-config = { group = "com.google.firebase", name = "firebase-config", ver
 androidx-runtime-android = { group = "androidx.compose.runtime", name = "runtime-android", version.ref = "runtimeAndroid" }
 androidx-ui-android = { group = "androidx.compose.ui", name = "ui-android", version.ref = "uiAndroid" }
 androidx-lifecycle-viewmodel-android = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-android", version.ref = "lifecycleViewmodelAndroid" }
+kotlin-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin-coroutines" }
 
 
 [plugins]
