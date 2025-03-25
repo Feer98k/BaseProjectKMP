@@ -1,5 +1,6 @@
 package com.f98k.tipstermindcocoapods.android
 
+import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.f98k.tipstermindcocoapods.ui.screen.HomeScreenApp
@@ -12,5 +13,8 @@ private fun PlayGround(){
     val uiState = HomeUiState(
         jsonData = "Loading..."
     )
+    Scaffold {
+
+    }
     HomeScreenApp(uiState)
 }

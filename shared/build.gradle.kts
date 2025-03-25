@@ -79,6 +79,8 @@ kotlin {
         }
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
+            implementation("org.jetbrains.skiko:skiko:0.7.56")
+
         }
     }
 }
@@ -105,5 +107,7 @@ dependencies {
     implementation(libs.androidx.ui.android)
     implementation(libs.androidx.lifecycle.viewmodel.android)
     implementation(libs.androidx.foundation.android)
+    implementation(libs.androidx.ui.graphics.android)
+    implementation(libs.androidx.foundation.layout.android)
 
 }
