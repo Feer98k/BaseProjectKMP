@@ -26,5 +26,20 @@
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:712224722874:ios:69ef562a2efcc81cd59783</string>
+        
+        <key>UIAppFonts</key>
+<array>
+    <string>Fonts/Lexend-Regular.ttf</string>
+    <string>Fonts/Lexend-Medium.ttf</string>
+    <string>Fonts/Lexend-Bold.ttf</string>
+    <string>Fonts/Lexend-Light.ttf</string>
+    <string>Fonts/Lexend-SemiBold.ttf</string>
+    <string>Fonts/Lexend-ExtraBold.ttf</string>
+    <string>Fonts/Lexend-ExtraLight.ttf</string>
+    <string>Fonts/Lexend-Thin.ttf</string>
+    <string>Fonts/Lexend-Black.ttf</string>
+</array>
+
+	
 </dict>
 </plist>

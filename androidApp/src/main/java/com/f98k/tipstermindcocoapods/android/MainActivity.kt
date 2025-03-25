@@ -6,8 +6,9 @@ import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.tooling.preview.Preview
-import com.f98k.tipstermindcocoapods.ui.presentation.HomeScreenApp
+import com.f98k.tipstermindcocoapods.ui.screen.HomeScreenApp
 import com.f98k.tipstermindcocoapods.ui.state.HomeUiState
+import com.f98k.tipstermindcocoapods.ui.theme.TipsterTheme
 import com.f98k.tipstermindcocoapods.ui.viewmodel.HomeViewModel
 import org.koin.androidx.compose.koinViewModel
 
@@ -18,7 +19,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val viewModel = koinViewModel<HomeViewModel>()
-            MyApplicationTheme {
+            TipsterTheme {
                 HomeScreenApp(viewModel.uiState.collectAsState().value)
             }
         }

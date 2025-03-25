@@ -64,6 +64,7 @@ kotlin {
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.uri.kmp)
             implementation(libs.navigation.compose)
+
         }
 
         androidMain.dependencies {
@@ -74,6 +75,7 @@ kotlin {
             implementation(libs.koin.androidx.compose)
             implementation(libs.firebase.bom)
             implementation(libs.firebase.config)
+            implementation(libs.androidx.ui.text.android)
         }
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
@@ -102,4 +104,6 @@ dependencies {
     implementation(libs.androidx.runtime.android)
     implementation(libs.androidx.ui.android)
     implementation(libs.androidx.lifecycle.viewmodel.android)
+    implementation(libs.androidx.foundation.android)
+
 }

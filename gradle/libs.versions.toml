@@ -30,6 +30,9 @@ activity_compose_pure = "1.8.0"
 lifecycle_pure = "2.6.2"
 compiler_ext_pure = "1.5.4"
 kotlin_pure = "1.9.22"
+uiTextAndroid = "1.7.8"
+material3Android = "1.3.1"
+foundationAndroid = "1.7.8"
 
 
 
@@ -71,6 +74,9 @@ compose-material_pure = { group = "androidx.compose.material", name = "material"
 activity-compose_pure = { group = "androidx.activity", name = "activity-compose", version.ref = "activity_compose_pure" }
 lifecycle-runtime-ktx_pure = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle_pure" }
 lifecycle-viewmodel-compose_pure = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle_pure" }
+androidx-ui-text-android = { group = "androidx.compose.ui", name = "ui-text-android", version.ref = "uiTextAndroid" }
+androidx-material3-android = { group = "androidx.compose.material3", name = "material3-android", version.ref = "material3Android" }
+androidx-foundation-android = { group = "androidx.compose.foundation", name = "foundation-android", version.ref = "foundationAndroid" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
