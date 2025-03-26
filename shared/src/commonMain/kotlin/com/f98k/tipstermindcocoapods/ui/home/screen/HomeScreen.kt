@@ -17,6 +17,7 @@ fun HomeScreenApp(
 ) {
     LaunchedEffect(Unit) {
         uiStateActions.getBottomBarList()
+        uiStateActions.getRemoteConfigData()
     }
     Scaffold(
         topBar = {

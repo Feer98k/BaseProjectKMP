@@ -13,6 +13,11 @@
 		4A1C6EF62D90B96700DF6B7B /* .plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A1C6EF52D90B96700DF6B7B /* .plist */; };
 		4A1C6EF82D90B9E600DF6B7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A1C6EF72D90B9E600DF6B7B /* GoogleService-Info.plist */; };
 		4A91DF882D8F3F1600CC3922 /* RemoteConfigBridgeIos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A91DF872D8F3F1600CC3922 /* RemoteConfigBridgeIos.swift */; };
+		4AA613112D939D7900B1C154 /* ic_bottom_bar_ia.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AA6130E2D939D7900B1C154 /* ic_bottom_bar_ia.png */; };
+		4AA613122D939D7900B1C154 /* ic_bottom_bar_search.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AA6130F2D939D7900B1C154 /* ic_bottom_bar_search.png */; };
+		4AA613132D939D7900B1C154 /* ic_bottom_bar_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AA613102D939D7900B1C154 /* ic_bottom_bar_settings.png */; };
+		4AA613142D939D7900B1C154 /* ic_bottom_bar_favorites.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AA6130C2D939D7900B1C154 /* ic_bottom_bar_favorites.png */; };
+		4AA613152D939D7900B1C154 /* ic_bottom_bar_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AA6130D2D939D7900B1C154 /* ic_bottom_bar_home.png */; };
 		4ACF07432D8F317600C2056B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4ACF07422D8F317600C2056B /* GoogleService-Info.plist */; };
 		4AE58BD62D922731006DEEED /* Lexend-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4AE58BCF2D922731006DEEED /* Lexend-ExtraBold.ttf */; };
 		4AE58BD72D922731006DEEED /* Lexend-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4AE58BCE2D922731006DEEED /* Lexend-Bold.ttf */; };
@@ -36,6 +41,11 @@
 		4A1C6EF52D90B96700DF6B7B /* .plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = .plist; sourceTree = "<group>"; };
 		4A1C6EF72D90B9E600DF6B7B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4A91DF872D8F3F1600CC3922 /* RemoteConfigBridgeIos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigBridgeIos.swift; sourceTree = "<group>"; };
+		4AA6130C2D939D7900B1C154 /* ic_bottom_bar_favorites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_bottom_bar_favorites.png; sourceTree = "<group>"; };
+		4AA6130D2D939D7900B1C154 /* ic_bottom_bar_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_bottom_bar_home.png; sourceTree = "<group>"; };
+		4AA6130E2D939D7900B1C154 /* ic_bottom_bar_ia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_bottom_bar_ia.png; sourceTree = "<group>"; };
+		4AA6130F2D939D7900B1C154 /* ic_bottom_bar_search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_bottom_bar_search.png; sourceTree = "<group>"; };
+		4AA613102D939D7900B1C154 /* ic_bottom_bar_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_bottom_bar_settings.png; sourceTree = "<group>"; };
 		4ACF07422D8F317600C2056B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4AE58BCD2D922731006DEEED /* Lexend-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-Black.ttf"; sourceTree = "<group>"; };
 		4AE58BCE2D922731006DEEED /* Lexend-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-Bold.ttf"; sourceTree = "<group>"; };
@@ -101,6 +111,11 @@
 		4AE58BDF2D92378B006DEEED /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				4AA6130C2D939D7900B1C154 /* ic_bottom_bar_favorites.png */,
+				4AA6130D2D939D7900B1C154 /* ic_bottom_bar_home.png */,
+				4AA6130E2D939D7900B1C154 /* ic_bottom_bar_ia.png */,
+				4AA6130F2D939D7900B1C154 /* ic_bottom_bar_search.png */,
+				4AA613102D939D7900B1C154 /* ic_bottom_bar_settings.png */,
 				4AE58BE62D924721006DEEED /* ic_back_left.png */,
 			);
 			path = Resource;
@@ -213,6 +228,11 @@
 			files = (
 				4AE58BD62D922731006DEEED /* Lexend-ExtraBold.ttf in Resources */,
 				4AE58BD72D922731006DEEED /* Lexend-Bold.ttf in Resources */,
+				4AA613112D939D7900B1C154 /* ic_bottom_bar_ia.png in Resources */,
+				4AA613122D939D7900B1C154 /* ic_bottom_bar_search.png in Resources */,
+				4AA613132D939D7900B1C154 /* ic_bottom_bar_settings.png in Resources */,
+				4AA613142D939D7900B1C154 /* ic_bottom_bar_favorites.png in Resources */,
+				4AA613152D939D7900B1C154 /* ic_bottom_bar_home.png in Resources */,
 				4AE58BD82D922731006DEEED /* Lexend-ExtraLight.ttf in Resources */,
 				4AE58BD92D922731006DEEED /* Lexend-Light.ttf in Resources */,
 				4AE58BDA2D922731006DEEED /* Lexend-Black.ttf in Resources */,
