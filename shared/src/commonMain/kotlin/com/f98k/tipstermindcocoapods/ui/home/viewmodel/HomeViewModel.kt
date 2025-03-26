@@ -7,8 +7,8 @@ import com.f98k.tipstermindcocoapods.domain.usecase.HomeUseCase
 import com.f98k.tipstermindcocoapods.ui.home.state.HomeUiActions
 import com.f98k.tipstermindcocoapods.ui.home.state.HomeUiState
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class HomeViewModel(private val useCase: HomeUseCase) : ViewModel() {
@@ -46,22 +46,23 @@ class HomeViewModel(private val useCase: HomeUseCase) : ViewModel() {
 
     private fun <T> launchWithLoading(
         onSuccess: (T) -> Unit,
+        onError: (Throwable) -> Unit = {},
         block: suspend () -> T
     ) {
         viewModelScope.launch {
             changeLoadingState(true)
-            try {
-                val result = block()
+            runCatching {
+                block()
+            }.onSuccess { result ->
                 onSuccess(result)
-            } catch (e: Exception) {
-                // doNothing
-            } finally {
-                changeLoadingState(false)
+            }.onFailure { throwable ->
+                onError(throwable)
             }
+            changeLoadingState(false)
         }
     }
 
-    private fun changeLoadingState(isLoading: Boolean) {
+        private fun changeLoadingState(isLoading: Boolean) {
         _uiState.update { currentState ->
             currentState.copy(
                 isToShowLoading = isLoading
