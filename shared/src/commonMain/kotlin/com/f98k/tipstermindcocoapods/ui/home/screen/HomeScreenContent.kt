@@ -12,6 +12,7 @@ import androidx.compose.ui.unit.dp
 import com.f98k.tipstermindcocoapods.ui.components.TipsterText
 import com.f98k.tipstermindcocoapods.ui.home.state.HomeUiActions
 import com.f98k.tipstermindcocoapods.ui.home.state.HomeUiState
+import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum
 
 
 @Composable
@@ -29,7 +30,8 @@ fun HomeScreenContent(
                 Spacer(modifier = Modifier.padding(16.dp))
                 TipsterText(
                     text = uiState.generalMatchList,
-                    color = Color.White
+                    color = Color.White,
+                    type = TipsterTextTypeEnum.Body
                 )
             }
 

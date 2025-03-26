@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.sp
 import com.f98k.tipstermindcocoapods.commons.LocalizedStrings
 import com.f98k.tipstermindcocoapods.domain.bridge.getImageResource
 import com.f98k.tipstermindcocoapods.domain.bridge.getLexendFont
+import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum
 
 
 @Composable
@@ -65,16 +66,14 @@ fun TipsterTopBar(
                     .fillMaxHeight(),
                 contentAlignment = Alignment.Center
             ) {
-                Text(
+                TipsterText(
                     text = title,
                     color = Color.White,
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 18.sp,
-                    fontFamily = getLexendFont(FontWeight.Bold)
+                    type = TipsterTextTypeEnum.Title
                 )
             }
 
-            Spacer(modifier = Modifier.size(48.dp))
+            Spacer(modifier = Modifier.size(28.dp))
         }
     }
 }
