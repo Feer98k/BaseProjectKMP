@@ -12,7 +12,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.f98k.tipstermindcocoapods.data.model.BottomBarItem
-import com.f98k.tipstermindcocoapods.data.repository.HomeRepositoryImpl
+import com.f98k.tipstermindcocoapods.data.repository.home.HomeRepositoryImpl
 import com.f98k.tipstermindcocoapods.domain.bridge.getImageResource
 
 @Preview(showBackground = true)

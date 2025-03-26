@@ -1,4 +1,4 @@
-package com.f98k.tipstermindcocoapods.ui.home.screen
+package com.f98k.tipstermindcocoapods.ui
 
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
@@ -9,6 +9,7 @@ import com.f98k.tipstermindcocoapods.commons.StringConstants
 import com.f98k.tipstermindcocoapods.navigation.TipsterRouters
 import com.f98k.tipstermindcocoapods.ui.components.TipsterBottomBar
 import com.f98k.tipstermindcocoapods.ui.components.TipsterTopBar
+import com.f98k.tipstermindcocoapods.ui.home.screen.HomeScreenContent
 import com.f98k.tipstermindcocoapods.ui.home.state.HomeUiActions
 import com.f98k.tipstermindcocoapods.ui.home.state.HomeUiState
 

@@ -1,4 +1,4 @@
-package com.f98k.tipstermindcocoapods.domain.usecase
+package com.f98k.tipstermindcocoapods.domain.usecase.home
 
 import com.f98k.tipstermindcocoapods.data.constants.RemoteConfigEnum
 import com.f98k.tipstermindcocoapods.data.model.BottomBarList

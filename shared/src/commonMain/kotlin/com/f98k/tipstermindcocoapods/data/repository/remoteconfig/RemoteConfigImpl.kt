@@ -1,9 +1,9 @@
-package com.f98k.tipstermindcocoapods.data.repository
+package com.f98k.tipstermindcocoapods.data.repository.remoteconfig
 
 import com.f98k.tipstermindcocoapods.data.constants.RemoteConfigEnum
 import com.f98k.tipstermindcocoapods.data.model.ResponseResource
-import com.f98k.tipstermindcocoapods.data.repository.RemoteConfigImpl.RemoteConfig.REMOTE_CONFIG_NULL
-import com.f98k.tipstermindcocoapods.data.repository.RemoteConfigImpl.RemoteConfig.REMOTE_CONFIG_RESPONSE_IS_NULL_OR_EMPTY
+import com.f98k.tipstermindcocoapods.data.repository.remoteconfig.RemoteConfigImpl.RemoteConfig.REMOTE_CONFIG_NULL
+import com.f98k.tipstermindcocoapods.data.repository.remoteconfig.RemoteConfigImpl.RemoteConfig.REMOTE_CONFIG_RESPONSE_IS_NULL_OR_EMPTY
 import com.f98k.tipstermindcocoapods.domain.RemoteConfigServiceProvider
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine

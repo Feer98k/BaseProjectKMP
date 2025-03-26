@@ -1,4 +1,4 @@
-package com.f98k.tipstermindcocoapods.data.repository
+package com.f98k.tipstermindcocoapods.data.repository.home
 
 import com.f98k.tipstermindcocoapods.data.model.BottomBarList
 

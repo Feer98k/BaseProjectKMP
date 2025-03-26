@@ -4,11 +4,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.tooling.preview.Preview
 import com.f98k.tipstermindcocoapods.domain.bridge.initJsonReader
-import com.f98k.tipstermindcocoapods.ui.home.screen.HomeScreenApp
+import com.f98k.tipstermindcocoapods.ui.HomeScreenApp
 import com.f98k.tipstermindcocoapods.ui.theme.TipsterTheme
 import com.f98k.tipstermindcocoapods.ui.home.viewmodel.HomeViewModel
 import org.koin.androidx.compose.koinViewModel
