@@ -12,6 +12,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.f98k.tipstermindcocoapods.data.model.BottomBarItem
 import com.f98k.tipstermindcocoapods.domain.bridge.getImageResource
+import com.f98k.tipstermindcocoapods.domain.helper.localizedText
 
 @Composable
 fun TipsterBottomBar(
@@ -39,7 +40,11 @@ fun TipsterBottomBar(
                 },
                 label = {
                     Text(
-                        text = item.titleEn,
+                        text = localizedText(
+                            en = item.titleEn,
+                            es = item.titleEs,
+                            pt = item.titlePt,
+                        ),
                         fontSize = 12.sp
                     )
                 },
