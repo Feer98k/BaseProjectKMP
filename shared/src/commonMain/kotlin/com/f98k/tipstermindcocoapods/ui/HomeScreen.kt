@@ -9,9 +9,9 @@ import com.f98k.tipstermindcocoapods.commons.StringConstants
 import com.f98k.tipstermindcocoapods.navigation.TipsterRouters
 import com.f98k.tipstermindcocoapods.ui.components.TipsterBottomBar
 import com.f98k.tipstermindcocoapods.ui.components.TipsterTopBar
-import com.f98k.tipstermindcocoapods.ui.home.screen.HomeScreenContent
-import com.f98k.tipstermindcocoapods.ui.home.state.HomeUiActions
-import com.f98k.tipstermindcocoapods.ui.home.state.HomeUiState
+import com.f98k.tipstermindcocoapods.ui.screen.home.screen.HomeScreenContent
+import com.f98k.tipstermindcocoapods.ui.screen.home.state.HomeUiActions
+import com.f98k.tipstermindcocoapods.ui.screen.home.state.HomeUiState
 
 @Composable
 fun HomeScreenApp(

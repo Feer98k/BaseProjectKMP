@@ -1,4 +1,4 @@
-package com.f98k.tipstermindcocoapods.ui.search.state
+package com.f98k.tipstermindcocoapods.ui.screen.search.state
 
 import com.f98k.tipstermindcocoapods.commons.StringConstants.EMPTY_STRING
 

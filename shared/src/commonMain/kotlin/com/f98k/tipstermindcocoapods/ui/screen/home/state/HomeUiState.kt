@@ -1,4 +1,4 @@
-package com.f98k.tipstermindcocoapods.ui.home.state
+package com.f98k.tipstermindcocoapods.ui.screen.home.state
 
 import com.f98k.tipstermindcocoapods.commons.StringConstants.EMPTY_STRING
 import com.f98k.tipstermindcocoapods.data.model.BottomBarList

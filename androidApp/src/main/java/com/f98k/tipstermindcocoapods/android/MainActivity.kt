@@ -9,7 +9,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.f98k.tipstermindcocoapods.domain.bridge.initJsonReader
 import com.f98k.tipstermindcocoapods.ui.HomeScreenApp
 import com.f98k.tipstermindcocoapods.ui.theme.TipsterTheme
-import com.f98k.tipstermindcocoapods.ui.home.viewmodel.HomeViewModel
+import com.f98k.tipstermindcocoapods.ui.screen.home.viewmodel.HomeViewModel
 import org.koin.androidx.compose.koinViewModel
 
 class MainActivity : ComponentActivity() {

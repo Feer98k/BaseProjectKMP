@@ -1,11 +1,11 @@
-package com.f98k.tipstermindcocoapods.ui.home.viewmodel
+package com.f98k.tipstermindcocoapods.ui.screen.home.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.f98k.tipstermindcocoapods.data.constants.RemoteConfigEnum
 import com.f98k.tipstermindcocoapods.domain.usecase.home.HomeUseCase
-import com.f98k.tipstermindcocoapods.ui.home.state.HomeUiActions
-import com.f98k.tipstermindcocoapods.ui.home.state.HomeUiState
+import com.f98k.tipstermindcocoapods.ui.screen.home.state.HomeUiActions
+import com.f98k.tipstermindcocoapods.ui.screen.home.state.HomeUiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
