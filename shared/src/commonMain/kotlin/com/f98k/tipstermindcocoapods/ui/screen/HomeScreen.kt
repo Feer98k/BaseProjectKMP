@@ -4,10 +4,14 @@ import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import com.f98k.tipstermindcocoapods.commons.StringConstants
 import com.f98k.tipstermindcocoapods.ui.components.TipsterTopBar
+import com.f98k.tipstermindcocoapods.ui.state.HomeUiActions
 import com.f98k.tipstermindcocoapods.ui.state.HomeUiState
 
 @Composable
-fun HomeScreenApp(uiState: HomeUiState) {
+fun HomeScreenApp(
+    uiState: HomeUiState,
+    uiStateActions: HomeUiActions
+) {
     Scaffold(
         topBar = {
             TipsterTopBar(
@@ -16,7 +20,10 @@ fun HomeScreenApp(uiState: HomeUiState) {
             )
         },
         content = {
-            HomeScreenContent(uiState)
+            HomeScreenContent(
+                uiState = uiState,
+                uiStateAction = uiStateActions
+            )
         })
 }
 

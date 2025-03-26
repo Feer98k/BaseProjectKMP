@@ -12,12 +12,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.f98k.tipstermindcocoapods.ui.components.TipsterText
+import com.f98k.tipstermindcocoapods.ui.state.HomeUiActions
 import com.f98k.tipstermindcocoapods.ui.state.HomeUiState
 
 
 @Composable
 fun HomeScreenContent(
-    uiState: HomeUiState
+    uiState: HomeUiState,
+    uiStateAction: HomeUiActions
 ) {
     Card(
         modifier = Modifier
@@ -28,7 +30,7 @@ fun HomeScreenContent(
             item {
                 Button(
                     onClick = {
-                        uiState.getRemoteConfigData()
+                        uiStateAction.getRemoteConfigData()
                     },
                     modifier = Modifier
                         .padding(16.dp)
@@ -41,7 +43,7 @@ fun HomeScreenContent(
                 }
                 Spacer(modifier = Modifier.padding(16.dp))
                 TipsterText(
-                    text = uiState.jsonData,
+                    text = uiState.generalMatchList,
                     color = Color.White
                 )
             }

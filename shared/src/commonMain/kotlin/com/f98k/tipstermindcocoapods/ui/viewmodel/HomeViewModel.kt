@@ -1,13 +1,14 @@
 package com.f98k.tipstermindcocoapods.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.f98k.tipstermindcocoapods.domain.usecase.HomeUseCase
-import com.f98k.tipstermindcocoapods.ui.state.HomeUiState
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.update
 import androidx.lifecycle.viewModelScope
 import com.f98k.tipstermindcocoapods.data.constants.RemoteConfigEnum
 import com.f98k.tipstermindcocoapods.data.model.ResponseResourceCallback
+import com.f98k.tipstermindcocoapods.domain.usecase.HomeUseCase
+import com.f98k.tipstermindcocoapods.ui.state.HomeUiActions
+import com.f98k.tipstermindcocoapods.ui.state.HomeUiState
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class HomeViewModel(private val homeUseCase: HomeUseCase) : ViewModel() {
@@ -15,22 +16,16 @@ class HomeViewModel(private val homeUseCase: HomeUseCase) : ViewModel() {
     private val _uiState: MutableStateFlow<HomeUiState> = MutableStateFlow(HomeUiState())
     val uiState: MutableStateFlow<HomeUiState> get() = _uiState
 
-    init{
-        _uiState.update { currentState ->
-            currentState.copy(
-                isLoading = true,
-                getRemoteConfigData = {
-                    fetchGeneralMatches()
-                }
-            )
-
+    val actions = HomeUiActions(
+        getRemoteConfigData = {
+            fetchGeneralMatches()
         }
-    }
+    )
 
     private fun fetchGeneralMatches() {
         _uiState.update { currentState ->
             currentState.copy(
-                jsonData = "pegando dados...",
+                generalMatchList = "pegando dados...",
             )
         }
         viewModelScope.launch {
@@ -39,16 +34,17 @@ class HomeViewModel(private val homeUseCase: HomeUseCase) : ViewModel() {
                     is ResponseResourceCallback.Success -> {
                         _uiState.update { currentState ->
                             currentState.copy(
-                                isLoading = false,
-                                jsonData = result.data.toString()
+                                isToShowLoading = false,
+                                generalMatchList = result.data.toString()
                             )
                         }
                     }
+
                     is ResponseResourceCallback.Error -> {
                         _uiState.update { currentState ->
                             currentState.copy(
-                                isLoading = false,
-                                jsonData = "failuere"
+                                isToShowLoading = false,
+                                generalMatchList = "failuere"
                             )
                         }
                     }
@@ -56,8 +52,8 @@ class HomeViewModel(private val homeUseCase: HomeUseCase) : ViewModel() {
                     is ResponseResourceCallback.Exception<*> -> {
                         _uiState.update { currentState ->
                             currentState.copy(
-                                isLoading = false,
-                                jsonData = "failuere"
+                                isToShowLoading = false,
+                                generalMatchList = "failuere"
                             )
                         }
                     }

@@ -1,7 +1,14 @@
 package com.f98k.tipstermindcocoapods.ui.state
 
+import com.f98k.tipstermindcocoapods.commons.StringConstants.EMPTY_STRING
+import com.f98k.tipstermindcocoapods.data.model.BottomBarList
+
 data class HomeUiState(
-    val isLoading:Boolean = false,
-    val jsonData: String = "",
-    val getRemoteConfigData:() -> Unit = {},
+    val isToShowLoading:Boolean = false,
+    val generalMatchList: String = EMPTY_STRING,
+    val bottomBarList : BottomBarList = BottomBarList()
+)
+
+data class HomeUiActions(
+    val getRemoteConfigData: () -> Unit = {}
 )

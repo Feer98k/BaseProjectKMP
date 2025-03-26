@@ -1,20 +1,10 @@
 package com.f98k.tipstermindcocoapods.android
 
-import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.f98k.tipstermindcocoapods.ui.screen.HomeScreenApp
-import com.f98k.tipstermindcocoapods.ui.state.HomeUiState
 
-@Preview
+@Preview(showBackground = true)
 @Composable
-private fun PlayGround(){
+private fun PlayGroundPreview(){
 
-    val uiState = HomeUiState(
-        jsonData = "Loading..."
-    )
-    Scaffold {
-
-    }
-    HomeScreenApp(uiState)
 }

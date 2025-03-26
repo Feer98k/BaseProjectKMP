@@ -24,7 +24,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             val viewModel = koinViewModel<HomeViewModel>()
             TipsterTheme {
-                HomeScreenApp(viewModel.uiState.collectAsState().value)
+                HomeScreenApp(
+                    uiState = viewModel.uiState.collectAsState().value,
+                    uiStateActions = viewModel.actions
+                )
             }
         }
     }
@@ -32,9 +35,12 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 @Preview(showBackground = true)
-private fun HomeAppPreview(){
-    Card(modifier = Modifier.size(34.dp)){
-
+private fun HomeAppPreview() {
+    val viewModel = koinViewModel<HomeViewModel>()
+    TipsterTheme {
+        HomeScreenApp(
+            uiState = viewModel.uiState.collectAsState().value,
+            uiStateActions = viewModel.actions
+        )
     }
-    HomeScreenApp(HomeUiState(jsonData = "testando"))
 }

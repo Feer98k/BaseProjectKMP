@@ -18,6 +18,7 @@ fun MainViewController() = ComposeUIViewController(
     TipsterTheme {
         HomeScreenApp(
             uiState = viewModel.uiState.collectAsState().value,
+            uiStateActions = viewModel.actions
         )
     }
 }
