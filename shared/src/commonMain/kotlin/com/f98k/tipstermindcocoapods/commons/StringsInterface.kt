@@ -24,4 +24,5 @@ object StringConstants{
     const val APP_NAME = "TipsterMind"
     const val APP_DESCRIPTION = "A simple app to help you remember tips and tricks."
     const val EMPTY_STRING = ""
+    const val EMPTY_REMOTE_CONFIG = "{}"
 }

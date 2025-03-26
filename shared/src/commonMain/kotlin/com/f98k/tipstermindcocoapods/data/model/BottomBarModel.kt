@@ -9,6 +9,9 @@ data class BottomBarList(
 data class BottomBarItem(
     val iconName: String = EMPTY_STRING,
     val icon: String = EMPTY_STRING,
-    val title: String = EMPTY_STRING,
-    val isSelected: Boolean = false
+    val titleEn: String = EMPTY_STRING,
+    val titleEs: String = EMPTY_STRING,
+    val titlePt: String = EMPTY_STRING,
+    val isSelected: Boolean = false,
+    val action: String = EMPTY_STRING,
 )

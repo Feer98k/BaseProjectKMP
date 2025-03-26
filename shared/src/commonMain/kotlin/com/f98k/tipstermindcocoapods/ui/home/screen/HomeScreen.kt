@@ -1,11 +1,11 @@
-package com.f98k.tipstermindcocoapods.ui.screen
+package com.f98k.tipstermindcocoapods.ui.home.screen
 
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import com.f98k.tipstermindcocoapods.commons.StringConstants
 import com.f98k.tipstermindcocoapods.ui.components.TipsterTopBar
-import com.f98k.tipstermindcocoapods.ui.state.HomeUiActions
-import com.f98k.tipstermindcocoapods.ui.state.HomeUiState
+import com.f98k.tipstermindcocoapods.ui.home.state.HomeUiActions
+import com.f98k.tipstermindcocoapods.ui.home.state.HomeUiState
 
 @Composable
 fun HomeScreenApp(

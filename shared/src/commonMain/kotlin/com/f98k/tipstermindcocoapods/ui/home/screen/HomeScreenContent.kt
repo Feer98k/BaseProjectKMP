@@ -1,4 +1,4 @@
-package com.f98k.tipstermindcocoapods.ui.screen
+package com.f98k.tipstermindcocoapods.ui.home.screen
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Spacer
@@ -12,8 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.f98k.tipstermindcocoapods.ui.components.TipsterText
-import com.f98k.tipstermindcocoapods.ui.state.HomeUiActions
-import com.f98k.tipstermindcocoapods.ui.state.HomeUiState
+import com.f98k.tipstermindcocoapods.ui.home.state.HomeUiActions
+import com.f98k.tipstermindcocoapods.ui.home.state.HomeUiState
 
 
 @Composable

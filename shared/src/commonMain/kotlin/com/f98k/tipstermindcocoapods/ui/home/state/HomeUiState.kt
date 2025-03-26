@@ -1,4 +1,4 @@
-package com.f98k.tipstermindcocoapods.ui.state
+package com.f98k.tipstermindcocoapods.ui.home.state
 
 import com.f98k.tipstermindcocoapods.commons.StringConstants.EMPTY_STRING
 import com.f98k.tipstermindcocoapods.data.model.BottomBarList
@@ -10,5 +10,6 @@ data class HomeUiState(
 )
 
 data class HomeUiActions(
-    val getRemoteConfigData: () -> Unit = {}
+    val getRemoteConfigData: () -> Unit = {},
+    val getBottomBarList: () -> Unit = {}
 )
