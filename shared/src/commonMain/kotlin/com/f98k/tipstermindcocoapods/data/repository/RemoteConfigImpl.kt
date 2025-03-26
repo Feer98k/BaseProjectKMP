@@ -5,13 +5,13 @@ import com.f98k.tipstermindcocoapods.data.model.ResponseResource
 import com.f98k.tipstermindcocoapods.data.repository.RemoteConfigImpl.RemoteConfig.REMOTE_CONFIG_NULL
 import com.f98k.tipstermindcocoapods.data.repository.RemoteConfigImpl.RemoteConfig.REMOTE_CONFIG_RESPONSE_IS_NULL_OR_EMPTY
 import com.f98k.tipstermindcocoapods.domain.RemoteConfigServiceProvider
-import kotlin.coroutines.suspendCoroutine
 import kotlin.coroutines.resume
+import kotlin.coroutines.suspendCoroutine
 
 
 class RemoteConfigImpl : RemoteConfig {
 
-    object RemoteConfig{
+    object RemoteConfig {
         const val REMOTE_CONFIG_NULL = "RemoteConfigService is null"
         const val REMOTE_CONFIG_RESPONSE_IS_NULL_OR_EMPTY = "Remote config is empty for key"
     }

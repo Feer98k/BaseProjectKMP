@@ -4,7 +4,6 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 
 
-
 actual fun getLexendFont(weight: FontWeight): FontFamily {
     return when (weight) {
         FontWeight.Bold,

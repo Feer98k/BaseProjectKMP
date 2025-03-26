@@ -5,12 +5,10 @@ import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.f98k.tipstermindcocoapods.data.model.BottomBarItem
 import com.f98k.tipstermindcocoapods.domain.bridge.getImageResource
 import com.f98k.tipstermindcocoapods.domain.helper.localizedText

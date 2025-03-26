@@ -13,17 +13,13 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.f98k.tipstermindcocoapods.commons.LocalizedStrings
 import com.f98k.tipstermindcocoapods.domain.bridge.getImageResource
-import com.f98k.tipstermindcocoapods.domain.bridge.getLexendFont
 import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum
 
 

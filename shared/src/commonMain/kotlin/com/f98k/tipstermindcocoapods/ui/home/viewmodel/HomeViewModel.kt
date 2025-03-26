@@ -62,7 +62,7 @@ class HomeViewModel(private val useCase: HomeUseCase) : ViewModel() {
         }
     }
 
-        private fun changeLoadingState(isLoading: Boolean) {
+    private fun changeLoadingState(isLoading: Boolean) {
         _uiState.update { currentState ->
             currentState.copy(
                 isToShowLoading = isLoading

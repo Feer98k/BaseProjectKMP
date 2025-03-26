@@ -32,7 +32,7 @@ kotlin {
             isStatic = true
         }
     }
-    
+
     sourceSets {
         commonMain.dependencies {
             //put your multiplatform dependencies here

@@ -4,16 +4,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.painter.BitmapPainter
 import androidx.compose.ui.graphics.painter.Painter
-import org.jetbrains.skia.Image
-import platform.UIKit.UIImage
-import platform.UIKit.UIImagePNGRepresentation
-import platform.Foundation.NSData
-import kotlinx.cinterop.*
-import platform.posix.memcpy
 import androidx.compose.ui.graphics.toComposeImageBitmap
+import kotlinx.cinterop.ExperimentalForeignApi
+import kotlinx.cinterop.addressOf
+import kotlinx.cinterop.usePinned
 import org.jetbrains.skia.ColorAlphaType
 import org.jetbrains.skia.ColorType
+import org.jetbrains.skia.Image
 import org.jetbrains.skia.ImageInfo
+import platform.Foundation.NSData
+import platform.UIKit.UIImage
+import platform.UIKit.UIImagePNGRepresentation
+import platform.posix.memcpy
 
 @Composable
 actual fun getImageResource(name: String): Painter {

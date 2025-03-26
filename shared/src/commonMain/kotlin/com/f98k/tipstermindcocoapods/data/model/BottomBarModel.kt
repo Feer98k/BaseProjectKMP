@@ -5,7 +5,8 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class BottomBarList(
-    val bottomBarList: List<BottomBarItem> = emptyList())
+    val bottomBarList: List<BottomBarItem> = emptyList()
+)
 
 @Serializable
 data class BottomBarItem(

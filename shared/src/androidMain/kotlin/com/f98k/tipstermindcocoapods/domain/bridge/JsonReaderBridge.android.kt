@@ -9,7 +9,7 @@ fun initJsonReader(context: Context) {
 }
 
 actual fun readJsonFileFromAssets(fileName: String): String {
-  val json = appContext.assets.open(fileName)
+    val json = appContext.assets.open(fileName)
         .bufferedReader()
         .use { it.readText() }
     return json

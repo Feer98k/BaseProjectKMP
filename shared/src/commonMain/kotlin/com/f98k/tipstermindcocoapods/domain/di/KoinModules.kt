@@ -9,7 +9,6 @@ import com.f98k.tipstermindcocoapods.domain.usecase.HomeUseCase
 import com.f98k.tipstermindcocoapods.domain.usecase.HomeUseCaseImpl
 import com.f98k.tipstermindcocoapods.ui.home.viewmodel.HomeViewModel
 import org.koin.compose.viewmodel.dsl.viewModel
-import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 
 val viewModelModule = module {
@@ -21,5 +20,5 @@ val repositoryModule = module {
 }
 
 val useCaseFactory = module {
-    single<HomeUseCase> { HomeUseCaseImpl(get(),get()) }
+    single<HomeUseCase> { HomeUseCaseImpl(get(), get()) }
 }
