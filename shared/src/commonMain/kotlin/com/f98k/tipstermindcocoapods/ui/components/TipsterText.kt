@@ -25,7 +25,7 @@ fun TipsterText(
     BoxWithConstraints(modifier = modifier) {
         val boxWidth = maxWidth
         val maxFontSize = type.fontSize
-        val minFontSize = 10.sp
+        val minFontSize = 8.sp
 
         val finalFontSize = remember(text, boxWidth, singleLine, type) {
             if (!singleLine) {

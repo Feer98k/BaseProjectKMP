@@ -2,6 +2,8 @@ package com.f98k.tipstermindcocoapods.ui.home.screen
 
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.LaunchedEffect
 import com.f98k.tipstermindcocoapods.commons.StringConstants
 import com.f98k.tipstermindcocoapods.navigation.TipsterRouters
@@ -19,6 +21,7 @@ fun HomeScreenApp(
         uiStateActions.getBottomBarList()
         uiStateActions.getRemoteConfigData()
     }
+    val currentAction = remember { mutableStateOf(TipsterRouters.HOME) }
     Scaffold(
         topBar = {
             TipsterTopBar(
@@ -35,8 +38,10 @@ fun HomeScreenApp(
         bottomBar = {
             TipsterBottomBar(
                 items = uiState.bottomBarList.bottomBarList,
-                currentAction = TipsterRouters.HOME,
-                onItemSelected = {}
+                currentAction = currentAction.value,
+                onItemSelected = {
+                    currentAction.value = it
+                }
             )
         }
     )
