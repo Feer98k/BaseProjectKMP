@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.tooling.preview.Preview
+import com.f98k.tipstermindcocoapods.domain.bridge.initJsonReader
 import com.f98k.tipstermindcocoapods.ui.home.screen.HomeScreenApp
 import com.f98k.tipstermindcocoapods.ui.theme.TipsterTheme
 import com.f98k.tipstermindcocoapods.ui.home.viewmodel.HomeViewModel
@@ -16,8 +17,8 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        injectLibraries()
         setContent {
-            LaunchedEffect(Unit) { }
             val viewModel = koinViewModel<HomeViewModel>()
             TipsterTheme {
                 HomeScreenApp(
@@ -27,6 +28,11 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+
+    private fun injectLibraries(){
+        initJsonReader(this@MainActivity)
+    }
+
 }
 
 @Composable
