@@ -5,12 +5,8 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.googleGmsGoogleServices)
-
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.kotlinxSerialization)
-
-
-
 }
 kotlin {
     androidTarget {
@@ -22,11 +18,11 @@ kotlin {
 
 android {
     namespace = "com.f98k.tipstermindcocoapods.android"
-    compileSdk = 35
+    compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
         applicationId = "com.f98k.tipstermindcocoapods.android"
-        minSdk = 24
-        targetSdk = 35
+        minSdk = libs.versions.android.minSdk.get().toInt()
+        targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
     }
@@ -57,19 +53,44 @@ android {
 }
 
 dependencies {
+    // ----------------------------------------
+    // Projeto compartilhado (Multiplatform)
+    // ----------------------------------------
     implementation(projects.shared)
+
+    // ----------------------------------------
+    // Networking (Ktor - Android)
+    // ----------------------------------------
     implementation(libs.ktor.client.okhttp)
+
+    // ----------------------------------------
+    // Dependency Injection (Koin - Android)
+    // ----------------------------------------
     implementation(libs.koin.android)
     implementation(libs.koin.androidx.compose)
 
+    // ----------------------------------------
+    // Jetpack Compose (Android)
+    // ----------------------------------------
     implementation(libs.compose.ui.pure)
     implementation(libs.compose.foundation.pure)
     implementation(libs.compose.material.pure)
     implementation(libs.androidx.activity.compose)
+
+    // ----------------------------------------
+    // Lifecycle (Android - Compose)
+    // ----------------------------------------
     implementation(libs.lifecycle.runtime.ktx.pure)
     implementation(libs.lifecycle.viewmodel.compose.pure)
 
+    // ----------------------------------------
+    // Compose Tooling (Preview)
+    // ----------------------------------------
     debugImplementation(libs.compose.ui.tooling.pure)
+
+    // ----------------------------------------
+    // Firebase (Android)
+    // ----------------------------------------
     implementation(libs.firebase.bom)
     implementation(libs.firebase.config)
 }

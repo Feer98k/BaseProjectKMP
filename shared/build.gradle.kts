@@ -35,7 +35,9 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            //put your multiplatform dependencies here
+            // ----------------------------------------
+            // Compose Multiplatform Core
+            // ----------------------------------------
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material)
@@ -43,53 +45,103 @@ kotlin {
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
 
+            // ----------------------------------------
+            // Lifecycle / ViewModel (Multiplatform)
+            // ----------------------------------------
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
 
+            // ----------------------------------------
+            // Networking (Ktor)
+            // ----------------------------------------
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.client.content.negotiation)
             implementation(libs.ktor.serialization.kotlinx.json)
 
+            // ----------------------------------------
+            // MVVM (Moko)
+            // ----------------------------------------
             implementation(libs.moko.mvvm.core)
             implementation(libs.moko.mvvm.compose)
 
+            // ----------------------------------------
+            // Image loading (Kamel)
+            // ----------------------------------------
             implementation(libs.kamel)
 
+            // ----------------------------------------
+            // Dependency Injection (Koin)
+            // ----------------------------------------
             implementation(libs.koin.core)
             implementation(libs.koin.compose)
             implementation(libs.koin.composeVM)
 
+            // ----------------------------------------
+            // Kotlin Utils
+            // ----------------------------------------
             implementation(libs.kotlin.coroutines.core)
-
             implementation(libs.kotlinx.serialization.json)
+
+            // ----------------------------------------
+            // Navegação
+            // ----------------------------------------
             implementation(libs.uri.kmp)
             implementation(libs.navigation.compose)
-
         }
 
         androidMain.dependencies {
+            // ----------------------------------------
+            // Compose Preview
+            // ----------------------------------------
             implementation(compose.preview)
+
+            // ----------------------------------------
+            // AndroidX Activity Compose
+            // ----------------------------------------
             implementation(libs.androidx.activity.compose)
+
+            // ----------------------------------------
+            // Networking (Ktor - Android)
+            // ----------------------------------------
             implementation(libs.ktor.client.okhttp)
+
+            // ----------------------------------------
+            // Dependency Injection (Koin Android)
+            // ----------------------------------------
             implementation(libs.koin.android)
             implementation(libs.koin.androidx.compose)
+
+            // ----------------------------------------
+            // Firebase
+            // ----------------------------------------
             implementation(libs.firebase.bom)
             implementation(libs.firebase.config)
+
+            // ----------------------------------------
+            // Android-specific UI Extensions
+            // ----------------------------------------
             implementation(libs.androidx.ui.text.android)
         }
-        iosMain.dependencies {
-            implementation(libs.ktor.client.darwin)
-            implementation(libs.skiko)
 
+        iosMain.dependencies {
+            // ----------------------------------------
+            // Networking (Ktor - iOS)
+            // ----------------------------------------
+            implementation(libs.ktor.client.darwin)
+
+            // ----------------------------------------
+            // Skiko (imagem e gráficos multiplataforma)
+            // ----------------------------------------
+            implementation(libs.skiko)
         }
     }
 }
 
 android {
     namespace = "com.f98k.tipstermindcocoapods"
-    compileSdk = 35
+    compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
-        minSdk = 24
+        minSdk = libs.versions.android.minSdk.get().toInt()
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
