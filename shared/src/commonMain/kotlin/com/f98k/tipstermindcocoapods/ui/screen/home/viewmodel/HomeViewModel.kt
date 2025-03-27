@@ -16,14 +16,11 @@ class HomeViewModel(private val useCase: HomeUseCase) : ViewModel() {
     private val _uiState: MutableStateFlow<HomeUiState> = MutableStateFlow(HomeUiState())
     val uiState: StateFlow<HomeUiState> get() = _uiState
 
-    val actions = HomeUiActions(
-        getRemoteConfigData = {
-            fetchGeneralMatches()
-        },
-        getBottomBarList = {
-            fetchBottomBarList()
-        }
-    )
+    val uiActions: HomeUiActions
+        get() = HomeUiActions(
+            getRemoteConfigData = { fetchGeneralMatches() },
+            getBottomBarList = { fetchBottomBarList() }
+        )
 
     private fun fetchBottomBarList() {
         launchWithLoading(

@@ -1,4 +1,4 @@
-package com.f98k.tipstermindcocoapods.ui.screen.iatips
+package com.f98k.tipstermindcocoapods.ui.screen.iatips.state
 
 data class IaTipsUiState(
     val isLoading: Boolean = false,

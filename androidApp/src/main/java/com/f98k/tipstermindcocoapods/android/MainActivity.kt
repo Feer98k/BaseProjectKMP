@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
             TipsterTheme {
                 HomeScreenApp(
                     uiState = viewModel.uiState.collectAsState().value,
-                    uiStateActions = viewModel.actions
+                    uiStateActions = viewModel.uiActions
                 )
             }
         }
@@ -41,7 +41,7 @@ private fun HomeAppPreview() {
     TipsterTheme {
         HomeScreenApp(
             uiState = viewModel.uiState.collectAsState().value,
-            uiStateActions = viewModel.actions
+            uiStateActions = viewModel.uiActions
         )
     }
 }

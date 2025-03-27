@@ -25,7 +25,7 @@ import com.f98k.tipstermindcocoapods.domain.usecase.settings.SettingsUseCase
 import com.f98k.tipstermindcocoapods.domain.usecase.settings.SettingsUseCaseImpl
 import com.f98k.tipstermindcocoapods.ui.screen.favorite.viewmodel.FavoriteViewModel
 import com.f98k.tipstermindcocoapods.ui.screen.home.viewmodel.HomeViewModel
-import com.f98k.tipstermindcocoapods.ui.screen.iatips.IaTipsViewModel
+import com.f98k.tipstermindcocoapods.ui.screen.iatips.viewmodel.IaTipsViewModel
 import com.f98k.tipstermindcocoapods.ui.screen.search.viewmodel.SearchViewModel
 import com.f98k.tipstermindcocoapods.ui.screen.settings.viewmodel.SettingsViewModel
 import org.koin.compose.viewmodel.dsl.viewModel
