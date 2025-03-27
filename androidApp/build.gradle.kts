@@ -65,7 +65,7 @@ dependencies {
     implementation(libs.compose.ui.pure)
     implementation(libs.compose.foundation.pure)
     implementation(libs.compose.material.pure)
-    implementation(libs.activity.compose.pure)
+    implementation(libs.androidx.activity.compose)
     implementation(libs.lifecycle.runtime.ktx.pure)
     implementation(libs.lifecycle.viewmodel.compose.pure)
 
