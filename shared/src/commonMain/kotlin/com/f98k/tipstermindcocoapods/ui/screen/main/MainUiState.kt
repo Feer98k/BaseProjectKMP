@@ -12,6 +12,7 @@ data class MainUiState(
 
 data class MainUiStateAction(
     val getBottomBarList: () -> Unit = {},
+    val getSettingsList: () -> Unit = {},
     val onSettingsItemClick: (SettingsItem) -> Unit = {},
     val setDrawerVisibility: (Boolean) -> Unit = {},
 )

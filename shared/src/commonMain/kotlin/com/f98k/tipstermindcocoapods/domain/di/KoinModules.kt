@@ -34,7 +34,6 @@ import com.f98k.tipstermindcocoapods.ui.screen.home.viewmodel.HomeViewModel
 import com.f98k.tipstermindcocoapods.ui.screen.iatips.viewmodel.IaTipsViewModel
 import com.f98k.tipstermindcocoapods.ui.screen.main.MainViewModel
 import com.f98k.tipstermindcocoapods.ui.screen.search.viewmodel.SearchViewModel
-import com.f98k.tipstermindcocoapods.ui.screen.settings.viewmodel.SettingsViewModel
 import org.koin.compose.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -43,7 +42,6 @@ val viewModelModule = module {
     viewModel { SearchViewModel(get()) }
     viewModel { FavoriteViewModel(get()) }
     viewModel { IaTipsViewModel(get()) }
-    viewModel { SettingsViewModel(get()) }
     viewModel { MainViewModel(get()) }
 }
 val repositoryModule = module {

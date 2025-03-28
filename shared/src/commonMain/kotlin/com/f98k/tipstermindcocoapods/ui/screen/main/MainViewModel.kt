@@ -18,17 +18,19 @@ class MainViewModel(private val useCase: MainUseCase) : ViewModel() {
         get() = MainUiStateAction(
             getBottomBarList = {
                 getBottomBarList()
+            },
+            getSettingsList = {
+                getSettingsList()
             }
         )
-
-    init {
-        getSettingsList()
-    }
 
     private fun getSettingsList() {
         launchWithLoading(
             onSuccess = { settingsList ->
-                _uiState.update { it.copy(settingsList = settingsList) }
+                _uiState.update { it.copy(
+                    settingsList = settingsList,
+                    isToShowSettingsDrawer = true
+                ) }
             },
             block = { useCase.fetchSettingsList() }
         )

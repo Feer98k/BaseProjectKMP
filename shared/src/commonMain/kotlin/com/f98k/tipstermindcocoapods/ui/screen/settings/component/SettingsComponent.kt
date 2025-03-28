@@ -31,6 +31,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.f98k.tipstermindcocoapods.data.model.settings.SettingsItem
 import com.f98k.tipstermindcocoapods.domain.bridge.getImageResource
+import com.f98k.tipstermindcocoapods.domain.helper.localizedText
+import com.f98k.tipstermindcocoapods.ui.components.TipsterText
+import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum
 
 
 @Composable
@@ -91,7 +94,14 @@ fun SettingsComponent(
                                 modifier = Modifier.size(24.dp)
                             )
                             Spacer(modifier = Modifier.width(12.dp))
-                            Text(text = item.labelEn)
+                            TipsterText(
+                                text = localizedText(
+                                    en = item.labelEn,
+                                    pt = item.labelPt,
+                                    es = item.labelEs
+                                ),
+                                type = TipsterTextTypeEnum.Body
+                            )
                         }
                     }
                 }

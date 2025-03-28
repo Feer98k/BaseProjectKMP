@@ -53,7 +53,7 @@ fun MainScreen() {
                 navController = navController,
                 setTopBar = { topBarComposable -> currentTopBar.value = topBarComposable },
                 setBottomBarVisibility = { show -> showBottomBar.value = show },
-                onSettingsClick = {uiActions.setDrawerVisibility(true)},
+                onSettingsClick = { uiActions.getSettingsList() },
             )
 
             SettingsComponent(
