@@ -18,18 +18,9 @@ class HomeViewModel(private val useCase: HomeUseCase) : ViewModel() {
 
     val uiActions: HomeUiActions
         get() = HomeUiActions(
-            getRemoteConfigData = { fetchGeneralMatches() },
-            getBottomBarList = { fetchBottomBarList() }
+            getGeneralMatchList = { fetchGeneralMatches() }
         )
 
-    private fun fetchBottomBarList() {
-        launchWithLoading(
-            onSuccess = { bottomBar ->
-                _uiState.update { it.copy(bottomBarList = bottomBar) }
-            },
-            block = { useCase.fetchRemoteConfigData(RemoteConfigEnum.BOTTOM_BAR_LIST) }
-        )
-    }
 
     private fun fetchGeneralMatches() {
         launchWithLoading(

@@ -27,7 +27,7 @@ import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum
 fun TipsterTopBar(
     title: String,
     showBackButton: Boolean = false,
-    onBackClick: () -> Unit = {}
+    onBackClick: () -> Unit = {},
 ) {
     Box(
         modifier = Modifier

@@ -9,6 +9,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.currentBackStackEntryAsState
 import com.f98k.tipstermindcocoapods.data.model.BottomBarItem
 import com.f98k.tipstermindcocoapods.domain.bridge.getImageResource
 import com.f98k.tipstermindcocoapods.domain.helper.localizedText
@@ -16,20 +18,31 @@ import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum
 
 @Composable
 fun TipsterBottomBar(
-    items: List<BottomBarItem>,
-    currentAction: String,
-    onItemSelected: (String) -> Unit
+    navController: NavHostController,
+    items: List<BottomBarItem>
 ) {
+    val currentDestination = navController.currentBackStackEntryAsState().value?.destination?.route
+
     BottomNavigation(
         backgroundColor = MaterialTheme.colors.background,
         contentColor = MaterialTheme.colors.onBackground
     ) {
         items.forEach { item ->
-            val isSelected = item.action == currentAction
+            val isSelected = item.action == currentDestination
 
             BottomNavigationItem(
                 selected = isSelected,
-                onClick = { onItemSelected(item.action) },
+                onClick = {
+                    if (!isSelected) {
+                        navController.navigate(item.action) {
+                            popUpTo(navController.graph.startDestinationId) {
+                                saveState = true
+                            }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
+                    }
+                },
                 icon = {
                     Icon(
                         painter = getImageResource(item.icon),

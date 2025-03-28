@@ -1,0 +1,53 @@
+package com.f98k.tipstermindcocoapods.ui.navigation.composable
+
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.Scaffold
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
+import androidx.navigation.NavHostController
+import com.f98k.tipstermindcocoapods.ui.components.TipsterBottomBar
+import com.f98k.tipstermindcocoapods.ui.navigation.AppNavGraph
+import com.f98k.tipstermindcocoapods.ui.screen.main.MainViewModel
+import org.koin.compose.viewmodel.koinViewModel
+import org.koin.core.annotation.KoinExperimentalAPI
+
+@OptIn(KoinExperimentalAPI::class)
+@Composable
+
+fun MainScreen(navController: NavHostController) {
+    val currentTopBar = remember { mutableStateOf<@Composable (() -> Unit)?>(null) }
+    val showBottomBar = remember { mutableStateOf(true) }
+
+    val viewModel = koinViewModel<MainViewModel>()
+    val uiState = viewModel.uiState.collectAsState().value
+    val uiActions = viewModel.uiActions
+
+    LaunchedEffect(Unit){
+        uiActions.getBottomBarList()
+    }
+
+    Scaffold(
+        topBar = {
+            currentTopBar.value?.invoke()
+        },
+        bottomBar = {
+            if (showBottomBar.value) TipsterBottomBar(
+                navController = navController,
+                items = uiState.bottomBarList.bottomBarList
+            )
+        }
+    ) { innerPadding ->
+        Box(modifier = Modifier.padding(innerPadding)) {
+            AppNavGraph(
+                navController = navController,
+                setTopBar = { topBarComposable -> currentTopBar.value = topBarComposable },
+                setBottomBarVisibility = { show -> showBottomBar.value = show }
+            )
+        }
+    }
+}

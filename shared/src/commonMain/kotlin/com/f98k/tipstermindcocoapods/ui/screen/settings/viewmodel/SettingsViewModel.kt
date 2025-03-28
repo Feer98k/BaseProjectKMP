@@ -10,8 +10,8 @@ import kotlinx.coroutines.flow.asStateFlow
 
 class SettingsViewModel(private val settingsUseCase: SettingsUseCase) : ViewModel() {
     private val _state = MutableStateFlow(SettingsUiState())
-    val state: StateFlow<SettingsUiState> = _state.asStateFlow()
+    val uiState: StateFlow<SettingsUiState> = _state.asStateFlow()
 
-    val uiActions : SettingsUiActions
+    val uiStateActions : SettingsUiActions
         get() = SettingsUiActions()
 }

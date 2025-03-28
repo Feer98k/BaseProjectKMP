@@ -19,7 +19,7 @@ import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum
 @Composable
 fun IaTipsScreenContent(
     uiState: IaTipsUiState,
-    uiActions: IaTipsUiActions
+    uiStateActions: IaTipsUiActions
 ){
     Card(
         modifier = Modifier

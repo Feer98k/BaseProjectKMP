@@ -19,7 +19,7 @@ import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum
 @Composable
 fun FavoriteScreenContent(
     uiState: FavoriteUiState,
-    uiActions: FavoriteUiActions
+    uiStateActions: FavoriteUiActions
 
 ){
     Card(

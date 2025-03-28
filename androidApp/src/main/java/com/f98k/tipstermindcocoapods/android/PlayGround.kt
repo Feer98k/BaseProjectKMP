@@ -14,10 +14,13 @@ import androidx.compose.ui.unit.sp
 import com.f98k.tipstermindcocoapods.data.model.BottomBarItem
 import com.f98k.tipstermindcocoapods.data.repository.home.HomeRepositoryImpl
 import com.f98k.tipstermindcocoapods.domain.bridge.getImageResource
+import com.f98k.tipstermindcocoapods.ui.screen.home.viewmodel.HomeViewModel
+import org.koin.androidx.compose.koinViewModel
 
 @Preview(showBackground = true)
 @Composable
 private fun PlayGroundPreview(){
+    val viewModel = koinViewModel<HomeViewModel>()
     val homeRepository = HomeRepositoryImpl()
     TipsterBottomBar(
         items = homeRepository.getDefaultBottomBar().bottomBarList,

@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.asStateFlow
 class SearchViewModel(private val searchUseCase: HomeUseCase) : ViewModel() {
 
     private val _state = MutableStateFlow(SearchUiState())
-    val state: StateFlow<SearchUiState> = _state.asStateFlow()
+    val uiState: StateFlow<SearchUiState> = _state.asStateFlow()
 
     val uiActions : SearchUiActions
         get() = SearchUiActions()

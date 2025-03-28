@@ -12,7 +12,7 @@ class FavoriteViewModel(private val useCase : FavoriteUseCase) : ViewModel() {
     private val _uiState: MutableStateFlow<FavoriteUiState> = MutableStateFlow(FavoriteUiState())
     val uiState: StateFlow<FavoriteUiState> get() = _uiState
 
-    val uiActions : FavoriteUiActions
+    val uiStateActions : FavoriteUiActions
         get() = FavoriteUiActions()
 
 }

@@ -10,9 +10,9 @@ import kotlinx.coroutines.flow.asStateFlow
 
 class IaTipsViewModel(private val useCase: IaTipsUseCase) : ViewModel() {
     private val _state = MutableStateFlow(IaTipsUiState())
-    val state: StateFlow<IaTipsUiState> = _state.asStateFlow()
+    val uiState: StateFlow<IaTipsUiState> = _state.asStateFlow()
 
-    val uiActions : IaTipsUiActions
+    val uiStateActions : IaTipsUiActions
         get() = IaTipsUiActions()
 
 }

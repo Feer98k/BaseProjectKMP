@@ -4,13 +4,12 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
+
 import androidx.compose.ui.tooling.preview.Preview
 import com.f98k.tipstermindcocoapods.domain.bridge.initJsonReader
-import com.f98k.tipstermindcocoapods.ui.HomeScreenApp
+import com.f98k.tipstermindcocoapods.ui.navigation.composable.home.HomeScreen
 import com.f98k.tipstermindcocoapods.ui.theme.TipsterTheme
-import com.f98k.tipstermindcocoapods.ui.screen.home.viewmodel.HomeViewModel
-import org.koin.androidx.compose.koinViewModel
+
 
 class MainActivity : ComponentActivity() {
 
@@ -18,12 +17,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         injectLibraries()
         setContent {
-            val viewModel = koinViewModel<HomeViewModel>()
             TipsterTheme {
-                HomeScreenApp(
-                    uiState = viewModel.uiState.collectAsState().value,
-                    uiStateActions = viewModel.uiActions
-                )
+                HomeScreen()
             }
         }
     }
@@ -37,11 +32,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 @Preview(showBackground = true)
 private fun HomeAppPreview() {
-    val viewModel = koinViewModel<HomeViewModel>()
     TipsterTheme {
-        HomeScreenApp(
-            uiState = viewModel.uiState.collectAsState().value,
-            uiStateActions = viewModel.uiActions
-        )
+        HomeScreen()
     }
 }
