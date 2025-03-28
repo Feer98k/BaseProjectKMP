@@ -6,7 +6,8 @@ import com.f98k.tipstermindcocoapods.domain.bridge.getCurrentLanguageCode
 enum class SupportedLanguage {
     EN, PT, ES
 }
-private fun getSupportedLanguage() :SupportedLanguage {
+
+private fun getSupportedLanguage(): SupportedLanguage {
     return when (getCurrentLanguageCode()) {
         "pt" -> SupportedLanguage.PT
         "es" -> SupportedLanguage.ES

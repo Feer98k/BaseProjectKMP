@@ -20,7 +20,7 @@ import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum
 fun SearchScreenContent(
     uiState: SearchUiState,
     uiStateActions: SearchUiActions
-){
+) {
     Card(
         modifier = Modifier
             .fillMaxSize()

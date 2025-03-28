@@ -14,7 +14,7 @@ class MainViewModel(private val useCase: MainUseCase) : ViewModel() {
     private val _uiState = MutableStateFlow(MainUiState())
     val uiState: StateFlow<MainUiState> = _uiState.asStateFlow()
 
-    val uiActions : MainUiStateAction
+    val uiActions: MainUiStateAction
         get() = MainUiStateAction(
             getBottomBarList = {
                 getBottomBarList()
@@ -22,12 +22,12 @@ class MainViewModel(private val useCase: MainUseCase) : ViewModel() {
         )
 
 
-    private fun getBottomBarList(){
+    private fun getBottomBarList() {
         launchWithLoading(
             onSuccess = { bottomBar ->
                 _uiState.update { it.copy(bottomBarList = bottomBar) }
             },
-            block = { useCase.fetchBottomBarList()}
+            block = { useCase.fetchBottomBarList() }
         )
     }
 

@@ -59,9 +59,9 @@ val repositoryModule = module {
 val useCaseFactory = module {
     single<HomeUseCase> { HomeUseCaseImpl(get(), get()) }
     single<SearchUseCase> { SearchUseCaseImpl(get()) }
-    single<FavoriteUseCase> { FavoriteUseCaseImpl(get(),get()) }
-    single<IaTipsUseCase> { IaTipsUseCaseImpl(get(),get()) }
-    single<SettingsUseCase> { SettingsUseCaseImpl(get(),get()) }
+    single<FavoriteUseCase> { FavoriteUseCaseImpl(get(), get()) }
+    single<IaTipsUseCase> { IaTipsUseCaseImpl(get(), get()) }
+    single<SettingsUseCase> { SettingsUseCaseImpl(get(), get()) }
     single<RemoteConfigUseCase> { RemoteConfigUseCaseImpl(get()) }
-    single<MainUseCase> { MainUseCaseImpl(get(),get()) }
+    single<MainUseCase> { MainUseCaseImpl(get(), get()) }
 }

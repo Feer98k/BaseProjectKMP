@@ -5,7 +5,8 @@ import com.f98k.tipstermindcocoapods.domain.usecase.home.HomeUseCase
 
 class FavoriteUseCaseImpl(
     private val homeUseCase: HomeUseCase,
-    private val repository: FavoriteRepository) : FavoriteUseCase {
+    private val repository: FavoriteRepository
+) : FavoriteUseCase {
 
     override suspend fun getAllFavorite(): List<String> {
         TODO("Not yet implemented")

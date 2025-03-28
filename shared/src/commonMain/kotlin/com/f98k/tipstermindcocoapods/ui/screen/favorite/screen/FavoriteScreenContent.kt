@@ -21,7 +21,7 @@ fun FavoriteScreenContent(
     uiState: FavoriteUiState,
     uiStateActions: FavoriteUiActions
 
-){
+) {
     Card(
         modifier = Modifier
             .fillMaxSize()

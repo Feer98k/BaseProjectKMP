@@ -12,6 +12,6 @@ class SettingsViewModel(private val settingsUseCase: SettingsUseCase) : ViewMode
     private val _state = MutableStateFlow(SettingsUiState())
     val uiState: StateFlow<SettingsUiState> = _state.asStateFlow()
 
-    val uiStateActions : SettingsUiActions
+    val uiStateActions: SettingsUiActions
         get() = SettingsUiActions()
 }

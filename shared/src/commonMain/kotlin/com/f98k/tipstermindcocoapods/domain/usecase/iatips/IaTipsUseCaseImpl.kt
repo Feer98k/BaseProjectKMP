@@ -5,7 +5,8 @@ import com.f98k.tipstermindcocoapods.domain.usecase.home.HomeUseCase
 
 class IaTipsUseCaseImpl(
     private val homeUseCase: HomeUseCase,
-    private val iaTipsRepository: IaTipsRepository) : IaTipsUseCase {
+    private val iaTipsRepository: IaTipsRepository
+) : IaTipsUseCase {
     override suspend fun getTips(
         searchText: String,
         languageCode: String,

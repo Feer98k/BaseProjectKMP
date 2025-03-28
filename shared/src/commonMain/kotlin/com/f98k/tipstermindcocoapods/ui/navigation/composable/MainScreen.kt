@@ -10,7 +10,6 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.f98k.tipstermindcocoapods.ui.components.TipsterBottomBar
 import com.f98k.tipstermindcocoapods.ui.navigation.AppNavGraph
@@ -32,7 +31,7 @@ fun MainScreen() {
     val uiState = viewModel.uiState.collectAsState().value
     val uiActions = viewModel.uiActions
 
-    LaunchedEffect(Unit){
+    LaunchedEffect(Unit) {
         uiActions.getBottomBarList()
     }
 

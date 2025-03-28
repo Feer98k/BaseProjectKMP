@@ -20,7 +20,7 @@ import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum
 fun IaTipsScreenContent(
     uiState: IaTipsUiState,
     uiStateActions: IaTipsUiActions
-){
+) {
     Card(
         modifier = Modifier
             .fillMaxSize()

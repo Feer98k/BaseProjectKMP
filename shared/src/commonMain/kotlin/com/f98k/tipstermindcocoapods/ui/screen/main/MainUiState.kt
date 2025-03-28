@@ -6,6 +6,7 @@ data class MainUiState(
     val isToShowLoading: Boolean = false,
     val bottomBarList: BottomBarList = BottomBarList()
 )
+
 data class MainUiStateAction(
     val getBottomBarList: () -> Unit = {}
 )

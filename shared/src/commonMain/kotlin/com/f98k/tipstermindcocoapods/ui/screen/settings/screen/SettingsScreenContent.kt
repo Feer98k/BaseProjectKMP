@@ -19,9 +19,9 @@ import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum
 @Composable
 fun SettingsScreenContent(
     uiState: SettingsUiState,
-    uiStateActions:SettingsUiActions
+    uiStateActions: SettingsUiActions
 
-){
+) {
     Card(
         modifier = Modifier
             .fillMaxSize()

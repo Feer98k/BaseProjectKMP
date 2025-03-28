@@ -12,7 +12,7 @@ class IaTipsViewModel(private val useCase: IaTipsUseCase) : ViewModel() {
     private val _state = MutableStateFlow(IaTipsUiState())
     val uiState: StateFlow<IaTipsUiState> = _state.asStateFlow()
 
-    val uiStateActions : IaTipsUiActions
+    val uiStateActions: IaTipsUiActions
         get() = IaTipsUiActions()
 
 }
