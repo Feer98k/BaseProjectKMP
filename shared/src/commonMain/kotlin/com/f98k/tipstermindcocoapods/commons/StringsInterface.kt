@@ -30,9 +30,9 @@ object LocalizedStrings {
     }
 
     fun topIaTipsScreen(): String = when (currentLang) {
-        SupportedLanguage.EN -> "$APP_NAME + AI"
-        SupportedLanguage.PT -> "$APP_NAME + IA"
-        SupportedLanguage.ES -> "$APP_NAME + IA"
+        SupportedLanguage.EN -> "$APP_NAME AI"
+        SupportedLanguage.PT -> "$APP_NAME IA"
+        SupportedLanguage.ES -> "$APP_NAME IA"
     }
 
     fun topSearchScreen(): String = when (currentLang) {

@@ -5,11 +5,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.f98k.tipstermindcocoapods.ui.components.TipsterBottomBar
 import com.f98k.tipstermindcocoapods.ui.navigation.AppNavGraph
 import com.f98k.tipstermindcocoapods.ui.screen.main.MainViewModel
@@ -19,9 +21,12 @@ import org.koin.core.annotation.KoinExperimentalAPI
 @OptIn(KoinExperimentalAPI::class)
 @Composable
 
-fun MainScreen(navController: NavHostController) {
-    val currentTopBar = remember { mutableStateOf<@Composable (() -> Unit)?>(null) }
-    val showBottomBar = remember { mutableStateOf(true) }
+fun MainScreen() {
+    val navController = rememberNavController()
+
+    val currentTopBar: MutableState<(@Composable () -> Unit)?> = remember { mutableStateOf(null) }
+    val showBottomBar: MutableState<Boolean> = remember { mutableStateOf(true) }
+
 
     val viewModel = koinViewModel<MainViewModel>()
     val uiState = viewModel.uiState.collectAsState().value

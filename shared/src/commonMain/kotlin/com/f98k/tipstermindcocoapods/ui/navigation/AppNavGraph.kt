@@ -57,7 +57,7 @@ fun AppNavGraph(
                     onBackClick = { navController.popBackStack() }
                 )
             }
-            setBottomBarVisibility(false)
+            setBottomBarVisibility(true)
             IaTipsScreen()
         }
         composable(AppRoute.Favorites.route) {

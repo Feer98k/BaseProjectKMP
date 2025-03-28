@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 
 import androidx.compose.ui.tooling.preview.Preview
 import com.f98k.tipstermindcocoapods.domain.bridge.initJsonReader
+import com.f98k.tipstermindcocoapods.ui.navigation.composable.MainScreen
 import com.f98k.tipstermindcocoapods.ui.navigation.composable.home.HomeScreen
 import com.f98k.tipstermindcocoapods.ui.theme.TipsterTheme
 
@@ -18,7 +19,7 @@ class MainActivity : ComponentActivity() {
         injectLibraries()
         setContent {
             TipsterTheme {
-                HomeScreen()
+                MainScreen()
             }
         }
     }
@@ -33,6 +34,6 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 private fun HomeAppPreview() {
     TipsterTheme {
-        HomeScreen()
+        MainScreen()
     }
 }
