@@ -1,6 +1,7 @@
 package com.f98k.tipstermindcocoapods.ui.navigation.composable
 
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
@@ -14,6 +15,7 @@ import androidx.navigation.compose.rememberNavController
 import com.f98k.tipstermindcocoapods.ui.components.TipsterBottomBar
 import com.f98k.tipstermindcocoapods.ui.navigation.AppNavGraph
 import com.f98k.tipstermindcocoapods.ui.screen.main.MainViewModel
+import com.f98k.tipstermindcocoapods.ui.screen.settings.component.SettingsComponent
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.annotation.KoinExperimentalAPI
 
@@ -50,7 +52,20 @@ fun MainScreen() {
             AppNavGraph(
                 navController = navController,
                 setTopBar = { topBarComposable -> currentTopBar.value = topBarComposable },
-                setBottomBarVisibility = { show -> showBottomBar.value = show }
+                setBottomBarVisibility = { show -> showBottomBar.value = show },
+                onSettingsClick = {uiActions.setDrawerVisibility(true)},
+            )
+
+            SettingsComponent(
+                modifier = Modifier.fillMaxSize(),
+                isVisible = uiState.isToShowSettingsDrawer,
+                settingsItems = uiState.settingsList,
+                onItemClick = { item ->
+                    //todo implementar action
+                },
+                onDismiss = {
+                    uiActions.setDrawerVisibility(false)
+                }
             )
         }
     }

@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.f98k.tipstermindcocoapods.data.model.BottomBarItem
+import com.f98k.tipstermindcocoapods.data.model.bottombar.BottomBarItem
 import com.f98k.tipstermindcocoapods.domain.bridge.getImageResource
 import com.f98k.tipstermindcocoapods.domain.helper.localizedText
 import com.f98k.tipstermindcocoapods.ui.components.TipsterText

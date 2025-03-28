@@ -7,21 +7,20 @@ import androidx.navigation.compose.composable
 import com.f98k.tipstermindcocoapods.commons.LocalizedStrings.topBarFavoriteScreen
 import com.f98k.tipstermindcocoapods.commons.LocalizedStrings.topIaTipsScreen
 import com.f98k.tipstermindcocoapods.commons.LocalizedStrings.topSearchScreen
-import com.f98k.tipstermindcocoapods.commons.LocalizedStrings.topSettingsScreen
 import com.f98k.tipstermindcocoapods.commons.StringConstants.APP_NAME
 import com.f98k.tipstermindcocoapods.ui.components.TipsterTopBar
 import com.f98k.tipstermindcocoapods.ui.navigation.composable.favorite.FavoritesScreen
 import com.f98k.tipstermindcocoapods.ui.navigation.composable.home.HomeScreen
 import com.f98k.tipstermindcocoapods.ui.navigation.composable.iaitips.IaTipsScreen
 import com.f98k.tipstermindcocoapods.ui.navigation.composable.search.SearchScreen
-import com.f98k.tipstermindcocoapods.ui.navigation.composable.settings.SettingsScreen
 
 @Composable
 fun AppNavGraph(
     navController: NavHostController,
     startDestination: String = AppRoute.Home.route,
     setTopBar: (topBar: @Composable (() -> Unit)?) -> Unit,
-    setBottomBarVisibility: (Boolean) -> Unit
+    setBottomBarVisibility: (Boolean) -> Unit,
+    onSettingsClick: () -> Unit = {},
 ) {
     NavHost(
         navController = navController,
@@ -72,15 +71,7 @@ fun AppNavGraph(
             FavoritesScreen()
         }
         composable(AppRoute.Settings.route) {
-            setTopBar {
-                TipsterTopBar(
-                    title = topSettingsScreen(),
-                    showBackButton = true,
-                    onBackClick = { navController.popBackStack() }
-                )
-            }
-            setBottomBarVisibility(true)
-            SettingsScreen()
+            onSettingsClick()
         }
     }
 }

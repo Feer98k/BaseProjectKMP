@@ -11,11 +11,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.f98k.tipstermindcocoapods.data.model.BottomBarItem
+import com.f98k.tipstermindcocoapods.data.model.bottombar.BottomBarItem
 import com.f98k.tipstermindcocoapods.data.repository.main.MainRepositoryImpl
 import com.f98k.tipstermindcocoapods.domain.bridge.getImageResource
-import com.f98k.tipstermindcocoapods.ui.screen.main.MainViewModel
-import org.koin.androidx.compose.koinViewModel
 
 @Preview(showBackground = true)
 @Composable

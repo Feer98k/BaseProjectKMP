@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.f98k.tipstermindcocoapods.data.model.BottomBarItem
+import com.f98k.tipstermindcocoapods.data.model.bottombar.BottomBarItem
 import com.f98k.tipstermindcocoapods.domain.bridge.getImageResource
 import com.f98k.tipstermindcocoapods.domain.helper.localizedText
 import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum

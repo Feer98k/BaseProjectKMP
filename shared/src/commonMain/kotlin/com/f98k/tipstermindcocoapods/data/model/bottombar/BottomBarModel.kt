@@ -1,4 +1,4 @@
-package com.f98k.tipstermindcocoapods.data.model
+package com.f98k.tipstermindcocoapods.data.model.bottombar
 
 import com.f98k.tipstermindcocoapods.commons.StringConstants.EMPTY_STRING
 import kotlinx.serialization.Serializable

@@ -21,6 +21,18 @@ class MainViewModel(private val useCase: MainUseCase) : ViewModel() {
             }
         )
 
+    init {
+        getSettingsList()
+    }
+
+    private fun getSettingsList() {
+        launchWithLoading(
+            onSuccess = { settingsList ->
+                _uiState.update { it.copy(settingsList = settingsList) }
+            },
+            block = { useCase.fetchSettingsList() }
+        )
+    }
 
     private fun getBottomBarList() {
         launchWithLoading(
