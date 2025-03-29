@@ -64,7 +64,6 @@ fun TipsterTopBar(
             ) {
                 TipsterText(
                     text = title,
-                    color = Color.White,
                     type = TipsterTextTypeEnum.Title
                 )
             }

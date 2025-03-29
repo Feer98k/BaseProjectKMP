@@ -32,7 +32,6 @@ fun IaTipsScreenContent(
                 TipsterText(
                     modifier = Modifier.fillMaxSize(),
                     text = "Ia Tips Section",
-                    color = Color.White,
                     type = TipsterTextTypeEnum.Body,
                     textAlign = TextAlign.Center
                 )

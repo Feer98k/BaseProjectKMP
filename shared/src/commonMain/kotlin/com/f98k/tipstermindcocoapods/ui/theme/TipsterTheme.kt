@@ -1,11 +1,13 @@
 package com.f98k.tipstermindcocoapods.ui.theme
 
 
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Shapes
 import androidx.compose.material.Typography
 import androidx.compose.material.darkColors
+import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
@@ -27,12 +29,24 @@ private val TipsterDarkColors = darkColors(
     onSurface = Color.White
 )
 
+private val TipsterLightColors = lightColors(
+    primary = Color(0xFF3A5EFF),
+    primaryVariant = Color(0xFF2A4ED8),
+    secondary = Color(0xFF94ADC7),
+    background = Color(0xFFFFFFFF),
+    surface = Color(0xFFF2F2F2),
+    onPrimary = Color.White,
+    onSecondary = Color.Black,
+    onBackground = Color.Black,
+    onSurface = Color.Black
+)
+
 private val TipsterTypography = Typography(
     h4 = TextStyle(
         fontFamily = getLexendFont(FontWeight.Bold),
         fontSize = 22.sp,
         lineHeight = 28.sp,
-        fontWeight = FontWeight.Bold
+        fontWeight = FontWeight.Bold,
     ),
     h5 = TextStyle(
         fontFamily = getLexendFont(FontWeight.Medium),
@@ -57,6 +71,7 @@ private val TipsterTypography = Typography(
 )
 
 
+
 private val TipsterShapes = Shapes(
     small = RoundedCornerShape(8.dp),
     medium = RoundedCornerShape(12.dp),
@@ -65,9 +80,14 @@ private val TipsterShapes = Shapes(
 
 
 @Composable
-fun TipsterTheme(content: @Composable () -> Unit) {
+fun TipsterTheme(
+    isDarkTheme: Boolean = isSystemInDarkTheme(),
+    content: @Composable () -> Unit
+) {
+    val colors = if (isDarkTheme) TipsterDarkColors else TipsterLightColors
+
     MaterialTheme(
-        colors = TipsterDarkColors,
+        colors = colors,
         typography = TipsterTypography,
         shapes = TipsterShapes,
         content = content

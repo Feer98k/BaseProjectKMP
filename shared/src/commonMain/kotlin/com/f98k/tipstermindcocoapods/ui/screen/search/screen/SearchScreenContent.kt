@@ -32,7 +32,6 @@ fun SearchScreenContent(
                 TipsterText(
                     modifier = Modifier.fillMaxSize(),
                     text = "Search Section",
-                    color = Color.White,
                     type = TipsterTextTypeEnum.Body,
                     textAlign = TextAlign.Center
                 )

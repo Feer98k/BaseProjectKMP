@@ -30,7 +30,6 @@ fun HomeScreenContent(
                 Spacer(modifier = Modifier.padding(16.dp))
                 TipsterText(
                     text = uiState.generalMatchList,
-                    color = Color.White,
                     type = TipsterTextTypeEnum.Body
                 )
             }

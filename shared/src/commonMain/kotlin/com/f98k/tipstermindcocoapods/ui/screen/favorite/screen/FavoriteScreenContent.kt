@@ -33,7 +33,6 @@ fun FavoriteScreenContent(
                 TipsterText(
                     modifier = Modifier.fillMaxSize(),
                     text = "Favorite Section",
-                    color = Color.White,
                     type = TipsterTextTypeEnum.Body,
                     textAlign = TextAlign.Center
                 )

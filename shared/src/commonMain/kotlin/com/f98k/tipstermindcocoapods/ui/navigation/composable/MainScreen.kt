@@ -32,7 +32,7 @@ fun MainScreen() {
     val viewModel = koinViewModel<MainViewModel>()
     val uiState = viewModel.uiState.collectAsState().value
     val uiActions = viewModel.uiActions
-//    val isToShowSettingsComponent = remember { mutableStateOf(false) }
+
 
     LaunchedEffect(Unit) {
         uiActions.getBottomBarList()

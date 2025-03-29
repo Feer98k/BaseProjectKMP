@@ -8,7 +8,7 @@ import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -23,7 +23,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -44,10 +43,9 @@ fun SettingsComponent(
     onItemClick: (SettingsItem) -> Unit,
     onDismiss: () -> Unit
 ) {
-    if(isVisible) {
-        Box(
-            modifier = modifier.fillMaxSize()
-        ) {
+    if (isVisible) {
+        Box(modifier = modifier.fillMaxSize()) {
+
             AnimatedVisibility(
                 visible = isVisible,
                 enter = fadeIn(),
@@ -60,48 +58,86 @@ fun SettingsComponent(
                         .clickable(onClick = onDismiss)
                 )
             }
+
             AnimatedVisibility(
                 visible = isVisible,
-                enter = slideInHorizontally(
-                    initialOffsetX = { fullWidth -> fullWidth }
-                ),
-                exit = slideOutHorizontally(
-                    targetOffsetX = { fullWidth -> fullWidth }
-                )
+                enter = slideInHorizontally { fullWidth -> fullWidth },
+                exit = slideOutHorizontally { fullWidth -> fullWidth },
+                modifier = Modifier.align(Alignment.CenterEnd)
             ) {
                 Surface(
                     modifier = Modifier
                         .fillMaxHeight()
-                        .fillMaxWidth(0.5f)
-                        .align(Alignment.CenterEnd),
+                        .fillMaxWidth(0.6f),
                     color = MaterialTheme.colors.surface,
                     shape = RoundedCornerShape(topStart = 24.dp, bottomStart = 24.dp),
                     elevation = 8.dp
                 ) {
-                    LazyColumn(
-                        contentPadding = PaddingValues(16.dp)
+                    Column(
+                        modifier = Modifier.fillMaxSize(),
                     ) {
-                        items(settingsItems) { item ->
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .weight(0.3f),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            TipsterText(
+                                text = "Banner Placeholder",
+                                type = TipsterTextTypeEnum.Subtitle
+                            )
+                        }
+
+                        LazyColumn(
+                            modifier = Modifier
+                                .weight(0.6f)
+                                .padding(horizontal = 16.dp)
+                        ) {
+                            items(settingsItems) { item ->
+                                Row(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .clickable { onItemClick(item) }
+                                        .padding(vertical = 12.dp),
+                                    verticalAlignment = Alignment.CenterVertically
+                                ) {
+                                    Icon(
+                                        painter = getImageResource(item.icon),
+                                        contentDescription = item.labelEn,
+                                        modifier = Modifier.size(24.dp)
+                                    )
+                                    Spacer(modifier = Modifier.width(12.dp))
+                                    TipsterText(
+                                        text = localizedText(
+                                            en = item.labelEn,
+                                            pt = item.labelPt,
+                                            es = item.labelEs
+                                        ),
+                                        type = TipsterTextTypeEnum.Subtitle
+                                    )
+                                }
+                            }
+                        }
+
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(16.dp)
+                                .clickable { onDismiss() },
+                            contentAlignment = Alignment.CenterStart
+                        ) {
                             Row(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .clickable { onItemClick(item) }
-                                    .padding(vertical = 12.dp),
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
                                 Icon(
-                                    painter = getImageResource(item.icon),
-                                    contentDescription = item.labelEn,
-                                    modifier = Modifier.size(24.dp)
+                                    painter = getImageResource("ic_close"),
+                                    contentDescription = "Close Icon",
+                                    modifier = Modifier.size(20.dp)
                                 )
-                                Spacer(modifier = Modifier.width(12.dp))
+                                Spacer(modifier = Modifier.width(8.dp))
                                 TipsterText(
-                                    text = localizedText(
-                                        en = item.labelEn,
-                                        pt = item.labelPt,
-                                        es = item.labelEs
-                                    ),
-                                    type = TipsterTextTypeEnum.Body
+                                    text = "Fechar",
+                                    type = TipsterTextTypeEnum.Subtitle,
                                 )
                             }
                         }

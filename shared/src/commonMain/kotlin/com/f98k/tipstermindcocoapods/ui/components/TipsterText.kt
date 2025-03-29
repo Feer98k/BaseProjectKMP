@@ -1,5 +1,6 @@
 package com.f98k.tipstermindcocoapods.ui.components
 
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.text.BasicText
 import androidx.compose.runtime.Composable
@@ -15,9 +16,9 @@ import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum
 @Composable
 fun TipsterText(
     text: String,
-    modifier: Modifier = Modifier,
     type: TipsterTextTypeEnum,
-    color: Color = Color.Black,
+    modifier: Modifier = Modifier,
+    color: Color? = null,
     textAlign: TextAlign? = null,
     style: TextStyle = TextStyle.Default,
     singleLine: Boolean = false
@@ -46,7 +47,7 @@ fun TipsterText(
                 TextStyle(
                     fontSize = finalFontSize,
                     fontWeight = type.fontWeight,
-                    color = color,
+                    color = color ?: if(isSystemInDarkTheme()) Color.White else Color.Black,
                     textAlign = textAlign ?: TextAlign.Start,
                     lineHeight = type.lineHeight,
                     fontFamily = getLexendFont(type.fontWeight)

@@ -52,7 +52,6 @@ private fun TipsterBottomBarMirror(
                             pt = item.titlePt,
                         ),
                         type = TipsterTextTypeEnum.Caption,
-                        color = Color.White,
                         singleLine = true
                     )
                 },
