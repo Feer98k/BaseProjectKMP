@@ -1,0 +1,44 @@
+{
+  "bottomBarList": [
+    {
+      "iconName": "search",
+      "icon": "ic_bottom_bar_search",
+      "titleEn": "Search",
+      "titleEs": "Buscar",
+      "titlePt": "Buscar",
+      "action": "action_search"
+    },
+    {
+      "iconName": "aiTips",
+      "icon": "ic_bottom_bar_ia",
+      "titleEn": "AI Tips",
+      "titleEs": "AI Tips",
+      "titlePt": "AI Tips",
+      "action": "action_ai_tips"
+    },
+    {
+      "iconName": "home",
+      "icon": "ic_bottom_bar_home",
+      "titleEn": "Home",
+      "titleEs": "Home",
+      "titlePt": "Home",
+      "action": "action_home"
+    },
+    {
+      "iconName": "favorites",
+      "icon": "ic_bottom_bar_favorites",
+      "titleEn": "Favorites",
+      "titleEs": "Favoritos",
+      "titlePt": "Favoritos",
+      "action": "action_favorites"
+    },
+    {
+      "iconName": "settings",
+      "icon": "ic_bottom_bar_settings",
+      "titleEn": "Settings",
+      "titleEs": "Ajustes",
+      "titlePt": "Configurações",
+      "action": "action_settings"
+    }
+  ]
+}

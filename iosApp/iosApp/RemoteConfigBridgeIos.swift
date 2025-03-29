@@ -16,6 +16,10 @@ class RemoteConfigBridgeIos: NSObject {
     @objc public static func configureRemoteConfigService() {
         RemoteConfigServiceProvider.shared.remoteConfigService = IosRemoteConfigService { key, completion in
             let remoteConfig = RemoteConfig.remoteConfig()
+            let settings = RemoteConfigSettings()
+                settings.minimumFetchInterval = 0
+                settings.fetchTimeout = 10
+            remoteConfig.configSettings = settings
             remoteConfig.fetchAndActivate { _, error in
                 if let error = error {
                     completion("errorGetFile")

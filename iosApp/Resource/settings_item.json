@@ -1,0 +1,30 @@
+[
+    {
+      "icon": "ic_settings_rate",
+      "labelEn": "Rate the App",
+      "labelPt": "Avaliar o app",
+      "labelEs": "Calificar la app",
+      "action": "action_rate_app"
+    },
+    {
+      "icon": "ic_contact_us",
+      "labelEn": "Contact us",
+      "labelPt": "Entre em contato conosco",
+      "labelEs": "Contáctenos",
+      "action": "action_contact_us"
+    },
+    {
+      "icon": "ic_instagram",
+      "labelEn": "Follow Us",
+      "labelPt": "Siga-nos",
+      "labelEs": "Síganos",
+      "action": "action_follow_instagram"
+    },	
+    {
+      "icon": "ic_settings_tipster_pro",
+      "labelEn": "Become Tipster Pro",
+      "labelPt": "Seja um Tipster Pro",
+      "labelEs": "Hazte Tipster Pro",
+      "action": "action_become_tipster_pro"
+    }
+  ]

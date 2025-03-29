@@ -1,63 +1,186 @@
 [versions]
+# ----------------------------------------
+# Android Gradle Plugin e SDK
+# ----------------------------------------
 agp = "8.5.2"
 android-compileSdk = "34"
 android-minSdk = "24"
 android-targetSdk = "34"
-androidx-activityCompose = "1.9.3"
 
-androidx-lifecycle = "2.8.4"
-
-compose-multiplatform = "1.7.0"
+# ----------------------------------------
+# Kotlin
+# ----------------------------------------
 kotlin = "2.1.0"
-ktor = "2.3.6"
-moko-mvvm = "0.16.1"
-kamel = "0.8.3"
-koin = "3.6.0-Beta4"
-koin-compose = "1.2.0-Beta4"
-navigation-compose = "2.8.0-alpha10"
+kotlin-coroutines = "1.8.0"
 kotlinx-serialization = "1.7.1"
-uri-kmp = "0.0.18"
-googleGmsGoogleServices = "4.4.2"
-firebase-bom = "32.2.0"
-googleFirebaseConfig = "22.1.0"
+
+# ----------------------------------------
+# Compose Multiplatform e Compose Android
+# ----------------------------------------
+compose-multiplatform = "1.7.0"
+compose_pure = "1.5.4"
+
+# Compose Android (dedicado)
 runtimeAndroid = "1.7.8"
 uiAndroid = "1.7.8"
+uiTextAndroid = "1.7.8"
+uiGraphicsAndroid = "1.7.8"
+foundationAndroid = "1.7.8"
+foundationLayoutAndroid = "1.7.8"
 
+# ----------------------------------------
+# AndroidX Lifecycle e Activity
+# ----------------------------------------
+androidx-activityCompose = "1.9.3"
+androidx-lifecycle = "2.8.4"
+lifecycle_pure = "2.6.2"
+lifecycleViewmodelAndroid = "2.8.7"
+
+# ----------------------------------------
+# Navigation Compose
+# ----------------------------------------
+navigation-compose = "2.8.0-alpha10"
+
+# ----------------------------------------
+# Ktor (Networking)
+# ----------------------------------------
+ktor = "2.3.6"
+
+# ----------------------------------------
+# Moko (MVVM multiplatform)
+# ----------------------------------------
+moko-mvvm = "0.16.1"
+
+# ----------------------------------------
+# Koin (DI)
+koin = "3.6.0-Beta4"
+koin-compose = "1.2.0-Beta4"
+
+# ----------------------------------------
+# Imagem / UI
+kamel = "0.8.3"
+skiko = "0.7.56"
+
+# ----------------------------------------
+# Firebase
+firebase-bom = "32.2.0"
+googleFirebaseConfig = "22.1.0"
+googleGmsGoogleServices = "4.4.2"
+
+# ----------------------------------------
+# Outros
+uri-kmp = "0.0.18"
 
 
 [libraries]
+# ----------------------------------------
+# AndroidX Core & Lifecycle
+# ----------------------------------------
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
 androidx-lifecycle-viewmodel = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-viewmodel-android = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-android", version.ref = "lifecycleViewmodelAndroid" }
 
-ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
-ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
-ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
-ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
-ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
-moko-mvvm-core = { module = "dev.icerock.moko:mvvm-core", version.ref = "moko-mvvm" }
-moko-mvvm-compose = { module = "dev.icerock.moko:mvvm-compose", version.ref = "moko-mvvm" }
-kamel = { module = "media.kamel:kamel-image", version.ref = "kamel" }
+# ----------------------------------------
+# Compose (Dedicated path for shared and pure Android)
+# ----------------------------------------
+compose-ui_pure = { group = "androidx.compose.ui", name = "ui", version.ref = "compose_pure" }
+compose-ui-tooling_pure = { group = "androidx.compose.ui", name = "ui-tooling", version.ref = "compose_pure" }
+compose-foundation_pure = { group = "androidx.compose.foundation", name = "foundation", version.ref = "compose_pure" }
+compose-material_pure = { group = "androidx.compose.material", name = "material", version.ref = "compose_pure" }
+
+androidx-runtime-android = { group = "androidx.compose.runtime", name = "runtime-android", version.ref = "runtimeAndroid" }
+androidx-ui-android = { group = "androidx.compose.ui", name = "ui-android", version.ref = "uiAndroid" }
+androidx-ui-text-android = { group = "androidx.compose.ui", name = "ui-text-android", version.ref = "uiTextAndroid" }
+androidx-foundation-android = { group = "androidx.compose.foundation", name = "foundation-android", version.ref = "foundationAndroid" }
+androidx-ui-graphics-android = { group = "androidx.compose.ui", name = "ui-graphics-android", version.ref = "uiGraphicsAndroid" }
+androidx-foundation-layout-android = { group = "androidx.compose.foundation", name = "foundation-layout-android", version.ref = "foundationLayoutAndroid" }
+
+# ----------------------------------------
+# Lifecycle (pure Android)
+# ----------------------------------------
+lifecycle-runtime-ktx_pure = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle_pure" }
+lifecycle-viewmodel-compose_pure = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle_pure" }
+
+# ----------------------------------------
+# Navigation
+# ----------------------------------------
+navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "navigation-compose" }
+
+# ----------------------------------------
+# Koin (DI)
+# ----------------------------------------
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koin-compose" }
 koin-composeVM = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koin-compose" }
-navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "navigation-compose" }
+
+# ----------------------------------------
+# Kotlin Coroutines
+# ----------------------------------------
+kotlin-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin-coroutines" }
+
+# ----------------------------------------
+# Kotlinx Serialization
+# ----------------------------------------
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
-uri-kmp = { module = "com.eygraber:uri-kmp", version.ref = "uri-kmp" }
+
+# ----------------------------------------
+# Ktor (Network)
+# ----------------------------------------
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
+ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+
+# ----------------------------------------
+# Moko MVVM
+# ----------------------------------------
+moko-mvvm-core = { module = "dev.icerock.moko:mvvm-core", version.ref = "moko-mvvm" }
+moko-mvvm-compose = { module = "dev.icerock.moko:mvvm-compose", version.ref = "moko-mvvm" }
+
+# ----------------------------------------
+# Image loading
+# ----------------------------------------
+kamel = { module = "media.kamel:kamel-image", version.ref = "kamel" }
+
+# ----------------------------------------
+# Firebase
+# ----------------------------------------
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase-bom" }
 firebase-config = { group = "com.google.firebase", name = "firebase-config", version.ref = "googleFirebaseConfig" }
-androidx-runtime-android = { group = "androidx.compose.runtime", name = "runtime-android", version.ref = "runtimeAndroid" }
-androidx-ui-android = { group = "androidx.compose.ui", name = "ui-android", version.ref = "uiAndroid" }
+
+# ----------------------------------------
+# Utilitários
+# ----------------------------------------
+skiko = { module = "org.jetbrains.skiko:skiko", version.ref = "skiko" }
+uri-kmp = { module = "com.eygraber:uri-kmp", version.ref = "uri-kmp" }
 
 
 [plugins]
+# ----------------------------------------
+# Android
+# ----------------------------------------
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
+
+# ----------------------------------------
+# Kotlin Multiplatform + Compose
+# ----------------------------------------
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
 composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+
+# ----------------------------------------
+# Kotlin Plugins
+# ----------------------------------------
 kotlinCocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }
 kotlinxSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+
+# ----------------------------------------
+# Firebase / Google Services
+# ----------------------------------------
 googleGmsGoogleServices = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
+
