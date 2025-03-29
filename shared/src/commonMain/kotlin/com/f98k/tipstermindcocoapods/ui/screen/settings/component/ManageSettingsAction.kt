@@ -11,35 +11,48 @@ import com.f98k.tipstermindcocoapods.ui.navigation.SettingsAction.Privacy
 import com.f98k.tipstermindcocoapods.ui.navigation.SettingsAction.RateApp
 import com.f98k.tipstermindcocoapods.ui.navigation.SettingsAction.TermsConditions
 import com.f98k.tipstermindcocoapods.ui.screen.main.MainUiStateAction
+import org.koin.core.annotation.KoinExperimentalAPI
 
+@OptIn(KoinExperimentalAPI::class)
 @Composable
-fun ManageSettingsClicked(action: String, uiActions: MainUiStateAction) {
+fun ManageSettingsClicked(
+    action: String,
+    uiActions: MainUiStateAction
+) {
     when (action) {
-        ChangeLanguage.toString() -> {
+        ChangeLanguage.action -> {
+            uiActions.onChangeThemeClick()
+        }
+
+        ChangeTheme.action -> {
 
         }
-        ChangeTheme.toString() -> {
+
+        Notifications.action -> {
 
         }
-        Notifications.toString() -> {
+
+        Privacy.action -> {
 
         }
-        Privacy.toString() -> {
+
+        TermsConditions.action -> {
 
         }
-        TermsConditions.toString() -> {
+
+        RateApp.action -> {
 
         }
-        RateApp.toString() -> {
+
+        ContactUs.action -> {
 
         }
-        ContactUs.toString() -> {
+
+        FollowInstagram.action -> {
 
         }
-        FollowInstagram.toString() -> {
 
-        }
-        BePro.toString() -> {
+        BePro.action -> {
 
         }
     }

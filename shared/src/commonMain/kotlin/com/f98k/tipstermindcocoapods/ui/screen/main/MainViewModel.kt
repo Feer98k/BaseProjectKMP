@@ -32,8 +32,17 @@ class MainViewModel(private val useCase: MainUseCase) : ViewModel() {
             },
             onChangeLanguage = {
                 onChangeLanguage(it)
+            },
+            onChangeThemeClick = {
+                onChangeTheme()
             }
         )
+
+    private fun onChangeTheme() {
+        viewModelScope.launch {
+            useCase.changeTheme()
+        }
+    }
 
     private fun onChangeLanguage(language: SupportedLanguage) {
         AppLanguageController.setLanguage(language)

@@ -121,6 +121,9 @@ kotlin {
             // Android-specific UI Extensions
             // ----------------------------------------
             implementation(libs.androidx.ui.text.android)
+            implementation("androidx.datastore:datastore-preferences:1.0.0")
+            implementation("androidx.datastore:datastore-core:1.0.0")
+            implementation("androidx.datastore:datastore-preferences-core:1.0.0")
         }
 
         iosMain.dependencies {
