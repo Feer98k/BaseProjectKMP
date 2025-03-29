@@ -1,10 +1,10 @@
 package com.f98k.tipstermindcocoapods.ui.screen.home.state
 
-import com.f98k.tipstermindcocoapods.commons.StringConstants.EMPTY_STRING
+import MatchesFootballResponseModel
 
 data class HomeUiState(
     val isToShowLoading: Boolean = false,
-    val generalMatchList: String = EMPTY_STRING
+    val generalMatchList: List<MatchesFootballResponseModel> = emptyList()
 )
 
 data class HomeUiActions(

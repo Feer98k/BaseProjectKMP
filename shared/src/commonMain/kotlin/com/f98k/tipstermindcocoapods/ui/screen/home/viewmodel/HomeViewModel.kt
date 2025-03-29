@@ -26,7 +26,7 @@ class HomeViewModel(private val useCase: HomeUseCase) : ViewModel() {
             onSuccess = { matches ->
                 _uiState.update { it.copy(generalMatchList = matches) }
             },
-            block = { useCase.generalMatches() }
+            block = { useCase.allLeaguesMatches() }
         )
     }
 
