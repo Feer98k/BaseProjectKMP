@@ -1,10 +1,107 @@
+# Gradle files
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Local configuration files (Android Studio/IntelliJ IDEA)
+.idea/
 *.iml
-.gradle
-.idea
+*.ipr
+*.iws
+/out/
+
+# Generated files
+*/build/
+*.klib
+*.metadata.json
+
+# iOS / Xcode specific files
 .DS_Store
-build
-captures
-.externalNativeBuild
-.cxx
+xcuserdata/
+*.xcworkspace
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+
+# Cocoapods generated files
+Pods/
+*.lock
+Podfile.lock
+/build/
+*.xcarchive
+*.ipa
+DerivedData/
+
+# Android generated files
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+bin/
+
+# Local properties file (SDK paths, etc.)
 local.properties
-xcuserdata
+
+# Keystore files
+*.jks
+*.keystore
+
+# Logs
+*.log
+
+# Node/npm if applicable
+node_modules/
+
+# Multiplatform common metadata/build
+**/metadata/
+*.kotlin_metadata
+*.kotlin_module
+*.kotlin_builtins
+*.metadata.json
+
+# Compose/Multiplatform desktop binaries
+composeApp/build/
+
+# Mac OS specific files
+.DS_Store
+
+# Windows specific files
+Thumbs.db
+desktop.ini
+
+# Linux specific files
+*~
+
+# General temp files
+*.tmp
+*.swp
+*.swo
+*.salive
+*.cinteropLibraries.json
+*.klib
+*.salive
+
+# Gradle cache
+.gradle_cache/
+
+# IntelliJ/Android Studio caches
+*.hprof
+captures/
+.externalNativeBuild
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+
+# Firebase configs (for safety, keep out of version control if contain sensitive info)
+google-services.json
+GoogleService-Info.plist
+
+# Sensitive or confidential data
+.env
+*.env
+
+# Generated KMP specific folders
+*.dSYM/
+*.framework
