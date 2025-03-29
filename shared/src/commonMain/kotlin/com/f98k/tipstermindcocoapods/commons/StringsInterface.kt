@@ -78,5 +78,7 @@ object StringConstants {
     const val ACTION_PRIVACY = "action_privacy_settings"
     const val ACTION_TERMS_CONDITIONS = "action_terms_conditions"
     const val ACTION_RATE_APP = "action_rate_app"
+    const val ACTION_CONTACT_US = "action_contact_us"
+    const val ACTION_FOLLOW_INSTAGRAM = "action_follow_instagram"
     const val ACTION_BE_PRO = "action_become_tipster_pro"
 }

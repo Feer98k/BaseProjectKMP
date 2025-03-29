@@ -12,13 +12,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
-import com.f98k.tipstermindcocoapods.commons.StringConstants.ACTION_CHANGE_LANGUAGE
-import com.f98k.tipstermindcocoapods.commons.StringConstants.EMPTY_STRING
 import com.f98k.tipstermindcocoapods.ui.components.TipsterBottomBar
 import com.f98k.tipstermindcocoapods.ui.navigation.AppNavGraph
-import com.f98k.tipstermindcocoapods.ui.screen.main.MainUiStateAction
 import com.f98k.tipstermindcocoapods.ui.screen.main.MainViewModel
-import com.f98k.tipstermindcocoapods.ui.screen.settings.component.LanguageSelectionDialog
+import com.f98k.tipstermindcocoapods.ui.screen.settings.component.ManageSettingsClicked
 import com.f98k.tipstermindcocoapods.ui.screen.settings.component.SettingsComponent
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.annotation.KoinExperimentalAPI
@@ -84,20 +81,6 @@ fun MainScreen() {
                 ManageSettingsClicked(uiState.lastActionClicked, uiActions)
             }
 
-        }
-    }
-}
-
-@Composable
-private fun ManageSettingsClicked(action: String, uiActions: MainUiStateAction) {
-    when (action) {
-        ACTION_CHANGE_LANGUAGE -> {
-            LanguageSelectionDialog(onDismiss = {
-                uiActions.setShowManageComponentActions(
-                    false,
-                    EMPTY_STRING
-                )
-            }, onLanguageSelected = { uiActions.onChangeLanguage(it) })
         }
     }
 }
