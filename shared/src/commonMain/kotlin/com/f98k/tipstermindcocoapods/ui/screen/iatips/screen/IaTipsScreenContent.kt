@@ -24,11 +24,9 @@ fun IaTipsScreenContent(
     Card(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp)
     ) {
         LazyColumn {
             item {
-                Spacer(modifier = Modifier.padding(16.dp))
                 TipsterText(
                     modifier = Modifier.fillMaxSize(),
                     text = "Ia Tips Section",

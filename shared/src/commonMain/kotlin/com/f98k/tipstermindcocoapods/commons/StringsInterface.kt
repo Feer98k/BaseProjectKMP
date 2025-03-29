@@ -48,6 +48,12 @@ object LocalizedStrings {
         SupportedLanguage.ES -> "Ajustes"
     }
 
+    fun close(): String = when (currentLang) {
+        SupportedLanguage.EN -> "Close"
+        SupportedLanguage.PT -> "Fechar"
+        SupportedLanguage.ES -> "cerrar"
+    }
+
 }
 
 object StringConstants {

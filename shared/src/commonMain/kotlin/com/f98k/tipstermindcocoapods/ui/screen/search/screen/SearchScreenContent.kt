@@ -24,7 +24,6 @@ fun SearchScreenContent(
     Card(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp)
     ) {
         LazyColumn {
             item {

@@ -28,6 +28,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.f98k.tipstermindcocoapods.commons.LocalizedStrings.close
 import com.f98k.tipstermindcocoapods.data.model.settings.SettingsItem
 import com.f98k.tipstermindcocoapods.domain.bridge.getImageResource
 import com.f98k.tipstermindcocoapods.domain.helper.localizedText
@@ -131,12 +132,12 @@ fun SettingsComponent(
                             ) {
                                 Icon(
                                     painter = getImageResource("ic_close"),
-                                    contentDescription = "Close Icon",
+                                    contentDescription = close(),
                                     modifier = Modifier.size(20.dp)
                                 )
                                 Spacer(modifier = Modifier.width(8.dp))
                                 TipsterText(
-                                    text = "Fechar",
+                                    text = close(),
                                     type = TipsterTextTypeEnum.Subtitle,
                                 )
                             }
