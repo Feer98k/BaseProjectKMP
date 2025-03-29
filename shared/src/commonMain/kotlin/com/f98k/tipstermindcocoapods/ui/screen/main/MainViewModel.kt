@@ -14,22 +14,30 @@ class MainViewModel(private val useCase: MainUseCase) : ViewModel() {
     private val _uiState = MutableStateFlow(MainUiState())
     val uiState: StateFlow<MainUiState> = _uiState.asStateFlow()
 
+    init {
+        getSettingsList()
+    }
     val uiActions: MainUiStateAction
         get() = MainUiStateAction(
             getBottomBarList = {
                 getBottomBarList()
             },
-            getSettingsList = {
-                getSettingsList()
+            setDrawerVisibility = {
+                setDrawerVisibility(it)
             }
         )
+
+    private fun setDrawerVisibility(value: Boolean) {
+        _uiState.update { it.copy(
+            isToShowSettingsDrawer = value
+        ) }
+    }
 
     private fun getSettingsList() {
         launchWithLoading(
             onSuccess = { settingsList ->
                 _uiState.update { it.copy(
-                    settingsList = settingsList,
-                    isToShowSettingsDrawer = true
+                    settingsList = settingsList
                 ) }
             },
             block = { useCase.fetchSettingsList() }

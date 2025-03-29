@@ -14,12 +14,14 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import com.f98k.tipstermindcocoapods.data.model.bottombar.BottomBarItem
 import com.f98k.tipstermindcocoapods.domain.bridge.getImageResource
 import com.f98k.tipstermindcocoapods.domain.helper.localizedText
+import com.f98k.tipstermindcocoapods.ui.navigation.AppRoute
 import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum
 
 @Composable
 fun TipsterBottomBar(
     navController: NavHostController,
-    items: List<BottomBarItem>
+    items: List<BottomBarItem>,
+    onSettingsClick: () -> Unit
 ) {
     val currentDestination = navController.currentBackStackEntryAsState().value?.destination?.route
 
@@ -34,12 +36,16 @@ fun TipsterBottomBar(
                 selected = isSelected,
                 onClick = {
                     if (!isSelected) {
-                        navController.navigate(item.action) {
-                            popUpTo(navController.graph.startDestinationId) {
-                                saveState = true
+                        if (item.action == AppRoute.Settings.route) {
+                            onSettingsClick()
+                        } else {
+                            navController.navigate(item.action) {
+                                popUpTo(navController.graph.startDestinationId) {
+                                    saveState = true
+                                }
+                                launchSingleTop = true
+                                restoreState = true
                             }
-                            launchSingleTop = true
-                            restoreState = true
                         }
                     }
                 },

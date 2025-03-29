@@ -44,64 +44,66 @@ fun SettingsComponent(
     onItemClick: (SettingsItem) -> Unit,
     onDismiss: () -> Unit
 ) {
-    Box(
-        modifier = modifier.fillMaxSize()
-    ) {
-        AnimatedVisibility(
-            visible = isVisible,
-            enter = fadeIn(),
-            exit = fadeOut()
+    if(isVisible) {
+        Box(
+            modifier = modifier.fillMaxSize()
         ) {
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .background(Color.Black.copy(alpha = 0.5f))
-                    .clickable(onClick = onDismiss)
-            )
-        }
-        AnimatedVisibility(
-            visible = isVisible,
-            enter = slideInHorizontally(
-                initialOffsetX = { fullWidth -> fullWidth }
-            ),
-            exit = slideOutHorizontally(
-                targetOffsetX = { fullWidth -> fullWidth }
-            )
-        ) {
-            Surface(
-                modifier = Modifier
-                    .fillMaxHeight()
-                    .fillMaxWidth(0.5f)
-                    .align(Alignment.CenterEnd),
-                color = MaterialTheme.colors.surface,
-                shape = RoundedCornerShape(topStart = 24.dp, bottomStart = 24.dp),
-                elevation = 8.dp
+            AnimatedVisibility(
+                visible = isVisible,
+                enter = fadeIn(),
+                exit = fadeOut()
             ) {
-                LazyColumn(
-                    contentPadding = PaddingValues(16.dp)
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(Color.Black.copy(alpha = 0.5f))
+                        .clickable(onClick = onDismiss)
+                )
+            }
+            AnimatedVisibility(
+                visible = isVisible,
+                enter = slideInHorizontally(
+                    initialOffsetX = { fullWidth -> fullWidth }
+                ),
+                exit = slideOutHorizontally(
+                    targetOffsetX = { fullWidth -> fullWidth }
+                )
+            ) {
+                Surface(
+                    modifier = Modifier
+                        .fillMaxHeight()
+                        .fillMaxWidth(0.5f)
+                        .align(Alignment.CenterEnd),
+                    color = MaterialTheme.colors.surface,
+                    shape = RoundedCornerShape(topStart = 24.dp, bottomStart = 24.dp),
+                    elevation = 8.dp
                 ) {
-                    items(settingsItems) { item ->
-                        Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .clickable { onItemClick(item) }
-                                .padding(vertical = 12.dp),
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            Icon(
-                                painter = getImageResource(item.icon),
-                                contentDescription = item.labelEn,
-                                modifier = Modifier.size(24.dp)
-                            )
-                            Spacer(modifier = Modifier.width(12.dp))
-                            TipsterText(
-                                text = localizedText(
-                                    en = item.labelEn,
-                                    pt = item.labelPt,
-                                    es = item.labelEs
-                                ),
-                                type = TipsterTextTypeEnum.Body
-                            )
+                    LazyColumn(
+                        contentPadding = PaddingValues(16.dp)
+                    ) {
+                        items(settingsItems) { item ->
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .clickable { onItemClick(item) }
+                                    .padding(vertical = 12.dp),
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Icon(
+                                    painter = getImageResource(item.icon),
+                                    contentDescription = item.labelEn,
+                                    modifier = Modifier.size(24.dp)
+                                )
+                                Spacer(modifier = Modifier.width(12.dp))
+                                TipsterText(
+                                    text = localizedText(
+                                        en = item.labelEn,
+                                        pt = item.labelPt,
+                                        es = item.labelEs
+                                    ),
+                                    type = TipsterTextTypeEnum.Body
+                                )
+                            }
                         }
                     }
                 }

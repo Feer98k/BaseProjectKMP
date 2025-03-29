@@ -21,12 +21,14 @@ fun AppNavGraph(
     setTopBar: (topBar: @Composable (() -> Unit)?) -> Unit,
     setBottomBarVisibility: (Boolean) -> Unit,
     onSettingsClick: () -> Unit = {},
+    closeSettingDraw: () -> Unit = {}
 ) {
     NavHost(
         navController = navController,
         startDestination = startDestination
     ) {
         composable(AppRoute.Home.route) {
+            closeSettingDraw()
             setTopBar {
                 TipsterTopBar(
                     title = APP_NAME,
@@ -38,6 +40,7 @@ fun AppNavGraph(
         }
 
         composable(AppRoute.Search.route) {
+            closeSettingDraw()
             setTopBar {
                 TipsterTopBar(
                     title = topSearchScreen(),
@@ -49,6 +52,7 @@ fun AppNavGraph(
             SearchScreen()
         }
         composable(AppRoute.AiTips.route) {
+            closeSettingDraw()
             setTopBar {
                 TipsterTopBar(
                     title = topIaTipsScreen(),
@@ -60,6 +64,7 @@ fun AppNavGraph(
             IaTipsScreen()
         }
         composable(AppRoute.Favorites.route) {
+            closeSettingDraw()
             setTopBar {
                 TipsterTopBar(
                     title = topBarFavoriteScreen(),
