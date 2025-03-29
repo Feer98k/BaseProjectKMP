@@ -2,9 +2,11 @@ package com.f98k.tipstermindcocoapods.commons
 
 import com.f98k.tipstermindcocoapods.commons.StringConstants.APP_NAME
 import com.f98k.tipstermindcocoapods.domain.bridge.getCurrentLanguageCode
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 
-enum class SupportedLanguage {
-    EN, PT, ES
+enum class SupportedLanguage(val lang : String) {
+    EN("en"), PT("pt"), ES("es")
 }
 
 private fun getSupportedLanguage(): SupportedLanguage {
@@ -15,8 +17,17 @@ private fun getSupportedLanguage(): SupportedLanguage {
     }
 }
 
+object AppLanguageController {
+    private val _currentLanguage = MutableStateFlow(getSupportedLanguage())
+    val currentLanguage: StateFlow<SupportedLanguage> get() = _currentLanguage
+
+    fun setLanguage(lang: SupportedLanguage) {
+        _currentLanguage.value = lang
+    }
+}
+
 object LocalizedStrings {
-    private var currentLang = getSupportedLanguage()
+    private var currentLang = AppLanguageController.currentLanguage.value
 
     fun backPressedAccessibility(): String = when (currentLang) {
         SupportedLanguage.EN -> "Back button"
@@ -61,4 +72,11 @@ object StringConstants {
     const val APP_DESCRIPTION = "A simple app to help you remember tips and tricks."
     const val EMPTY_STRING = ""
     const val EMPTY_REMOTE_CONFIG = "{}"
+    const val ACTION_CHANGE_LANGUAGE = "action_change_language"
+    const val ACTION_CHANGE_THEME = "action_change_theme"
+    const val ACTION_NOTIFICATIONS = "action_notifications_center"
+    const val ACTION_PRIVACY = "action_privacy_settings"
+    const val ACTION_TERMS_CONDITIONS = "action_terms_conditions"
+    const val ACTION_RATE_APP = "action_rate_app"
+    const val ACTION_BE_PRO = "action_become_tipster_pro"
 }

@@ -2,6 +2,8 @@ package com.f98k.tipstermindcocoapods.ui.screen.main
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.f98k.tipstermindcocoapods.commons.AppLanguageController
+import com.f98k.tipstermindcocoapods.commons.SupportedLanguage
 import com.f98k.tipstermindcocoapods.domain.usecase.MainUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -24,8 +26,25 @@ class MainViewModel(private val useCase: MainUseCase) : ViewModel() {
             },
             setDrawerVisibility = {
                 setDrawerVisibility(it)
+            },
+            setShowManageComponentActions = { booleanValue, actionSelected ->
+                setManageComponentActions(booleanValue,actionSelected)
+            },
+            onChangeLanguage = {
+                onChangeLanguage(it)
             }
         )
+
+    private fun onChangeLanguage(language: SupportedLanguage) {
+        AppLanguageController.setLanguage(language)
+    }
+
+    private fun setManageComponentActions(value: Boolean,actionSelected : String) {
+        _uiState.update { it.copy(
+            isToShowSettingsActionComponent = value,
+            lastActionClicked = actionSelected
+        ) }
+    }
 
     private fun setDrawerVisibility(value: Boolean) {
         _uiState.update { it.copy(

@@ -18,6 +18,9 @@
 		4A1E4EBB2D94B73300C02A61 /* ic_bottom_bar_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A1E4EBA2D94B73300C02A61 /* ic_bottom_bar_home.png */; };
 		4A1E4EBD2D94B79B00C02A61 /* ic_bottom_bar_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A1E4EBC2D94B79B00C02A61 /* ic_bottom_bar_settings.png */; };
 		4A1E4EBF2D94B80900C02A61 /* ic_bottom_bar_ia.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A1E4EBE2D94B80900C02A61 /* ic_bottom_bar_ia.png */; };
+		4A8C8F1D2D98446C00CF7C25 /* settings_item.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A8C8F1C2D98446C00CF7C25 /* settings_item.json */; };
+		4A8C8F222D9845B400CF7C25 /* ic_instagram.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8C8F212D9845B400CF7C25 /* ic_instagram.png */; };
+		4A8C8F232D9845B400CF7C25 /* ic_contact_us.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8C8F202D9845B400CF7C25 /* ic_contact_us.png */; };
 		4A91DF882D8F3F1600CC3922 /* RemoteConfigBridgeIos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A91DF872D8F3F1600CC3922 /* RemoteConfigBridgeIos.swift */; };
 		4ACF07432D8F317600C2056B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4ACF07422D8F317600C2056B /* GoogleService-Info.plist */; };
 		4AD747E02D97620400D259A6 /* ic_settings_notifications.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AD747DA2D97620400D259A6 /* ic_settings_notifications.png */; };
@@ -28,7 +31,6 @@
 		4AD747E52D97620400D259A6 /* ic_settings_terms.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AD747DD2D97620400D259A6 /* ic_settings_terms.png */; };
 		4AD747E62D97620400D259A6 /* ic_settings_tipster_pro.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AD747DF2D97620400D259A6 /* ic_settings_tipster_pro.png */; };
 		4AD747EA2D97769900D259A6 /* ic_back_left 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AD747E92D97769900D259A6 /* ic_back_left 2.png */; };
-		4AD747EC2D97773B00D259A6 /* settings_item.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AD747EB2D97773B00D259A6 /* settings_item.json */; };
 		4AD747EE2D97841400D259A6 /* ic_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AD747ED2D97841400D259A6 /* ic_close.png */; };
 		4AE58BD62D922731006DEEED /* Lexend-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4AE58BCF2D922731006DEEED /* Lexend-ExtraBold.ttf */; };
 		4AE58BD72D922731006DEEED /* Lexend-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4AE58BCE2D922731006DEEED /* Lexend-Bold.ttf */; };
@@ -57,6 +59,9 @@
 		4A1E4EBA2D94B73300C02A61 /* ic_bottom_bar_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_bottom_bar_home.png; sourceTree = "<group>"; };
 		4A1E4EBC2D94B79B00C02A61 /* ic_bottom_bar_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_bottom_bar_settings.png; sourceTree = "<group>"; };
 		4A1E4EBE2D94B80900C02A61 /* ic_bottom_bar_ia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_bottom_bar_ia.png; sourceTree = "<group>"; };
+		4A8C8F1C2D98446C00CF7C25 /* settings_item.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = settings_item.json; sourceTree = "<group>"; };
+		4A8C8F202D9845B400CF7C25 /* ic_contact_us.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_contact_us.png; sourceTree = "<group>"; };
+		4A8C8F212D9845B400CF7C25 /* ic_instagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_instagram.png; sourceTree = "<group>"; };
 		4A91DF872D8F3F1600CC3922 /* RemoteConfigBridgeIos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigBridgeIos.swift; sourceTree = "<group>"; };
 		4ACF07422D8F317600C2056B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4AD747D92D97620400D259A6 /* ic_settings_language.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_settings_language.png; sourceTree = "<group>"; };
@@ -67,7 +72,6 @@
 		4AD747DE2D97620400D259A6 /* ic_settings_theme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_settings_theme.png; sourceTree = "<group>"; };
 		4AD747DF2D97620400D259A6 /* ic_settings_tipster_pro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_settings_tipster_pro.png; sourceTree = "<group>"; };
 		4AD747E92D97769900D259A6 /* ic_back_left 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_back_left 2.png"; sourceTree = "<group>"; };
-		4AD747EB2D97773B00D259A6 /* settings_item.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = settings_item.json; sourceTree = "<group>"; };
 		4AD747ED2D97841400D259A6 /* ic_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_close.png; sourceTree = "<group>"; };
 		4AE58BCD2D922731006DEEED /* Lexend-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-Black.ttf"; sourceTree = "<group>"; };
 		4AE58BCE2D922731006DEEED /* Lexend-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-Bold.ttf"; sourceTree = "<group>"; };
@@ -133,8 +137,10 @@
 		4AE58BDF2D92378B006DEEED /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				4A8C8F202D9845B400CF7C25 /* ic_contact_us.png */,
+				4A8C8F212D9845B400CF7C25 /* ic_instagram.png */,
+				4A8C8F1C2D98446C00CF7C25 /* settings_item.json */,
 				4AD747ED2D97841400D259A6 /* ic_close.png */,
-				4AD747EB2D97773B00D259A6 /* settings_item.json */,
 				4AD747E92D97769900D259A6 /* ic_back_left 2.png */,
 				4AD747D92D97620400D259A6 /* ic_settings_language.png */,
 				4AD747DA2D97620400D259A6 /* ic_settings_notifications.png */,
@@ -263,13 +269,13 @@
 				4AE58BD62D922731006DEEED /* Lexend-ExtraBold.ttf in Resources */,
 				4A1E4EBF2D94B80900C02A61 /* ic_bottom_bar_ia.png in Resources */,
 				4AE58BD72D922731006DEEED /* Lexend-Bold.ttf in Resources */,
-				4AD747EC2D97773B00D259A6 /* settings_item.json in Resources */,
 				4A1E4EBD2D94B79B00C02A61 /* ic_bottom_bar_settings.png in Resources */,
 				4AE58BD82D922731006DEEED /* Lexend-ExtraLight.ttf in Resources */,
 				4AE58BD92D922731006DEEED /* Lexend-Light.ttf in Resources */,
 				4AE58BDA2D922731006DEEED /* Lexend-Black.ttf in Resources */,
 				4A1E4EB72D94B61D00C02A61 /* ic_bottom_bar_search.png in Resources */,
 				4AE58BDB2D922731006DEEED /* Lexend-Regular.ttf in Resources */,
+				4A8C8F1D2D98446C00CF7C25 /* settings_item.json in Resources */,
 				4AE58BDC2D922731006DEEED /* Lexend-Medium.ttf in Resources */,
 				4AE58BDD2D922731006DEEED /* Lexend-SemiBold.ttf in Resources */,
 				4AE58BDE2D922731006DEEED /* Lexend-Thin.ttf in Resources */,
@@ -281,6 +287,8 @@
 				4AD747E52D97620400D259A6 /* ic_settings_terms.png in Resources */,
 				4AD747E62D97620400D259A6 /* ic_settings_tipster_pro.png in Resources */,
 				4A1E4EAF2D949F3100C02A61 /* bottom_bar_items.json in Resources */,
+				4A8C8F222D9845B400CF7C25 /* ic_instagram.png in Resources */,
+				4A8C8F232D9845B400CF7C25 /* ic_contact_us.png in Resources */,
 				058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */,
 				4A1C6EF62D90B96700DF6B7B /* .plist in Resources */,
 				4A1C6EF82D90B9E600DF6B7B /* GoogleService-Info.plist in Resources */,

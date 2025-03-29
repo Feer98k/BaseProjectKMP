@@ -1,11 +1,5 @@
 [
-    {
-      "icon": "ic_settings_language",
-      "labelEn": "Change Language",
-      "labelPt": "Alterar idioma",
-      "labelEs": "Cambiar idioma",
-      "action": "action_change_language"
-    },
+    
     {
       "icon": "ic_settings_theme",
       "labelEn": "Change Theme",
@@ -20,13 +14,7 @@
       "labelEs": "Centro de notificaciones",
       "action": "action_notifications_center"
     },
-    {
-      "icon": "ic_settings_privacy",
-      "labelEn": "Privacy Settings",
-      "labelPt": "Privacidade",
-      "labelEs": "Privacidad",
-      "action": "action_privacy_settings"
-    },
+   
     {
       "icon": "ic_settings_terms",
       "labelEn": "Terms & Conditions",
@@ -41,6 +29,20 @@
       "labelEs": "Calificar la app",
       "action": "action_rate_app"
     },
+    {
+      "icon": "ic_contact_us",
+      "labelEn": "Contact us",
+      "labelPt": "Entre em contato conosco",
+      "labelEs": "Contáctenos",
+      "action": "action_contact_us"
+    },
+    {
+      "icon": "ic_instagram",
+      "labelEn": "Follow Us",
+      "labelPt": "Siga-nos",
+      "labelEs": "Síganos",
+      "action": "action_follow_instagram"
+    },	
     {
       "icon": "ic_settings_tipster_pro",
       "labelEn": "Become Tipster Pro",
