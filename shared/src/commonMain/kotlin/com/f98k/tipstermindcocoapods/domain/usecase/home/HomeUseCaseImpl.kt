@@ -6,6 +6,12 @@ import com.f98k.tipstermindcocoapods.data.model.ResponseResource
 import com.f98k.tipstermindcocoapods.data.repository.home.HomeRepository
 import com.f98k.tipstermindcocoapods.domain.extensions.fromJsonOrNull
 import com.f98k.tipstermindcocoapods.domain.usecase.remoteconfig.RemoteConfigUseCase
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.IO
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.coroutineScope
+
 
 class HomeUseCaseImpl(
     private val homeRepository: HomeRepository,
@@ -22,7 +28,7 @@ class HomeUseCaseImpl(
         }
     }
 
-    override suspend fun allLeaguesMatches(): List<MatchesFootballResponseModel> {
+    override suspend fun allLeaguesMatches(): List<MatchesFootballResponseModel> = coroutineScope {
         val leagues = listOf(
             RemoteConfigEnum.PREMIER_LEAGUE,
             RemoteConfigEnum.LA_LIGA,
@@ -49,11 +55,13 @@ class HomeUseCaseImpl(
             RemoteConfigEnum.GOLD_CUP
         )
 
-        return leagues.mapNotNull { league ->
-            val result = remoteConfigUseCase.fetchRemoteConfigData(league)
-            val raw = (result as? ResponseResource.Success)?.data
-            raw?.fromJsonOrNull<MatchesFootballResponseModel>()
-        }
+        leagues.map { league ->
+            async(Dispatchers.IO) { // Dispara cada fetch numa coroutine independente em IO
+                val result = remoteConfigUseCase.fetchRemoteConfigData(league)
+                val raw = (result as? ResponseResource.Success)?.data
+                raw?.fromJsonOrNull<MatchesFootballResponseModel>()
+            }
+        }.awaitAll().filterNotNull()
     }
 
 }
