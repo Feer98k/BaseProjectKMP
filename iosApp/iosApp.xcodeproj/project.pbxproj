@@ -18,9 +18,9 @@
 		4A1E4EBB2D94B73300C02A61 /* ic_bottom_bar_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A1E4EBA2D94B73300C02A61 /* ic_bottom_bar_home.png */; };
 		4A1E4EBD2D94B79B00C02A61 /* ic_bottom_bar_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A1E4EBC2D94B79B00C02A61 /* ic_bottom_bar_settings.png */; };
 		4A1E4EBF2D94B80900C02A61 /* ic_bottom_bar_ia.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A1E4EBE2D94B80900C02A61 /* ic_bottom_bar_ia.png */; };
-		4A8C8F1D2D98446C00CF7C25 /* settings_item.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A8C8F1C2D98446C00CF7C25 /* settings_item.json */; };
 		4A8C8F222D9845B400CF7C25 /* ic_instagram.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8C8F212D9845B400CF7C25 /* ic_instagram.png */; };
 		4A8C8F232D9845B400CF7C25 /* ic_contact_us.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8C8F202D9845B400CF7C25 /* ic_contact_us.png */; };
+		4A8C8F312D98631700CF7C25 /* settings_item.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A8C8F302D98631700CF7C25 /* settings_item.json */; };
 		4A91DF882D8F3F1600CC3922 /* RemoteConfigBridgeIos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A91DF872D8F3F1600CC3922 /* RemoteConfigBridgeIos.swift */; };
 		4ACF07432D8F317600C2056B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4ACF07422D8F317600C2056B /* GoogleService-Info.plist */; };
 		4AD747E02D97620400D259A6 /* ic_settings_notifications.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AD747DA2D97620400D259A6 /* ic_settings_notifications.png */; };
@@ -59,9 +59,9 @@
 		4A1E4EBA2D94B73300C02A61 /* ic_bottom_bar_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_bottom_bar_home.png; sourceTree = "<group>"; };
 		4A1E4EBC2D94B79B00C02A61 /* ic_bottom_bar_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_bottom_bar_settings.png; sourceTree = "<group>"; };
 		4A1E4EBE2D94B80900C02A61 /* ic_bottom_bar_ia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_bottom_bar_ia.png; sourceTree = "<group>"; };
-		4A8C8F1C2D98446C00CF7C25 /* settings_item.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = settings_item.json; sourceTree = "<group>"; };
 		4A8C8F202D9845B400CF7C25 /* ic_contact_us.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_contact_us.png; sourceTree = "<group>"; };
 		4A8C8F212D9845B400CF7C25 /* ic_instagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_instagram.png; sourceTree = "<group>"; };
+		4A8C8F302D98631700CF7C25 /* settings_item.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = settings_item.json; sourceTree = "<group>"; };
 		4A91DF872D8F3F1600CC3922 /* RemoteConfigBridgeIos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigBridgeIos.swift; sourceTree = "<group>"; };
 		4ACF07422D8F317600C2056B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4AD747D92D97620400D259A6 /* ic_settings_language.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_settings_language.png; sourceTree = "<group>"; };
@@ -137,9 +137,9 @@
 		4AE58BDF2D92378B006DEEED /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				4A8C8F302D98631700CF7C25 /* settings_item.json */,
 				4A8C8F202D9845B400CF7C25 /* ic_contact_us.png */,
 				4A8C8F212D9845B400CF7C25 /* ic_instagram.png */,
-				4A8C8F1C2D98446C00CF7C25 /* settings_item.json */,
 				4AD747ED2D97841400D259A6 /* ic_close.png */,
 				4AD747E92D97769900D259A6 /* ic_back_left 2.png */,
 				4AD747D92D97620400D259A6 /* ic_settings_language.png */,
@@ -275,7 +275,6 @@
 				4AE58BDA2D922731006DEEED /* Lexend-Black.ttf in Resources */,
 				4A1E4EB72D94B61D00C02A61 /* ic_bottom_bar_search.png in Resources */,
 				4AE58BDB2D922731006DEEED /* Lexend-Regular.ttf in Resources */,
-				4A8C8F1D2D98446C00CF7C25 /* settings_item.json in Resources */,
 				4AE58BDC2D922731006DEEED /* Lexend-Medium.ttf in Resources */,
 				4AE58BDD2D922731006DEEED /* Lexend-SemiBold.ttf in Resources */,
 				4AE58BDE2D922731006DEEED /* Lexend-Thin.ttf in Resources */,
@@ -296,6 +295,7 @@
 				4A1E4EB92D94B6D500C02A61 /* ic_bottom_bar_favorites.png in Resources */,
 				4AE58BE72D924721006DEEED /* ic_back_left.png in Resources */,
 				4ACF07432D8F317600C2056B /* GoogleService-Info.plist in Resources */,
+				4A8C8F312D98631700CF7C25 /* settings_item.json in Resources */,
 				4A1E4EBB2D94B73300C02A61 /* ic_bottom_bar_home.png in Resources */,
 				4AD747EA2D97769900D259A6 /* ic_back_left 2.png in Resources */,
 			);

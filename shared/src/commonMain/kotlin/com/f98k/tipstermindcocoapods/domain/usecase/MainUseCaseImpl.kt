@@ -28,10 +28,6 @@ class MainUseCaseImpl(
         return mainRepository.fetchSettingsList()
     }
 
-    override suspend fun changeTheme() {
-        mainRepository.changeAppTheme()
-    }
-
     private suspend fun getDefaultBottomBar(): BottomBarList {
         return mainRepository.getDefaultBottomBar()
     }

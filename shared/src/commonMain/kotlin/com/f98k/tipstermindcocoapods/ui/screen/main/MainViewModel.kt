@@ -29,24 +29,10 @@ class MainViewModel(private val useCase: MainUseCase) : ViewModel() {
             },
             setShowManageComponentActions = { booleanValue, actionSelected ->
                 setManageComponentActions(booleanValue,actionSelected)
-            },
-            onChangeLanguage = {
-                onChangeLanguage(it)
-            },
-            onChangeThemeClick = {
-                onChangeTheme()
             }
         )
 
-    private fun onChangeTheme() {
-        viewModelScope.launch {
-            useCase.changeTheme()
-        }
-    }
 
-    private fun onChangeLanguage(language: SupportedLanguage) {
-        AppLanguageController.setLanguage(language)
-    }
 
     private fun setManageComponentActions(value: Boolean,actionSelected : String) {
         _uiState.update { it.copy(
