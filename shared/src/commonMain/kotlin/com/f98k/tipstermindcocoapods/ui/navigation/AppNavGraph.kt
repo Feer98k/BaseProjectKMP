@@ -28,7 +28,6 @@ fun AppNavGraph(
         startDestination = startDestination
     ) {
         composable(AppRoute.Home.route) {
-            closeSettingDraw()
             setTopBar {
                 TipsterTopBar(
                     title = APP_NAME,
@@ -40,7 +39,6 @@ fun AppNavGraph(
         }
 
         composable(AppRoute.Search.route) {
-            closeSettingDraw()
             setTopBar {
                 TipsterTopBar(
                     title = topSearchScreen(),
@@ -52,7 +50,6 @@ fun AppNavGraph(
             SearchScreen()
         }
         composable(AppRoute.AiTips.route) {
-            closeSettingDraw()
             setTopBar {
                 TipsterTopBar(
                     title = topIaTipsScreen(),
@@ -64,7 +61,6 @@ fun AppNavGraph(
             IaTipsScreen()
         }
         composable(AppRoute.Favorites.route) {
-            closeSettingDraw()
             setTopBar {
                 TipsterTopBar(
                     title = topBarFavoriteScreen(),
@@ -74,9 +70,6 @@ fun AppNavGraph(
             }
             setBottomBarVisibility(true)
             FavoritesScreen()
-        }
-        composable(AppRoute.Settings.route) {
-            onSettingsClick()
         }
     }
 }

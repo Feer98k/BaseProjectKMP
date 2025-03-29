@@ -32,7 +32,7 @@ fun MainScreen() {
     val viewModel = koinViewModel<MainViewModel>()
     val uiState = viewModel.uiState.collectAsState().value
     val uiActions = viewModel.uiActions
-    val isToShowSettingsComponent = remember { mutableStateOf(false) }
+//    val isToShowSettingsComponent = remember { mutableStateOf(false) }
 
     LaunchedEffect(Unit) {
         uiActions.getBottomBarList()
@@ -46,7 +46,7 @@ fun MainScreen() {
             if (showBottomBar.value) TipsterBottomBar(
                 navController = navController,
                 items = uiState.bottomBarList.bottomBarList,
-                onSettingsClick = {isToShowSettingsComponent.value = true}
+                isToShowSettingsComponent = {uiActions.setDrawerVisibility(it)}
             )
         }
     ) { innerPadding ->
@@ -55,22 +55,24 @@ fun MainScreen() {
                 navController = navController,
                 setTopBar = { topBarComposable -> currentTopBar.value = topBarComposable },
                 setBottomBarVisibility = { show -> showBottomBar.value = show },
-                closeSettingDraw = {isToShowSettingsComponent.value = false},
+                closeSettingDraw = {
+                    uiActions.setDrawerVisibility(false)
+                },
                 onSettingsClick = {
-                    isToShowSettingsComponent.value = true
+                    uiActions.setDrawerVisibility(true)
                 },
             )
 
                 SettingsComponent(
                     modifier = Modifier.fillMaxSize(),
-                    isVisible = isToShowSettingsComponent.value,
+                    isVisible = uiState.isToShowSettingsDrawer,
                     settingsItems = uiState.settingsList,
                     onItemClick = { item ->
                         //todo implementar action
                     },
                     onDismiss = {
                         navController.popBackStack()
-                        isToShowSettingsComponent.value = false
+                        uiActions.setDrawerVisibility(false)
                     }
                 )
 

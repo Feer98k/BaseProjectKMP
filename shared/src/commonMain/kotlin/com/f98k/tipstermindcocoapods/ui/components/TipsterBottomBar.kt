@@ -21,7 +21,7 @@ import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum
 fun TipsterBottomBar(
     navController: NavHostController,
     items: List<BottomBarItem>,
-    onSettingsClick: () -> Unit
+    isToShowSettingsComponent: (Boolean) -> Unit
 ) {
     val currentDestination = navController.currentBackStackEntryAsState().value?.destination?.route
 
@@ -37,8 +37,9 @@ fun TipsterBottomBar(
                 onClick = {
                     if (!isSelected) {
                         if (item.action == AppRoute.Settings.route) {
-                            onSettingsClick()
+                            isToShowSettingsComponent(true)
                         } else {
+                            isToShowSettingsComponent(false)
                             navController.navigate(item.action) {
                                 popUpTo(navController.graph.startDestinationId) {
                                     saveState = true
