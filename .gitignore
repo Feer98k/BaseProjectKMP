@@ -13,7 +13,7 @@ build/
 # Generated files
 */build/
 *.klib
-*.metadata.json
+
 
 # iOS / Xcode specific files
 .DS_Store
@@ -94,9 +94,6 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 
-# Firebase configs (for safety, keep out of version control if contain sensitive info)
-google-services.json
-GoogleService-Info.plist
 
 # Sensitive or confidential data
 .env

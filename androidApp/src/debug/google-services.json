@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "712224722874",
+    "project_id": "tipstermindproject",
+    "storage_bucket": "tipstermindproject.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712224722874:android:36502628ba073300d59783",
+        "android_client_info": {
+          "package_name": "com.f98k.tipstermindcocoapods.android"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKfdW72i4n6oZlehhjmys892XzVOkqmzk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -156,6 +156,48 @@ android {
         }
     }
 
+    flavorDimensions += "env"
+
+    buildTypes {
+        getByName("debug") {
+            isMinifyEnabled = false // ProGuard/desugaring OFF
+        }
+        getByName("release") {
+            isMinifyEnabled = true // ProGuard ativo em release
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+
+    buildFeatures {
+        compose = true
+        buildConfig = true
+    }
+
+    productFlavors {
+        create("dev") {
+            dimension = "env"
+
+            // Habilita debug e desativa otimizações
+            buildConfigField("String", "BASE_URL", "\"https://dev.api.tipstermind.com\"")
+            buildConfigField("Boolean", "ANALYTICS_ENABLED", "false")
+
+            manifestPlaceholders["appLabel"] = "Tipster (DEV)"
+        }
+
+        create("prod") {
+            dimension = "env"
+
+            // Desativa debug e ativa otimizações
+            buildConfigField("String", "BASE_URL", "\"https://api.tipstermind.com\"")
+            buildConfigField("Boolean", "ANALYTICS_ENABLED", "true")
+
+            manifestPlaceholders["appLabel"] = "Tipster"
+        }
+    }
+
 }
 dependencies {
     implementation(libs.androidx.runtime.android)

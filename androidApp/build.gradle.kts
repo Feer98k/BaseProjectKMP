@@ -28,6 +28,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     packaging {
         resources {
@@ -48,6 +49,28 @@ android {
     sourceSets {
         getByName("main") {
             manifest.srcFile("src/main/AndroidManifest.xml")
+        }
+    }
+
+    flavorDimensions += "env" // Pode ter mais de uma dimensão no futuro, como "store" ou "region"
+
+    productFlavors {
+        create("dev") {
+            dimension = "env"
+
+            buildConfigField("String", "BASE_URL", "\"https://dev.api.tipstermind.com\"")
+            buildConfigField("Boolean", "ANALYTICS_ENABLED", "false")
+
+            manifestPlaceholders["appLabel"] = "Tipster (DEV)"
+        }
+
+        create("prod") {
+            dimension = "env"
+
+            buildConfigField("String", "BASE_URL", "\"https://api.tipstermind.com\"")
+            buildConfigField("Boolean", "ANALYTICS_ENABLED", "true")
+
+            manifestPlaceholders["appLabel"] = "Tipster"
         }
     }
 }
