@@ -57,19 +57,22 @@ android {
     productFlavors {
         create("dev") {
             dimension = "env"
-
-            buildConfigField("String", "BASE_URL", "\"https://dev.api.tipstermind.com\"")
             buildConfigField("Boolean", "ANALYTICS_ENABLED", "false")
-
+            buildConfigField("Boolean", "IS_LOG_ENABLED", "true")
             manifestPlaceholders["appLabel"] = "Tipster (DEV)"
+        }
+
+        create("devHml") {
+            dimension = "env"
+            buildConfigField("Boolean", "ANALYTICS_ENABLED", "true")
+            buildConfigField("Boolean", "IS_LOG_ENABLED", "true")
+            manifestPlaceholders["appLabel"] = "Tipster (DEV-HML)"
         }
 
         create("prod") {
             dimension = "env"
-
-            buildConfigField("String", "BASE_URL", "\"https://api.tipstermind.com\"")
             buildConfigField("Boolean", "ANALYTICS_ENABLED", "true")
-
+            buildConfigField("Boolean", "IS_LOG_ENABLED", "false")
             manifestPlaceholders["appLabel"] = "Tipster"
         }
     }
