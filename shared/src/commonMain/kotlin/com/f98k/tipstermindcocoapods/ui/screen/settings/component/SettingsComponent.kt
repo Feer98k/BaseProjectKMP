@@ -1,6 +1,7 @@
 package com.f98k.tipstermindcocoapods.ui.screen.settings.component
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInHorizontally
@@ -46,7 +47,10 @@ fun SettingsComponent(
     onDismiss: () -> Unit
 ) {
     if (isVisible) {
-        Box(modifier = modifier.fillMaxSize()) {
+        Box(modifier = modifier
+            .fillMaxSize()
+            .animateContentSize()
+        ) {
 
             AnimatedVisibility(
                 visible = isVisible,

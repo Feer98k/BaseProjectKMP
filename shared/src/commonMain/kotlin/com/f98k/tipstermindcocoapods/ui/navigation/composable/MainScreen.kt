@@ -17,6 +17,10 @@ import com.f98k.tipstermindcocoapods.ui.screen.main.MainViewModel
 import com.f98k.tipstermindcocoapods.ui.screen.settings.component.ManageSettingsClicked
 import com.f98k.tipstermindcocoapods.ui.screen.settings.component.SettingsComponent
 import org.koin.compose.viewmodel.koinViewModel
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.ui.graphics.Color
+import com.f98k.tipstermindcocoapods.ui.screen.bottomsheet.BottomSheetHandle
 import org.koin.core.annotation.KoinExperimentalAPI
 
 
@@ -57,6 +61,7 @@ fun MainScreen() {
     BottomSheetScaffold(
         scaffoldState = scaffoldState,
         sheetContent = {
+            BottomSheetHandle()
             TipsterBottomSheetContent(type = uiState.currentBottomSheet, uiActions)
         },
         sheetPeekHeight = 0.dp,
@@ -105,6 +110,16 @@ private fun MainContent(
                 uiActions.setDrawerVisibility(true)
             },
         )
+        if (uiState.isBottomSheetVisible) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(Color.Black.copy(alpha = 0.5f))
+                    .clickable {
+                        uiActions.hideBottomSheet()
+                    }
+            )
+        }
 
         SettingsComponent(
             modifier = Modifier.fillMaxSize(),
