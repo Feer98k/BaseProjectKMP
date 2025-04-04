@@ -1,13 +1,19 @@
+package com.f98k.tipstermindcocoapods.ui.screen.bottomsheet
+
+
+import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.Divider
 import androidx.compose.material.Icon
 import androidx.compose.material.RadioButton
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.unit.dp
+
+
 import com.f98k.tipstermindcocoapods.commons.LocalizedStrings.close
 import com.f98k.tipstermindcocoapods.commons.LocalizedStrings.selectLanguageString
 import com.f98k.tipstermindcocoapods.commons.SupportedLanguage
@@ -26,36 +32,38 @@ fun LanguagePickerSheet(
         modifier = Modifier
             .fillMaxWidth()
             .padding(24.dp)
+            .animateContentSize()
     ) {
         TipsterText(
             text = selectLanguageString(),
             type = TipsterTextTypeEnum.Subtitle,
-            modifier = Modifier.padding(bottom = 16.dp)
+            modifier = Modifier
+                .padding(bottom = 16.dp)
+                .align(Alignment.CenterHorizontally)
         )
 
-        listOf(SupportedLanguage.EN, SupportedLanguage.ES, SupportedLanguage.PT).forEach { language ->
+        SupportedLanguage.entries.forEachIndexed { index, language ->
             val isSelected = language == currentLanguage
 
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clickable {
+                    .clickable(enabled = !isSelected) {
                         VibrationBridge.vibrate()
                         onLanguageSelected(language)
                     }
-                    .padding(vertical = 12.dp),
+                    .padding(vertical = 8.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Icon(
-                    painter = getImageResource("ic_settings_language"),
-                    contentDescription = language.name,
-                    modifier = Modifier.size(24.dp)
+                RadioButton(
+                    selected = isSelected,
+                    onClick = null
                 )
 
-                Spacer(modifier = Modifier.width(6.dp))
+                Spacer(modifier = Modifier.width(12.dp))
 
                 TipsterText(
-                    text = when (language) {
+                     text = when (language) {
                         SupportedLanguage.EN -> "English"
                         SupportedLanguage.ES -> "Español"
                         SupportedLanguage.PT -> "Português"
@@ -65,16 +73,10 @@ fun LanguagePickerSheet(
                         alpha = if (isSelected) 0.5f else 1f
                     }
                 )
+            }
 
-                Spacer(modifier = Modifier.weight(1f))
-
-                RadioButton(
-                    selected = isSelected,
-                    onClick = {
-                        VibrationBridge.vibrate()
-                        onLanguageSelected(language)
-                    }
-                )
+            if (index < SupportedLanguage.values().lastIndex) {
+                Divider(modifier = Modifier.padding(horizontal = 8.dp))
             }
         }
 
@@ -83,7 +85,8 @@ fun LanguagePickerSheet(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .clickable { onDismiss() },
+                .clickable { onDismiss() }
+                .padding(vertical = 8.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         ) {

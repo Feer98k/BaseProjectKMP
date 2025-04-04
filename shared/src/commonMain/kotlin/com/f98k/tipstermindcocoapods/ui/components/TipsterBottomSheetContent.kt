@@ -1,9 +1,9 @@
 package com.f98k.tipstermindcocoapods.ui.components
 
-import LanguagePickerSheet
 import com.f98k.tipstermindcocoapods.ui.screen.bottomsheet.ModalBottomSheetType
 import androidx.compose.runtime.Composable
 import com.f98k.tipstermindcocoapods.commons.getSupportedLanguage
+import com.f98k.tipstermindcocoapods.ui.screen.bottomsheet.LanguagePickerSheet
 import com.f98k.tipstermindcocoapods.ui.screen.main.MainUiStateAction
 import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum
 
