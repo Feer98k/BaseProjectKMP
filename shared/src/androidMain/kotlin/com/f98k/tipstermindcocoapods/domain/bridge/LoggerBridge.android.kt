@@ -3,7 +3,7 @@ package com.f98k.tipstermindcocoapods.domain.bridge
 import android.util.Log
 import com.f98k.tipstermindcocoapods.BuildConfig
 
-actual class LoggerBridge {
+actual object LoggerBridge {
     private val isLoggerEnabled = BuildConfig.IS_LOG_ENABLED
 
     actual fun logDebug(message: String) {

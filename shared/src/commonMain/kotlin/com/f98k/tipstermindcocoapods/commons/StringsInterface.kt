@@ -81,4 +81,5 @@ object StringConstants {
     const val ACTION_CONTACT_US = "action_contact_us"
     const val ACTION_FOLLOW_INSTAGRAM = "action_follow_instagram"
     const val ACTION_BE_PRO = "action_become_tipster_pro"
+    const val ACTION_FONT_SIZE= "Alterar tamanho de fonte"
 }

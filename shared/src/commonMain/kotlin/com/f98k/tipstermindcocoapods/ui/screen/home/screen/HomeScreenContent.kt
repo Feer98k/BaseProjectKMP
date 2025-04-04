@@ -25,29 +25,12 @@ fun HomeScreenContent(
     ) {
         LazyColumn {
             item {
-                uiState.generalMatchList.forEach { match ->
-                    
-                    Spacer(modifier = Modifier.height(14.dp))
-                    match.matches.forEach { actualMatch ->
-                        Spacer(modifier = Modifier.height(14.dp))
-                        TipsterText(
-                            text = "${actualMatch.homeTeam} VS ${actualMatch.awayTeam}",
-                            type = TipsterTextTypeEnum.Body
-                        )
-                    }
-                }
-
-            kotlin.runCatching {
-                uiState.generalMatchList[0].matches.size
-            }.onSuccess{
-                Spacer(modifier = Modifier.height(14.dp))
                 TipsterText(
-                    text = "Total Partidas: ${uiState.generalMatchList[0].matches.size?:0}",
+                    text = "${uiState.generalMatchList}",
                     type = TipsterTextTypeEnum.Body
                 )
-            }
-            }
 
+            }
         }
     }
 }

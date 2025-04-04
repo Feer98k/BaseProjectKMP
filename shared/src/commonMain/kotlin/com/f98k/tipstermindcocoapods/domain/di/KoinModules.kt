@@ -15,6 +15,8 @@ import com.f98k.tipstermindcocoapods.data.repository.search.SearchRepository
 import com.f98k.tipstermindcocoapods.data.repository.search.SearchRepositoryImpl
 import com.f98k.tipstermindcocoapods.data.repository.settings.SettingsRepository
 import com.f98k.tipstermindcocoapods.data.repository.settings.SettingsRepositoryImpl
+import com.f98k.tipstermindcocoapods.data.service.home.HomeApiService
+import com.f98k.tipstermindcocoapods.domain.bridge.provideHttpClient
 import com.f98k.tipstermindcocoapods.domain.usecase.MainUseCase
 import com.f98k.tipstermindcocoapods.domain.usecase.MainUseCaseImpl
 import com.f98k.tipstermindcocoapods.domain.usecase.favorite.FavoriteUseCase
@@ -34,6 +36,7 @@ import com.f98k.tipstermindcocoapods.ui.screen.home.viewmodel.HomeViewModel
 import com.f98k.tipstermindcocoapods.ui.screen.iatips.viewmodel.IaTipsViewModel
 import com.f98k.tipstermindcocoapods.ui.screen.main.MainViewModel
 import com.f98k.tipstermindcocoapods.ui.screen.search.viewmodel.SearchViewModel
+import io.ktor.client.HttpClient
 import org.koin.compose.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -62,4 +65,9 @@ val useCaseFactory = module {
     single<SettingsUseCase> { SettingsUseCaseImpl(get(), get()) }
     single<RemoteConfigUseCase> { RemoteConfigUseCaseImpl(get()) }
     single<MainUseCase> { MainUseCaseImpl(get(), get()) }
+}
+
+val service = module {
+    single<HttpClient> { provideHttpClient() }
+    single<HomeApiService> { HomeApiService(get())}
 }

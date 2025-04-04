@@ -57,6 +57,8 @@ kotlin {
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.client.content.negotiation)
             implementation(libs.ktor.serialization.kotlinx.json)
+            implementation(libs.ktor.client.logging)
+
 
             // ----------------------------------------
             // MVVM (Moko)
@@ -124,6 +126,7 @@ kotlin {
             implementation("androidx.datastore:datastore-preferences:1.0.0")
             implementation("androidx.datastore:datastore-core:1.0.0")
             implementation("androidx.datastore:datastore-preferences-core:1.0.0")
+
         }
 
         iosMain.dependencies {
@@ -131,6 +134,7 @@ kotlin {
             // Networking (Ktor - iOS)
             // ----------------------------------------
             implementation(libs.ktor.client.darwin)
+            implementation(libs.ktor.client.logging)
 
             // ----------------------------------------
             // Skiko (imagem e gráficos multiplataforma)

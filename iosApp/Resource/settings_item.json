@@ -1,5 +1,27 @@
 [
     {
+      "icon": "ic_settings_language",
+      "labelEn": "Change Language",
+      "labelPt": "Alterar idioma",
+      "labelEs": "Alterar idioma",
+      "action": "action_change_language"
+    }, 
+    {
+      "icon": "ic_settings_theme",
+      "labelEn": "Change theme",
+      "labelPt": "Alterar tema",
+      "labelEs": "Alterar tema",
+      "action": "action_change_theme"
+    }, 
+    {
+      "icon": "ic_settings_font_size",
+      "labelEn": "Change font size",
+      "labelPt": "Alterar tamanho de fonte",
+      "labelEs": "Alterar tamanho de fonte",
+      "action": "action_change_font_size"
+    }, 
+
+    {
       "icon": "ic_settings_rate",
       "labelEn": "Rate the App",
       "labelPt": "Avaliar o app",

@@ -3,7 +3,7 @@ package com.f98k.tipstermindcocoapods.domain.bridge
 
 import platform.Foundation.NSLog
 
-actual class LoggerBridge {
+actual object LoggerBridge {
     private val isLoggerEnabled = BuildConfigBridge.IS_LOG_ENABLED
 
 
