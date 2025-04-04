@@ -16,6 +16,7 @@ import com.f98k.tipstermindcocoapods.commons.AppThemeType
 import com.f98k.tipstermindcocoapods.domain.bridge.getLexendFont
 import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum
 import androidx.compose.foundation.isSystemInDarkTheme
+import com.f98k.tipstermindcocoapods.ui.theme.scaledFontSize
 
 @Composable
 fun TipsterText(
@@ -30,7 +31,7 @@ fun TipsterText(
     val coroutineScope = rememberCoroutineScope()
     BoxWithConstraints(modifier = modifier) {
         val boxWidth = maxWidth
-        val maxFontSize = type.fontSize
+        val maxFontSize = type.scaledFontSize()
         val minFontSize = 8.sp
 
         val finalFontSize = remember(text, boxWidth, singleLine, type) {

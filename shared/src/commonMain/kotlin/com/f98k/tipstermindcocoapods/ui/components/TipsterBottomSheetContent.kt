@@ -5,6 +5,8 @@ import com.f98k.tipstermindcocoapods.commons.AppLanguageController
 import com.f98k.tipstermindcocoapods.commons.AppThemeController
 import com.f98k.tipstermindcocoapods.ui.screen.bottomsheet.LanguagePickerSheet
 import com.f98k.tipstermindcocoapods.data.model.bottomsheet.ModalBottomSheetType
+import com.f98k.tipstermindcocoapods.domain.helper.FontSizeController
+import com.f98k.tipstermindcocoapods.ui.screen.bottomsheet.FontSizePickerSheet
 import com.f98k.tipstermindcocoapods.ui.screen.bottomsheet.ThemePickerSheet
 import com.f98k.tipstermindcocoapods.ui.screen.main.MainUiStateAction
 import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum
@@ -30,9 +32,13 @@ fun TipsterBottomSheetContent(type: ModalBottomSheetType, uiState: MainUiStateAc
             onDismiss = { uiState.hideBottomSheet() }
         )
 
-        ModalBottomSheetType.FONT_SIZE_TYPE -> TipsterText(
-            "Tamanho da Fonte",
-            TipsterTextTypeEnum.Title
+        ModalBottomSheetType.FONT_SIZE_TYPE -> FontSizePickerSheet(
+            currentLevel = FontSizeController.currentSize.value,
+            onLevelSelected = {
+                uiState.setFontSize(it)
+                uiState.hideBottomSheet()
+            },
+            onDismiss = { uiState.hideBottomSheet() }
         )
 
         ModalBottomSheetType.NONE_TYPE -> TipsterText("None", TipsterTextTypeEnum.Title)

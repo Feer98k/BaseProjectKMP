@@ -111,6 +111,12 @@ object LocalizedStrings {
         SupportedLanguage.PT -> "Modo escuro"
         SupportedLanguage.ES -> "Modo escuro"
     }
+
+    fun selectFontSizeTitle(): String= when (currentLang) {
+        SupportedLanguage.EN -> "Select Font Size"
+        SupportedLanguage.PT -> "Escolher tamanho da fonte"
+        SupportedLanguage.ES -> "Seleccionar tamaño de fuente"
+    }
 }
 
 object StringConstants {

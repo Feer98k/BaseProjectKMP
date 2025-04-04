@@ -6,6 +6,7 @@ import com.f98k.tipstermindcocoapods.commons.SupportedLanguage
 import com.f98k.tipstermindcocoapods.data.model.bottombar.BottomBarList
 import com.f98k.tipstermindcocoapods.data.model.settings.SettingsItem
 import com.f98k.tipstermindcocoapods.data.model.bottomsheet.ModalBottomSheetType
+import com.f98k.tipstermindcocoapods.ui.theme.FontSizeLevel
 
 data class MainUiState(
     val isToShowLoading: Boolean = false,
@@ -26,5 +27,6 @@ data class MainUiStateAction(
     val showBottomSheet: (ModalBottomSheetType) -> Unit,
     val hideBottomSheet: () -> Unit,
     val setLanguage:(SupportedLanguage) -> Unit,
-    val setTheme:(AppThemeType) -> Unit
+    val setTheme:(AppThemeType) -> Unit,
+    val setFontSize:(FontSizeLevel) -> Unit
 )
