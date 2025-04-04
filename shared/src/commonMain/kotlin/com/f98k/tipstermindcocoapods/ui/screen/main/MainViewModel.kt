@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.f98k.tipstermindcocoapods.commons.AppLanguageController
 import com.f98k.tipstermindcocoapods.commons.SupportedLanguage
 import com.f98k.tipstermindcocoapods.domain.usecase.MainUseCase
+import com.f98k.tipstermindcocoapods.ui.screen.bottomsheet.ModalBottomSheetType
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -27,11 +28,20 @@ class MainViewModel(private val useCase: MainUseCase) : ViewModel() {
             setDrawerVisibility = {
                 setDrawerVisibility(it)
             },
-            setShowManageComponentActions = { booleanValue, actionSelected ->
-                setManageComponentActions(booleanValue,actionSelected)
+            showBottomSheet = { type ->
+                _uiState.update { it.copy(currentBottomSheet = type, isBottomSheetVisible = true) }
+            },
+            hideBottomSheet = {
+                _uiState.update { it.copy(currentBottomSheet = ModalBottomSheetType.NONE_TYPE, isBottomSheetVisible = false) }
+            },
+            setLanguage = {
+                changeLanguage(it)
             }
         )
 
+    private fun changeLanguage(it: SupportedLanguage) {
+        TODO("Not yet implemented")
+    }
 
 
     private fun setManageComponentActions(value: Boolean,actionSelected : String) {
@@ -91,5 +101,12 @@ class MainViewModel(private val useCase: MainUseCase) : ViewModel() {
                 isToShowLoading = isLoading
             )
         }
+    }
+    fun showBottomSheet(type: ModalBottomSheetType) {
+        _uiState.update { it.copy(currentBottomSheet = type, isBottomSheetVisible = true) }
+    }
+
+    fun hideBottomSheet() {
+        _uiState.update { it.copy(currentBottomSheet = ModalBottomSheetType.NONE_TYPE, isBottomSheetVisible = false) }
     }
 }

@@ -3,6 +3,7 @@ package com.f98k.tipstermindcocoapods.android
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.material.ModalBottomSheetLayout
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.f98k.tipstermindcocoapods.domain.bridge.initJsonReader
@@ -16,6 +17,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         injectLibraries()
         setContent {
+//            ModalBottomSheetLayout{
+//
+//            }
             TipsterTheme {
                 MainScreen()
             }

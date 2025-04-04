@@ -9,7 +9,7 @@ enum class SupportedLanguage(val lang : String) {
     EN("en"), PT("pt"), ES("es")
 }
 
-private fun getSupportedLanguage(): SupportedLanguage {
+fun getSupportedLanguage(): SupportedLanguage {
     return when (getCurrentLanguageCode()) {
         "pt" -> SupportedLanguage.PT
         "es" -> SupportedLanguage.ES

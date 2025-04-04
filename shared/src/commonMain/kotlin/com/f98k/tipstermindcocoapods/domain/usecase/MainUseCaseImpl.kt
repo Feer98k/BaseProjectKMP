@@ -14,14 +14,15 @@ class MainUseCaseImpl(
 ) : MainUseCase {
 
     override suspend fun fetchBottomBarList(): BottomBarList {
-        return when (val result =
-            remoteConfigUseCase.fetchRemoteConfigData(RemoteConfigEnum.BOTTOM_BAR_LIST)) {
-            is ResponseResource.Success -> result.data.fromJsonOrNull<BottomBarList>()
-                ?: getDefaultBottomBar()
-
-            is ResponseResource.Error -> getDefaultBottomBar()
-            is ResponseResource.Exception -> getDefaultBottomBar()
-        }
+//        return when (val result =
+//            remoteConfigUseCase.fetchRemoteConfigData(RemoteConfigEnum.BOTTOM_BAR_LIST)) {
+//            is ResponseResource.Success -> result.data.fromJsonOrNull<BottomBarList>()
+//                ?: getDefaultBottomBar()
+//
+//            is ResponseResource.Error -> getDefaultBottomBar()
+//            is ResponseResource.Exception -> getDefaultBottomBar()
+//        }
+        return getDefaultBottomBar()
     }
 
     override suspend fun fetchSettingsList(): List<SettingsItem> {
