@@ -1,9 +1,9 @@
 package com.f98k.tipstermindcocoapods.ui.components
 
+import LanguagePickerSheet
 import com.f98k.tipstermindcocoapods.ui.screen.bottomsheet.ModalBottomSheetType
 import androidx.compose.runtime.Composable
 import com.f98k.tipstermindcocoapods.commons.getSupportedLanguage
-import com.f98k.tipstermindcocoapods.ui.screen.bottomsheet.LanguagePickerSheet
 import com.f98k.tipstermindcocoapods.ui.screen.main.MainUiStateAction
 import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum
 
@@ -13,7 +13,8 @@ fun TipsterBottomSheetContent(type: ModalBottomSheetType,uiState: MainUiStateAct
         ModalBottomSheetType.THEME_TYPE -> TipsterText("Escolher Tema",type = TipsterTextTypeEnum.Title)
         ModalBottomSheetType.LANGUAGE_TYPE -> LanguagePickerSheet(
             currentLanguage = getSupportedLanguage(),
-            onLanguageSelected = { uiState.setLanguage(it) }
+            onLanguageSelected = { uiState.setLanguage(it) },
+            onDismiss = {uiState.hideBottomSheet()}
         )
         ModalBottomSheetType.FONT_SIZE_TYPE -> TipsterText("Tamanho da Fonte",TipsterTextTypeEnum.Title)
         ModalBottomSheetType.NONE_TYPE -> TipsterText("None",TipsterTextTypeEnum.Title)

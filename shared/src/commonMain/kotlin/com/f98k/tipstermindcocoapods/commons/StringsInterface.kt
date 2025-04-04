@@ -65,6 +65,12 @@ object LocalizedStrings {
         SupportedLanguage.ES -> "cerrar"
     }
 
+    fun selectLanguageString(): String = when (currentLang) {
+        SupportedLanguage.EN -> "Select Language"
+        SupportedLanguage.PT -> "Selecionar idioma"
+        SupportedLanguage.ES -> "cambiar idioma"
+    }
+
 }
 
 object StringConstants {

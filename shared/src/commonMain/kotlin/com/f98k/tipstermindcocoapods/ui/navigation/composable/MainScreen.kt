@@ -44,36 +44,41 @@ fun MainScreen() {
         }
     }
 
+    LaunchedEffect(scaffoldState.bottomSheetState.currentValue) {
+        if (scaffoldState.bottomSheetState.isCollapsed) {
+            uiActions.hideBottomSheet()
+        }
+    }
+
     LaunchedEffect(Unit) {
         uiActions.getBottomBarList()
     }
 
-    Scaffold(
+    BottomSheetScaffold(
+        scaffoldState = scaffoldState,
+        sheetContent = {
+            TipsterBottomSheetContent(type = uiState.currentBottomSheet, uiActions)
+        },
+        sheetPeekHeight = 0.dp,
         topBar = {
             currentTopBar.value?.invoke()
-        },
-        bottomBar = {
+        }
+    ) { innerPadding ->
+        Column(modifier = Modifier.padding(innerPadding)) {
+            Box(modifier = Modifier.weight(1f)) {
+                MainContent(
+                    innerPadding,
+                    navController,
+                    currentTopBar,
+                    showBottomBar,
+                    uiActions,
+                    uiState
+                )
+            }
             if (showBottomBar.value) TipsterBottomBar(
                 navController = navController,
                 items = uiState.bottomBarList.bottomBarList,
                 isToShowSettingsComponent = { uiActions.setDrawerVisibility(it) }
-            )
-        }
-    ) { innerPadding ->
-        BottomSheetScaffold(
-            scaffoldState = scaffoldState,
-            sheetContent = {
-                TipsterBottomSheetContent(type = uiState.currentBottomSheet,uiActions)
-            },
-            sheetPeekHeight = 0.dp
-        ){
-            MainContent(
-                innerPadding,
-                navController,
-                currentTopBar,
-                showBottomBar,
-                uiActions,
-                uiState
             )
         }
     }
@@ -95,7 +100,6 @@ private fun MainContent(
             setBottomBarVisibility = { show -> showBottomBar.value = show },
             closeSettingDraw = {
                 uiActions.setDrawerVisibility(false)
-                uiActions.hideBottomSheet()
             },
             onSettingsClick = {
                 uiActions.setDrawerVisibility(true)
