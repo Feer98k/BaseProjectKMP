@@ -48,14 +48,14 @@ object LocalizedStrings {
 
     fun backPressedAccessibility(): String = when (currentLang) {
         SupportedLanguage.EN -> "Back button"
-        SupportedLanguage.PT -> "Botão de voltar"
-        SupportedLanguage.ES -> "Botón Atrás"
+        SupportedLanguage.PT -> "Botão voltar"
+        SupportedLanguage.ES -> "Botón de regreso"
     }
 
     fun topBarFavoriteScreen(): String = when (currentLang) {
         SupportedLanguage.EN -> "My Favorites"
-        SupportedLanguage.PT -> "Meus Favoritos"
-        SupportedLanguage.ES -> "Mis Favoritos"
+        SupportedLanguage.PT -> "Favoritos"
+        SupportedLanguage.ES -> "Favoritos"
     }
 
     fun topIaTipsScreen(): String = when (currentLang) {
@@ -65,52 +65,51 @@ object LocalizedStrings {
     }
 
     fun topSearchScreen(): String = when (currentLang) {
-        SupportedLanguage.EN -> "Find Matches"
-        SupportedLanguage.PT -> "Buscar Jogos"
+        SupportedLanguage.EN -> "Search Matches"
+        SupportedLanguage.PT -> "Buscar Partidas"
         SupportedLanguage.ES -> "Buscar Partidos"
     }
 
     fun topSettingsScreen(): String = when (currentLang) {
         SupportedLanguage.EN -> "Settings"
         SupportedLanguage.PT -> "Configurações"
-        SupportedLanguage.ES -> "Ajustes"
+        SupportedLanguage.ES -> "Configurações"
     }
 
     fun close(): String = when (currentLang) {
         SupportedLanguage.EN -> "Close"
         SupportedLanguage.PT -> "Fechar"
-        SupportedLanguage.ES -> "cerrar"
+        SupportedLanguage.ES -> "Fechar"
     }
 
     fun selectLanguageString(): String = when (currentLang) {
         SupportedLanguage.EN -> "Select Language"
-        SupportedLanguage.PT -> "Selecionar idioma"
-        SupportedLanguage.ES -> "cambiar idioma"
+        SupportedLanguage.PT -> "Escolher idioma"
+        SupportedLanguage.ES -> "Seleccionar idioma"
     }
 
     fun selectThemeTitle(): String = when (currentLang) {
         SupportedLanguage.EN -> "Select Theme"
-        SupportedLanguage.PT -> "Selecionar Tema"
-        SupportedLanguage.ES -> "Seleccionar Tema"
+        SupportedLanguage.PT -> "Escolher tema"
+        SupportedLanguage.ES -> "Seleccionar tema"
     }
 
     fun themeSystem(): String = when (currentLang) {
-        SupportedLanguage.EN -> "system preference"
-        SupportedLanguage.PT -> "preferência do sistema"
-        SupportedLanguage.ES -> "preferencia del sistema"
-
+        SupportedLanguage.EN -> "System preference"
+        SupportedLanguage.PT -> "Preferência do sistema"
+        SupportedLanguage.ES -> "Preferencia del sistema"
     }
 
     fun themeLight(): String = when (currentLang) {
-        SupportedLanguage.EN -> "Light Theme"
-        SupportedLanguage.PT -> "Tema claro"
-        SupportedLanguage.ES -> "tema claro"
+        SupportedLanguage.EN -> "Light mode"
+        SupportedLanguage.PT -> "Modo claro"
+        SupportedLanguage.ES -> "Modo claro"
     }
 
     fun themeDark(): String = when (currentLang) {
-        SupportedLanguage.EN -> "Dark Theme"
-        SupportedLanguage.PT -> "Tema escuro"
-        SupportedLanguage.ES -> "tema oscuro"
+        SupportedLanguage.EN -> "Dark mode"
+        SupportedLanguage.PT -> "Modo escuro"
+        SupportedLanguage.ES -> "Modo escuro"
     }
 }
 

@@ -23,25 +23,25 @@ import androidx.compose.runtime.collectAsState
 private val TipsterDarkColors = darkColors(
     primary = Color(0xFF3A5EFF),
     primaryVariant = Color(0xFF2A4ED8),
-    secondary = Color(0xFF94ADC7),
-    background = Color(0xFF000000),
+    secondary = Color(0xFF788D9C),
+    background = Color(0xFF0D0D0D),
     surface = Color(0xFF1B1B1B),
     onPrimary = Color.White,
-    onSecondary = Color.White,
+    onSecondary = Color(0xFFB0BEC5),
     onBackground = Color.White,
-    onSurface = Color.White
+    onSurface = Color(0xFFE0E0E0)
 )
 
 private val TipsterLightColors = lightColors(
     primary = Color(0xFF3A5EFF),
     primaryVariant = Color(0xFF2A4ED8),
-    secondary = Color(0xFF94ADC7),
+    secondary = Color(0xFF5A6D80),
     background = Color(0xFFFFFFFF),
-    surface = Color(0xFFF2F2F2),
+    surface = Color(0xFFEFEFEF),
     onPrimary = Color.White,
-    onSecondary = Color.Black,
+    onSecondary = Color(0xFF37474F),
     onBackground = Color.Black,
-    onSurface = Color.Black
+    onSurface = Color(0xFF212121)
 )
 
 private val TipsterTypography = Typography(

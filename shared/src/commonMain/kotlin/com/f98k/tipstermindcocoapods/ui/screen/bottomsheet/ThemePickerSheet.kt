@@ -1,19 +1,22 @@
 package com.f98k.tipstermindcocoapods.ui.screen.bottomsheet
 
+import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.Divider
 import androidx.compose.material.Icon
 import androidx.compose.material.RadioButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.unit.dp
+import com.f98k.tipstermindcocoapods.commons.AppThemeType
+import com.f98k.tipstermindcocoapods.commons.LocalizedStrings
+import com.f98k.tipstermindcocoapods.domain.bridge.VibrationBridge
 import com.f98k.tipstermindcocoapods.domain.bridge.getImageResource
 import com.f98k.tipstermindcocoapods.ui.components.TipsterText
 import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum
-import com.f98k.tipstermindcocoapods.commons.AppThemeType
-import com.f98k.tipstermindcocoapods.commons.LocalizedStrings
 
 @Composable
 fun ThemePickerSheet(
@@ -25,27 +28,36 @@ fun ThemePickerSheet(
         modifier = Modifier
             .fillMaxWidth()
             .padding(24.dp)
+            .animateContentSize()
     ) {
         TipsterText(
             text = LocalizedStrings.selectThemeTitle(),
             type = TipsterTextTypeEnum.Subtitle,
-            modifier = Modifier.padding(bottom = 16.dp)
+            modifier = Modifier
+                .padding(bottom = 16.dp)
+                .align(Alignment.CenterHorizontally)
         )
 
-        listOf(
-            AppThemeType.SYSTEM,
-            AppThemeType.LIGHT,
-            AppThemeType.DARK
-        ).forEach { theme ->
+        listOf(AppThemeType.SYSTEM, AppThemeType.LIGHT, AppThemeType.DARK).forEachIndexed { index, theme ->
             val isSelected = theme == currentTheme
 
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clickable { onThemeSelected(theme) }
-                    .padding(vertical = 12.dp),
+                    .clickable(enabled = !isSelected) {
+                        VibrationBridge.vibrate()
+                        onThemeSelected(theme)
+                    }
+                    .padding(vertical = 8.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
+                RadioButton(
+                    selected = isSelected,
+                    onClick = null
+                )
+
+                Spacer(modifier = Modifier.width(12.dp))
+
                 TipsterText(
                     text = when (theme) {
                         AppThemeType.SYSTEM -> LocalizedStrings.themeSystem()
@@ -57,13 +69,10 @@ fun ThemePickerSheet(
                         alpha = if (isSelected) 0.5f else 1f
                     }
                 )
+            }
 
-                Spacer(modifier = Modifier.weight(1f))
-
-                RadioButton(
-                    selected = isSelected,
-                    onClick = { onThemeSelected(theme) }
-                )
+            if (index < 2) {
+                Divider(modifier = Modifier.padding(horizontal = 8.dp))
             }
         }
 
@@ -72,7 +81,8 @@ fun ThemePickerSheet(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .clickable { onDismiss() },
+                .clickable { onDismiss() }
+                .padding(vertical = 8.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         ) {

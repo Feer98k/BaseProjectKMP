@@ -7,6 +7,7 @@ import androidx.compose.foundation.text.BasicText
 import androidx.compose.material.BottomSheetScaffold
 import androidx.compose.material.ModalBottomSheetLayout
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.tooling.preview.Preview
@@ -25,6 +26,8 @@ class MainActivity : ComponentActivity() {
 //
 //    }
             TipsterTheme {
+//                val coroutineScope = remember
+//                globalCoroutineScope = coroutineScope
 //                BasicText(modifier = Modifier.alpha(), text = "Hello World"){
 //
 //                }
