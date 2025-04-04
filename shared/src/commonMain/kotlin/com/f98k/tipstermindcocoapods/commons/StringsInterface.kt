@@ -88,6 +88,30 @@ object LocalizedStrings {
         SupportedLanguage.ES -> "cambiar idioma"
     }
 
+    fun selectThemeTitle(): String = when (currentLang) {
+        SupportedLanguage.EN -> "Select Theme"
+        SupportedLanguage.PT -> "Selecionar Tema"
+        SupportedLanguage.ES -> "Seleccionar Tema"
+    }
+
+    fun themeSystem(): String = when (currentLang) {
+        SupportedLanguage.EN -> "system preference"
+        SupportedLanguage.PT -> "preferência do sistema"
+        SupportedLanguage.ES -> "preferencia del sistema"
+
+    }
+
+    fun themeLight(): String = when (currentLang) {
+        SupportedLanguage.EN -> "Light Theme"
+        SupportedLanguage.PT -> "Tema claro"
+        SupportedLanguage.ES -> "tema claro"
+    }
+
+    fun themeDark(): String = when (currentLang) {
+        SupportedLanguage.EN -> "Dark Theme"
+        SupportedLanguage.PT -> "Tema escuro"
+        SupportedLanguage.ES -> "tema oscuro"
+    }
 }
 
 object StringConstants {

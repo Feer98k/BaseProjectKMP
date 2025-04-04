@@ -2,18 +2,23 @@ package com.f98k.tipstermindcocoapods.ui.components
 
 import androidx.compose.runtime.Composable
 import com.f98k.tipstermindcocoapods.commons.AppLanguageController
-import com.f98k.tipstermindcocoapods.commons.getSupportedLanguage
+import com.f98k.tipstermindcocoapods.commons.AppThemeController
 import com.f98k.tipstermindcocoapods.ui.screen.bottomsheet.LanguagePickerSheet
-import com.f98k.tipstermindcocoapods.ui.screen.bottomsheet.ModalBottomSheetType
+import com.f98k.tipstermindcocoapods.data.model.bottomsheet.ModalBottomSheetType
+import com.f98k.tipstermindcocoapods.ui.screen.bottomsheet.ThemePickerSheet
 import com.f98k.tipstermindcocoapods.ui.screen.main.MainUiStateAction
 import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum
 
 @Composable
 fun TipsterBottomSheetContent(type: ModalBottomSheetType, uiState: MainUiStateAction) {
     when (type) {
-        ModalBottomSheetType.THEME_TYPE -> TipsterText(
-            "Escolher Tema",
-            type = TipsterTextTypeEnum.Title
+        ModalBottomSheetType.THEME_TYPE -> ThemePickerSheet(
+            currentTheme = AppThemeController.currentTheme.value,
+            onThemeSelected = {
+                uiState.setTheme(it)
+                uiState.hideBottomSheet()
+            },
+            onDismiss = { uiState.hideBottomSheet() }
         )
 
         ModalBottomSheetType.LANGUAGE_TYPE -> LanguagePickerSheet(

@@ -1,6 +1,6 @@
 package com.f98k.tipstermindcocoapods.domain.extensions
 
-import com.f98k.tipstermindcocoapods.ui.screen.bottomsheet.ModalBottomSheetType
+import com.f98k.tipstermindcocoapods.data.model.bottomsheet.ModalBottomSheetType
 
 fun String.toModalBottomSheetType(): ModalBottomSheetType {
     return when (this) {

@@ -8,7 +8,7 @@ import com.f98k.tipstermindcocoapods.commons.SupportedLanguage
 import kotlinx.coroutines.flow.first
 
 actual object LanguageStorageBridge {
-    private val Context.dataStore by preferencesDataStore(name = "app_settings")
+    private val Context.dataStore by preferencesDataStore(name = "app_settings_language")
 
     actual suspend fun saveLanguage(lang: SupportedLanguage) {
         appContext.dataStore.edit { prefs ->

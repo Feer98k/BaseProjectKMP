@@ -3,12 +3,14 @@ package com.f98k.tipstermindcocoapods.ui.screen.main
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.f98k.tipstermindcocoapods.commons.AppLanguageController
+import com.f98k.tipstermindcocoapods.commons.AppThemeController
+import com.f98k.tipstermindcocoapods.commons.AppThemeType
 import com.f98k.tipstermindcocoapods.commons.SupportedLanguage
 import com.f98k.tipstermindcocoapods.domain.bridge.LanguageStorageBridge
 import com.f98k.tipstermindcocoapods.domain.usecase.MainUseCase
-import com.f98k.tipstermindcocoapods.ui.screen.bottomsheet.ModalBottomSheetType
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
+import com.f98k.tipstermindcocoapods.data.model.bottomsheet.ModalBottomSheetType
+import com.f98k.tipstermindcocoapods.domain.bridge.ThemeStorageBridge
+import com.f98k.tipstermindcocoapods.domain.helper.initializeTheme
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -24,6 +26,7 @@ class MainViewModel(private val useCase: MainUseCase) : ViewModel() {
         getSettingsList()
         viewModelScope.launch {
             AppLanguageController.initialize(LanguageStorageBridge)
+            initializeTheme(ThemeStorageBridge)
         }
     }
     val uiActions: MainUiStateAction
@@ -42,8 +45,18 @@ class MainViewModel(private val useCase: MainUseCase) : ViewModel() {
             },
             setLanguage = {
                 changeLanguage(it)
+            },
+            setTheme = {
+                changeTheme(it)
             }
         )
+
+    private fun changeTheme(themeType: AppThemeType) {
+        viewModelScope.launch {
+            ThemeStorageBridge.saveTheme(themeType)
+            AppThemeController.setTheme(themeType)
+        }
+    }
 
     private fun changeLanguage(it: SupportedLanguage) {
         viewModelScope.launch {

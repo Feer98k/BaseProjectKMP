@@ -14,7 +14,10 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.f98k.tipstermindcocoapods.commons.AppThemeController
+import com.f98k.tipstermindcocoapods.commons.AppThemeType
 import com.f98k.tipstermindcocoapods.domain.bridge.getLexendFont
+import androidx.compose.runtime.collectAsState
 
 
 private val TipsterDarkColors = darkColors(
@@ -81,9 +84,15 @@ private val TipsterShapes = Shapes(
 
 @Composable
 fun TipsterTheme(
-    isDarkTheme: Boolean = isSystemInDarkTheme(),
+    theme: AppThemeType = AppThemeController.currentTheme.collectAsState().value,
     content: @Composable () -> Unit
 ) {
+    val isDarkTheme = when (theme) {
+        AppThemeType.SYSTEM -> isSystemInDarkTheme()
+        AppThemeType.DARK -> true
+        AppThemeType.LIGHT -> false
+    }
+
     val colors = if (isDarkTheme) TipsterDarkColors else TipsterLightColors
 
     MaterialTheme(
