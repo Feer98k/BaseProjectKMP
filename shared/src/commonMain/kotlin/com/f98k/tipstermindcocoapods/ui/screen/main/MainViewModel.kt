@@ -40,7 +40,7 @@ class MainViewModel(private val useCase: MainUseCase) : ViewModel() {
         )
 
     private fun changeLanguage(it: SupportedLanguage) {
-
+        AppLanguageController.setLanguage(it)
     }
 
 
