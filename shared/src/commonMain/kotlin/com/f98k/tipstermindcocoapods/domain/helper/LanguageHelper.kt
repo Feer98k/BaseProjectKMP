@@ -1,15 +1,23 @@
 package com.f98k.tipstermindcocoapods.domain.helper
 
-import com.f98k.tipstermindcocoapods.domain.bridge.getCurrentLanguageCode
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import com.f98k.tipstermindcocoapods.commons.AppLanguageController
+import com.f98k.tipstermindcocoapods.commons.SupportedLanguage
 
+@Composable
 fun localizedText(
     en: String,
     es: String,
     pt: String
 ): String {
-    return when (getCurrentLanguageCode()) {
-        "pt" -> pt
-        "es" -> es
-        else -> en
+    val currentLanguage by AppLanguageController.currentLanguage.collectAsState()
+
+    return when (currentLanguage) {
+        SupportedLanguage.PT -> pt
+        SupportedLanguage.ES -> es
+        SupportedLanguage.EN -> en
+        else -> {en}
     }
 }

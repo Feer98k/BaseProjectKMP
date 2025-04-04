@@ -1,9 +1,13 @@
 package com.f98k.tipstermindcocoapods.commons
 
 import com.f98k.tipstermindcocoapods.commons.StringConstants.APP_NAME
+import com.f98k.tipstermindcocoapods.domain.bridge.LanguageStorageBridge
 import com.f98k.tipstermindcocoapods.domain.bridge.getCurrentLanguageCode
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 
 enum class SupportedLanguage(val lang : String) {
     EN("en"), PT("pt"), ES("es")
@@ -21,6 +25,11 @@ object AppLanguageController {
     private val _currentLanguage = MutableStateFlow(getSupportedLanguage())
     val currentLanguage: StateFlow<SupportedLanguage> get() = _currentLanguage
 
+    suspend fun initialize(languageStorageBridge: LanguageStorageBridge) {
+        val stored = languageStorageBridge.getSavedLanguage()
+        stored?.let { _currentLanguage.value = it }
+    }
+
     fun setLanguage(lang: SupportedLanguage) {
         _currentLanguage.value = lang
     }
@@ -28,6 +37,14 @@ object AppLanguageController {
 
 object LocalizedStrings {
     private var currentLang = AppLanguageController.currentLanguage.value
+
+    init {
+        CoroutineScope(Dispatchers.Default).launch {
+            AppLanguageController.currentLanguage.collect {
+                currentLang = it
+            }
+        }
+    }
 
     fun backPressedAccessibility(): String = when (currentLang) {
         SupportedLanguage.EN -> "Back button"

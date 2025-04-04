@@ -30,6 +30,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.f98k.tipstermindcocoapods.commons.LocalizedStrings.close
 import com.f98k.tipstermindcocoapods.data.model.settings.SettingsItem
+import com.f98k.tipstermindcocoapods.domain.bridge.VibrationBridge
 import com.f98k.tipstermindcocoapods.domain.bridge.getImageResource
 import com.f98k.tipstermindcocoapods.domain.helper.localizedText
 import com.f98k.tipstermindcocoapods.ui.components.TipsterText
@@ -98,7 +99,10 @@ fun SettingsComponent(
                                 Row(
                                     modifier = Modifier
                                         .fillMaxWidth()
-                                        .clickable { onItemClick(item) }
+                                        .clickable {
+                                            VibrationBridge.vibrate()
+                                            onItemClick(item)
+                                        }
                                         .padding(vertical = 12.dp),
                                     verticalAlignment = Alignment.CenterVertically
                                 ) {
@@ -114,7 +118,7 @@ fun SettingsComponent(
                                             pt = item.labelPt,
                                             es = item.labelEs
                                         ),
-                                        type = TipsterTextTypeEnum.Subtitle
+                                        type = TipsterTextTypeEnum.Body
                                     )
                                 }
                             }

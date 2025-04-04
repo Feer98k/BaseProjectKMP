@@ -75,7 +75,7 @@ fun LanguagePickerSheet(
                 )
             }
 
-            if (index < SupportedLanguage.values().lastIndex) {
+            if (index < SupportedLanguage.entries.toTypedArray().lastIndex) {
                 Divider(modifier = Modifier.padding(horizontal = 8.dp))
             }
         }

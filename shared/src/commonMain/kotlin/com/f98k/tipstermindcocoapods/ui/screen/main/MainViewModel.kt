@@ -4,8 +4,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.f98k.tipstermindcocoapods.commons.AppLanguageController
 import com.f98k.tipstermindcocoapods.commons.SupportedLanguage
+import com.f98k.tipstermindcocoapods.domain.bridge.LanguageStorageBridge
 import com.f98k.tipstermindcocoapods.domain.usecase.MainUseCase
 import com.f98k.tipstermindcocoapods.ui.screen.bottomsheet.ModalBottomSheetType
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -19,6 +22,9 @@ class MainViewModel(private val useCase: MainUseCase) : ViewModel() {
 
     init {
         getSettingsList()
+        viewModelScope.launch {
+            AppLanguageController.initialize(LanguageStorageBridge)
+        }
     }
     val uiActions: MainUiStateAction
         get() = MainUiStateAction(
@@ -40,7 +46,12 @@ class MainViewModel(private val useCase: MainUseCase) : ViewModel() {
         )
 
     private fun changeLanguage(it: SupportedLanguage) {
-        AppLanguageController.setLanguage(it)
+        viewModelScope.launch {
+            LanguageStorageBridge.saveLanguage(it)
+            AppLanguageController.setLanguage(it)
+            getSettingsList()
+            getBottomBarList()
+        }
     }
 
 
