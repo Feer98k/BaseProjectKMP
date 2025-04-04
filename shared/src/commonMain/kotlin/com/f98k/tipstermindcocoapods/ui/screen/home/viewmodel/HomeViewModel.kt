@@ -15,6 +15,9 @@ class HomeViewModel(private val useCase: HomeUseCase) : ViewModel() {
     private val _uiState: MutableStateFlow<HomeUiState> = MutableStateFlow(HomeUiState())
     val uiState: StateFlow<HomeUiState> get() = _uiState
 
+    init {
+        fetchGeneralMatches()
+    }
     val uiActions: HomeUiActions
         get() = HomeUiActions(
             getGeneralMatchList = { fetchGeneralMatches() }

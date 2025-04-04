@@ -4,16 +4,22 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Icon
 import androidx.compose.material.Slider
-import androidx.compose.runtime.Composable
+import androidx.compose.material.TextButton
+import androidx.compose.material.Text
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.f98k.tipstermindcocoapods.commons.LocalizedStrings
 import com.f98k.tipstermindcocoapods.domain.bridge.getImageResource
 import com.f98k.tipstermindcocoapods.ui.components.TipsterText
 import com.f98k.tipstermindcocoapods.ui.theme.FontSizeLevel
 import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum
-import androidx.compose.ui.draw.alpha
+import com.f98k.tipstermindcocoapods.domain.bridge.getLexendFont
+import kotlin.math.roundToInt
 
 @Composable
 fun FontSizePickerSheet(
@@ -22,7 +28,7 @@ fun FontSizePickerSheet(
     onDismiss: () -> Unit
 ) {
     val allLevels = FontSizeLevel.entries.toTypedArray()
-    val currentIndex = allLevels.indexOf(currentLevel)
+    var selectedIndex by remember { mutableStateOf(allLevels.indexOf(currentLevel)) }
 
     Column(
         modifier = Modifier
@@ -37,6 +43,18 @@ fun FontSizePickerSheet(
 
         Spacer(modifier = Modifier.height(24.dp))
 
+        val previewFontSize = (TipsterTextTypeEnum.Body.fontSize.value * allLevels[selectedIndex].scale).sp
+        Text(
+            text = LocalizedStrings.previewTextSample(),
+            fontSize = previewFontSize,
+            fontWeight = TipsterTextTypeEnum.Body.fontWeight,
+            lineHeight = TipsterTextTypeEnum.Body.lineHeight,
+            fontFamily = getLexendFont(TipsterTextTypeEnum.Body.fontWeight),
+            modifier = Modifier.align(Alignment.CenterHorizontally)
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
         Row(verticalAlignment = Alignment.CenterVertically) {
             TipsterText(
                 text = "Aa",
@@ -47,9 +65,9 @@ fun FontSizePickerSheet(
             Spacer(modifier = Modifier.width(12.dp))
 
             Slider(
-                value = currentIndex.toFloat(),
+                value = selectedIndex.toFloat(),
                 onValueChange = {
-                    onLevelSelected(allLevels[it.toInt()])
+                    selectedIndex = it.roundToInt().coerceIn(0, allLevels.lastIndex)
                 },
                 valueRange = 0f..(allLevels.size - 1).toFloat(),
                 steps = allLevels.size - 2,
@@ -68,22 +86,38 @@ fun FontSizePickerSheet(
         Spacer(modifier = Modifier.height(28.dp))
 
         Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .clickable { onDismiss() },
-            horizontalArrangement = Arrangement.Center,
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceEvenly,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Icon(
-                painter = getImageResource("ic_close"),
-                contentDescription = LocalizedStrings.close(),
-                modifier = Modifier.size(20.dp)
-            )
-            Spacer(modifier = Modifier.width(8.dp))
-            TipsterText(
-                text = LocalizedStrings.close(),
-                type = TipsterTextTypeEnum.Subtitle,
-            )
+            TextButton(onClick = onDismiss) {
+                Icon(
+                    painter = getImageResource("ic_close"),
+                    contentDescription = LocalizedStrings.close(),
+                    modifier = Modifier.size(24.dp)
+                )
+                Spacer(modifier = Modifier.width(8.dp))
+                TipsterText(
+                    text = LocalizedStrings.close(),
+                    type = TipsterTextTypeEnum.Subtitle,
+                )
+            }
+
+            TextButton(onClick = {
+                onLevelSelected(allLevels[selectedIndex])
+                onDismiss()
+            }) {
+                Icon(
+                    painter = getImageResource("ic_confirm"),
+                    contentDescription = LocalizedStrings.confirm(),
+                    modifier = Modifier.size(24.dp)
+                )
+                Spacer(modifier = Modifier.width(8.dp))
+                TipsterText(
+                    text = LocalizedStrings.confirm(),
+                    type = TipsterTextTypeEnum.Subtitle,
+                )
+            }
         }
     }
 }

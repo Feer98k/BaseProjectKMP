@@ -34,26 +34,8 @@ class HomeUseCaseImpl(
             RemoteConfigEnum.PREMIER_LEAGUE,
             RemoteConfigEnum.LA_LIGA,
             RemoteConfigEnum.SERIE_A,
-            RemoteConfigEnum.BUNDESLIGA,
-            RemoteConfigEnum.LIGUE_1,
             RemoteConfigEnum.BRASILEIRAO,
-            RemoteConfigEnum.MLS,
-            RemoteConfigEnum.LIGA_PORTUGAL,
-            RemoteConfigEnum.EREDIVISIE,
-            RemoteConfigEnum.SAUDI_PRO_LEAGUE,
-            RemoteConfigEnum.ARGENTINE_PRIMERA,
-            RemoteConfigEnum.J1_LEAGUE,
-            RemoteConfigEnum.CHINESE_SUPER_LEAGUE,
-            RemoteConfigEnum.SCOTTISH_PREMIERSHIP,
-            RemoteConfigEnum.BELGIAN_PRO_LEAGUE,
-            RemoteConfigEnum.UEFA_CHAMPIONS_LEAGUE,
-            RemoteConfigEnum.UEFA_EUROPA_LEAGUE,
-            RemoteConfigEnum.COPA_LIBERTADORES,
-            RemoteConfigEnum.AFC_CHAMPIONS_LEAGUE,
-            RemoteConfigEnum.FIFA_WORLD_CUP,
-            RemoteConfigEnum.UEFA_EURO,
-            RemoteConfigEnum.COPA_AMERICA,
-            RemoteConfigEnum.GOLD_CUP
+
         )
 
         leagues.map { league ->

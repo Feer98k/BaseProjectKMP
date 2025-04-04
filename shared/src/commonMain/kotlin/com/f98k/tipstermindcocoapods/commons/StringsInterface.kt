@@ -117,6 +117,18 @@ object LocalizedStrings {
         SupportedLanguage.PT -> "Escolher tamanho da fonte"
         SupportedLanguage.ES -> "Seleccionar tamaño de fuente"
     }
+
+    fun confirm(): String = when (currentLang) {
+        SupportedLanguage.EN -> "Confirm"
+        SupportedLanguage.PT -> "Confirmar"
+        SupportedLanguage.ES -> "Confirmar"
+    }
+
+    fun previewTextSample(): String = when (currentLang) {
+        SupportedLanguage.EN -> "Sample text"
+        SupportedLanguage.PT -> "Texto de exemplo"
+        SupportedLanguage.ES -> "Texto de ejemplo"
+    }
 }
 
 object StringConstants {

@@ -15,10 +15,6 @@ fun HomeScreen() {
     val uiState = viewModel.uiState.collectAsState().value
     val uiStateActions = viewModel.uiActions
 
-    LaunchedEffect(Unit) {
-        uiStateActions.getGeneralMatchList()
-    }
-
     HomeScreenContent(
         uiState = uiState,
         uiStateAction = uiStateActions
