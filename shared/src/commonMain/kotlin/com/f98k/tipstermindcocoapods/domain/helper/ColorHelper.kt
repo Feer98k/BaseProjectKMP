@@ -15,3 +15,12 @@ fun getDefaultColor(): Color {
         else -> Color.DarkGray
     }
 }
+
+@Composable
+fun setColorByTheme(lightColor: Color, darkColor: Color) : Color {
+    val theme = AppThemeController.currentTheme.collectAsState().value
+    return when {
+        theme == AppThemeType.DARK || (theme == AppThemeType.SYSTEM && isSystemInDarkTheme()) -> lightColor
+        else -> darkColor
+    }
+}

@@ -17,11 +17,14 @@ enum class TipsterTextTypeEnum(
 }
 
 enum class FontSizeLevel(val scale: Float) {
+    EXTRA_SMALL(0.5f),
     SMALL(0.85f),
     NORMAL(1.0f),
-    EXTRA_LARGE(1.5f),
-    EXTRA_HUGE(2f),
-    EXTRA_MAX_SIZE(2.2f),
+    EXTRA_LARGE(1.2f),
+    EXTRA_HUGE(1.5f),
+    EXTRA_MAX_SIZE(1.8f),
+    BIG_MAX_SIZE(2.0f),
+    BIG_EXTRA_MAX_SIZE(2.2f),
 }
 fun TipsterTextTypeEnum.scaledFontSize(): TextUnit {
     val scale = FontSizeController.currentSize.value.scale

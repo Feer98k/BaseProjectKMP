@@ -129,10 +129,29 @@ object LocalizedStrings {
         SupportedLanguage.PT -> "Texto de exemplo"
         SupportedLanguage.ES -> "Texto de ejemplo"
     }
+
+    fun dailyPrayer(): String = when (currentLang) {
+        SupportedLanguage.EN -> "Daily Prayer"
+        SupportedLanguage.PT -> "Oração diaria"
+        SupportedLanguage.ES -> "Oración diaria"
+    }
+
+    fun dailyVerse(): String = when(currentLang) {
+        SupportedLanguage.EN -> "Daily verse"
+        SupportedLanguage.PT -> "Versículo diário"
+        SupportedLanguage.ES -> "Verso diário"
+    }
+
+    fun dailySermon(): String= when(currentLang) {
+        SupportedLanguage.EN -> "Daily sermon"
+        SupportedLanguage.PT -> "Sermão diário"
+        SupportedLanguage.ES -> "Sermón diario"
+    }
+
 }
 
 object StringConstants {
-    const val APP_NAME = "TipsterMind"
+    const val APP_NAME = "Hole Bible daily"
     const val APP_DESCRIPTION = "A simple app to help you remember tips and tricks."
     const val EMPTY_STRING = ""
     const val EMPTY_REMOTE_CONFIG = "{}"
