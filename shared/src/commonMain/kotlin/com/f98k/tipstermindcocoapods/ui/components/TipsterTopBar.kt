@@ -10,16 +10,13 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.f98k.tipstermindcocoapods.commons.LocalizedStrings
-import com.f98k.tipstermindcocoapods.domain.bridge.getImageResource
 import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum
 
 
@@ -44,10 +41,9 @@ fun TipsterTopBar(
 
             if (showBackButton) {
                 IconButton(onClick = onBackClick) {
-                    Icon(
-                        painter = getImageResource("ic_back_left"),
+                    TipsterIcon(
+                        iconName = "ic_back_left",
                         contentDescription = LocalizedStrings.backPressedAccessibility(),
-                        tint = Color.White,
                         modifier = Modifier.size(24.dp)
                     )
                 }

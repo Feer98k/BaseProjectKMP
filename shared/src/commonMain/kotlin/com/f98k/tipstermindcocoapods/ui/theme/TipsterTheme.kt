@@ -9,6 +9,7 @@ import androidx.compose.material.Typography
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -17,7 +18,6 @@ import androidx.compose.ui.unit.sp
 import com.f98k.tipstermindcocoapods.commons.AppThemeController
 import com.f98k.tipstermindcocoapods.commons.AppThemeType
 import com.f98k.tipstermindcocoapods.domain.bridge.getLexendFont
-import androidx.compose.runtime.collectAsState
 
 
 private val TipsterDarkColors = darkColors(

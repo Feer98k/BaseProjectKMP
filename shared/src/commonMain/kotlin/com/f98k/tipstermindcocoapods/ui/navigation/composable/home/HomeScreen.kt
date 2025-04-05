@@ -1,7 +1,6 @@
 package com.f98k.tipstermindcocoapods.ui.navigation.composable.home
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import com.f98k.tipstermindcocoapods.ui.screen.home.screen.HomeScreenContent
 import com.f98k.tipstermindcocoapods.ui.screen.home.viewmodel.HomeViewModel

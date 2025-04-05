@@ -1,24 +1,33 @@
 package com.f98k.tipstermindcocoapods.ui.screen.bottomsheet
 
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
-import androidx.compose.material.Icon
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.Slider
-import androidx.compose.material.TextButton
 import androidx.compose.material.Text
-import androidx.compose.runtime.*
+import androidx.compose.material.TextButton
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.f98k.tipstermindcocoapods.commons.LocalizedStrings
-import com.f98k.tipstermindcocoapods.domain.bridge.getImageResource
+import com.f98k.tipstermindcocoapods.domain.bridge.getLexendFont
+import com.f98k.tipstermindcocoapods.ui.components.TipsterIcon
 import com.f98k.tipstermindcocoapods.ui.components.TipsterText
 import com.f98k.tipstermindcocoapods.ui.theme.FontSizeLevel
 import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum
-import com.f98k.tipstermindcocoapods.domain.bridge.getLexendFont
 import kotlin.math.roundToInt
 
 @Composable
@@ -91,8 +100,8 @@ fun FontSizePickerSheet(
             verticalAlignment = Alignment.CenterVertically
         ) {
             TextButton(onClick = onDismiss) {
-                Icon(
-                    painter = getImageResource("ic_close"),
+                TipsterIcon(
+                    "ic_close",
                     contentDescription = LocalizedStrings.close(),
                     modifier = Modifier.size(24.dp)
                 )
@@ -107,8 +116,8 @@ fun FontSizePickerSheet(
                 onLevelSelected(allLevels[selectedIndex])
                 onDismiss()
             }) {
-                Icon(
-                    painter = getImageResource("ic_confirm"),
+                TipsterIcon(
+                    "ic_confirm",
                     contentDescription = LocalizedStrings.confirm(),
                     modifier = Modifier.size(24.dp)
                 )

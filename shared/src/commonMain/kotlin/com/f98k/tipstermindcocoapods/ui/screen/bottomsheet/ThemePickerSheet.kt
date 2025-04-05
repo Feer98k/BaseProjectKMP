@@ -2,9 +2,16 @@ package com.f98k.tipstermindcocoapods.ui.screen.bottomsheet
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.Divider
-import androidx.compose.material.Icon
 import androidx.compose.material.RadioButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -14,7 +21,7 @@ import androidx.compose.ui.unit.dp
 import com.f98k.tipstermindcocoapods.commons.AppThemeType
 import com.f98k.tipstermindcocoapods.commons.LocalizedStrings
 import com.f98k.tipstermindcocoapods.domain.bridge.VibrationBridge
-import com.f98k.tipstermindcocoapods.domain.bridge.getImageResource
+import com.f98k.tipstermindcocoapods.ui.components.TipsterIcon
 import com.f98k.tipstermindcocoapods.ui.components.TipsterText
 import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum
 
@@ -86,8 +93,8 @@ fun ThemePickerSheet(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         ) {
-            Icon(
-                painter = getImageResource("ic_close"),
+            TipsterIcon(
+                "ic_close",
                 contentDescription = LocalizedStrings.close(),
                 modifier = Modifier.size(20.dp)
             )

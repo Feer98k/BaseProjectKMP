@@ -3,17 +3,14 @@ package com.f98k.tipstermindcocoapods.ui.components
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
-import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.f98k.tipstermindcocoapods.data.model.bottombar.BottomBarItem
 import com.f98k.tipstermindcocoapods.domain.bridge.VibrationBridge
-import com.f98k.tipstermindcocoapods.domain.bridge.getImageResource
 import com.f98k.tipstermindcocoapods.domain.helper.localizedText
 import com.f98k.tipstermindcocoapods.ui.navigation.AppRoute
 import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum
@@ -53,8 +50,8 @@ fun TipsterBottomBar(
                     }
                 },
                 icon = {
-                    Icon(
-                        painter = getImageResource(item.icon),
+                    TipsterIcon(
+                        item.icon,
                         contentDescription = item.titleEn,
                         modifier = Modifier.size(if (isSelected) 28.dp else 24.dp),
                         tint = if (isSelected) MaterialTheme.colors.primary else MaterialTheme.colors.onBackground

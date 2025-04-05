@@ -1,7 +1,7 @@
 package com.f98k.tipstermindcocoapods.data.model.settings
 
-import kotlinx.serialization.Serializable
 import com.f98k.tipstermindcocoapods.commons.StringConstants.EMPTY_STRING
+import kotlinx.serialization.Serializable
 
 @Serializable
 data class SettingsItem(

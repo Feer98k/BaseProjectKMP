@@ -4,7 +4,6 @@ import MatchesFootballResponseModel
 import com.f98k.tipstermindcocoapods.data.constants.RemoteConfigEnum
 import com.f98k.tipstermindcocoapods.data.model.ResponseResource
 import com.f98k.tipstermindcocoapods.data.repository.home.HomeRepository
-import com.f98k.tipstermindcocoapods.data.service.data.RemoteResult
 import com.f98k.tipstermindcocoapods.domain.extensions.fromJsonOrNull
 import com.f98k.tipstermindcocoapods.domain.usecase.remoteconfig.RemoteConfigUseCase
 import kotlinx.coroutines.Dispatchers

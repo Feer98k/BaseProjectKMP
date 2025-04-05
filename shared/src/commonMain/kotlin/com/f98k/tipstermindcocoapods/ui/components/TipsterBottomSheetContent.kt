@@ -3,10 +3,10 @@ package com.f98k.tipstermindcocoapods.ui.components
 import androidx.compose.runtime.Composable
 import com.f98k.tipstermindcocoapods.commons.AppLanguageController
 import com.f98k.tipstermindcocoapods.commons.AppThemeController
-import com.f98k.tipstermindcocoapods.ui.screen.bottomsheet.LanguagePickerSheet
 import com.f98k.tipstermindcocoapods.data.model.bottomsheet.ModalBottomSheetType
 import com.f98k.tipstermindcocoapods.domain.helper.FontSizeController
 import com.f98k.tipstermindcocoapods.ui.screen.bottomsheet.FontSizePickerSheet
+import com.f98k.tipstermindcocoapods.ui.screen.bottomsheet.LanguagePickerSheet
 import com.f98k.tipstermindcocoapods.ui.screen.bottomsheet.ThemePickerSheet
 import com.f98k.tipstermindcocoapods.ui.screen.main.MainUiStateAction
 import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum

@@ -4,8 +4,8 @@ import com.f98k.tipstermindcocoapods.commons.AppThemeType
 import com.f98k.tipstermindcocoapods.commons.StringConstants.EMPTY_STRING
 import com.f98k.tipstermindcocoapods.commons.SupportedLanguage
 import com.f98k.tipstermindcocoapods.data.model.bottombar.BottomBarList
-import com.f98k.tipstermindcocoapods.data.model.settings.SettingsItem
 import com.f98k.tipstermindcocoapods.data.model.bottomsheet.ModalBottomSheetType
+import com.f98k.tipstermindcocoapods.data.model.settings.SettingsItem
 import com.f98k.tipstermindcocoapods.ui.theme.FontSizeLevel
 
 data class MainUiState(

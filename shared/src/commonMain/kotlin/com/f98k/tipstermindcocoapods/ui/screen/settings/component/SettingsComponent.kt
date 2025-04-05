@@ -21,7 +21,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
@@ -32,8 +31,8 @@ import androidx.compose.ui.unit.dp
 import com.f98k.tipstermindcocoapods.commons.LocalizedStrings.close
 import com.f98k.tipstermindcocoapods.data.model.settings.SettingsItem
 import com.f98k.tipstermindcocoapods.domain.bridge.VibrationBridge
-import com.f98k.tipstermindcocoapods.domain.bridge.getImageResource
 import com.f98k.tipstermindcocoapods.domain.helper.localizedText
+import com.f98k.tipstermindcocoapods.ui.components.TipsterIcon
 import com.f98k.tipstermindcocoapods.ui.components.TipsterText
 import com.f98k.tipstermindcocoapods.ui.theme.TipsterTextTypeEnum
 
@@ -110,8 +109,8 @@ fun SettingsComponent(
                                         .padding(vertical = 12.dp),
                                     verticalAlignment = Alignment.CenterVertically
                                 ) {
-                                    Icon(
-                                        painter = getImageResource(item.icon),
+                                    TipsterIcon(
+                                       item.icon,
                                         contentDescription = item.labelEn,
                                         modifier = Modifier.size(24.dp)
                                     )
@@ -138,8 +137,8 @@ fun SettingsComponent(
                             Row(
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
-                                Icon(
-                                    painter = getImageResource("ic_close"),
+                                TipsterIcon(
+                                    "ic_close",
                                     contentDescription = close(),
                                     modifier = Modifier.size(20.dp)
                                 )
