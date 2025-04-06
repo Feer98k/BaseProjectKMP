@@ -14,6 +14,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "TipsterMindCocoaPods"
+rootProject.name = "BaseProjectKMP"
 include(":androidApp")
 include(":shared")

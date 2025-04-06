@@ -59,21 +59,21 @@ android {
             dimension = "env"
             buildConfigField("Boolean", "ANALYTICS_ENABLED", "false")
             buildConfigField("Boolean", "IS_LOG_ENABLED", "true")
-            manifestPlaceholders["appLabel"] = "Tipster (DEV)"
+            manifestPlaceholders["appLabel"] = "BaseProject (DEV)"
         }
 
         create("devHml") {
             dimension = "env"
             buildConfigField("Boolean", "ANALYTICS_ENABLED", "true")
             buildConfigField("Boolean", "IS_LOG_ENABLED", "true")
-            manifestPlaceholders["appLabel"] = "Tipster (DEV-HML)"
+            manifestPlaceholders["appLabel"] = "BaseProject (DEV-HML)"
         }
 
         create("prod") {
             dimension = "env"
             buildConfigField("Boolean", "ANALYTICS_ENABLED", "true")
             buildConfigField("Boolean", "IS_LOG_ENABLED", "false")
-            manifestPlaceholders["appLabel"] = "Tipster"
+            manifestPlaceholders["appLabel"] = "BaseProject"
         }
     }
 }
