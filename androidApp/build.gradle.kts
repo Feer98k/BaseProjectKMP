@@ -17,10 +17,10 @@ kotlin {
 }
 
 android {
-    namespace = "com.f98k.tipstermindcocoapods.android"
+    namespace = "com.f98k.baseproject.android"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
-        applicationId = "com.f98k.tipstermindcocoapods.android"
+        applicationId = "com.f98k.baseproject.android"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1
